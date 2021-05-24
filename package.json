@@ -16,7 +16,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "postinstall": "husky install && npm run -s bootstrap && npm run -s update-ts-project-refs",
+    "postinstall": "husky install && npm run -s bootstrap && npm run -s update-ts-project-refs && npm ci --prefix ./frontend",
     "update-ts-project-refs": "lb-update-ts-project-refs",
     "update-packages": "npm run -s update-package-locks",
     "check-package-metadata": "node bin/check-package-metadata.js",
