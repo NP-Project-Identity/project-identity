@@ -39,9 +39,8 @@ jobs:
           npm run postinstall
       - name: Build project
         run: npm run build
-      - uses: Yuri6037/Action-FakeTTY@v1.1
       - name: Run tests
-        run: faketty npm test --ignore-scripts
+        run: npm test --ignore-scripts
 
   code-lint:
     name: Code Lint
