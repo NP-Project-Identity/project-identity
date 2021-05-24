@@ -3,6 +3,16 @@
   "compilerOptions": {
     "composite": true
   },
-  "references": [],
+  "references": [
+    {
+      "path": "packages/discussion-board-api/tsconfig.json"
+    },
+    {
+      "path": "packages/loopback-connector-postgresql/tsconfig.json"
+    },
+    {
+      "path": "packages/loopback-connector/tsconfig.json"
+    }
+  ],
   "files": []
 }
