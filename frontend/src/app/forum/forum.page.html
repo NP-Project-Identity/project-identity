@@ -1,57 +1,29 @@
 <ion-content>
   <main-header title="Forum"></main-header>
-  <ion-grid>
-    <ion-row>
-      <div>
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-        <p>hi</p>
-        <br />
-      </div>
-    </ion-row>
-  </ion-grid>
+  <ion-row>
+    <ion-title>School</ion-title>
+    <ion-slides
+      [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
+    >
+      <ion-slide *ngFor="let card of [0,1,2,3,4,5,6,7]">
+        <ion-col>
+          <img style="pointer-events: none" src="./assets/NP-ICT.png" />
+          <ion-label>INFOCOMM TECHNOLOGY</ion-label>
+        </ion-col>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+  <ion-row>
+    <ion-title>CCA</ion-title>
+    <ion-slides
+      [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
+    >
+      <ion-slide *ngFor="let card of [0,1,2,3,4,5,6,7]">
+        <ion-col>
+          <img style="pointer-events: none" src="./assets/NP-ICT.png" />
+          <ion-label>OverFlow</ion-label>
+        </ion-col>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
 </ion-content>
