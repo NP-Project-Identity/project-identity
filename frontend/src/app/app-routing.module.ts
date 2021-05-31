@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'safeentry',
     loadChildren: () => import('./safeentry/safeentry.module').then(m => m.SafeentryPageModule),
+  },
+  {
+    path: 'forum',
+    loadChildren: () => import('./forum/forum.module').then( m => m.ForumPageModule)
   }
 ];
 

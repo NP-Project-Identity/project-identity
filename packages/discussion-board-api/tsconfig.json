@@ -9,9 +9,5 @@
   "include": [
     "src"
   ],
-  "references": [
-    {
-      "path": "../loopback-connector-postgresql/tsconfig.json"
-    }
-  ]
+  "references": []
 }

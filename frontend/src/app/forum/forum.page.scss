@@ -1,0 +1,83 @@
+$col-1: white;
+$col-2: black;
+
+p {
+  margin: 0;
+}
+.bg-1 {
+  height: 320px;
+  width: 100%;
+  background-color: $col-1;
+  clip-path: polygon(0 100%, 100% 80%, 100% 0, 0 0);
+  .header {
+    position: absolute;
+    top: 0px;
+    padding: 55px;
+    width: 100%;
+    z-index: 0;
+    .avatar {
+      height: 200px;
+      width: 200px;
+      max-width: 200px;
+      float: left;
+    }
+    p,
+    ion-title {
+      color: $col-2;
+      font-size: 40px;
+      width: 100%;
+    }
+    .right,
+    .left {
+      float: left;
+      display: flex;
+      height: 100%;
+    }
+    .left {
+      width: 22%;
+    }
+    .right {
+      padding-top: 141px;
+      width: 55%;
+      text-align: center;
+    }
+  }
+  .banner {
+    height: 180px;
+    width: 100%;
+    clip-path: polygon(0 100%, 100% 65%, 100% 0, 0 0);
+    background-image: url('../../assets/bg.jpg');
+    z-index: -2;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .bg-1 {
+    height: 280px;
+    .header {
+      padding: 40px;
+      .avatar {
+        height: 120px;
+        width: 120px;
+        max-width: 120px;
+      }
+      p,
+      ion-title {
+        color: $col-2;
+        font-size: 30px;
+        width: 100%;
+      }
+      .avatar {
+        margin-top: 50px;
+      }
+      .left {
+        width: 30%;
+      }
+      .right {
+        padding-top: 141px;
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+}
