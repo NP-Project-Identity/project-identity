@@ -1,9 +1,23 @@
 $col-1: white;
 $col-2: black;
+$col-3: #efebe2;
 
 p {
   margin: 0;
 }
+//menu button
+.menu {
+  position: fixed;
+  top: 0;
+}
+ion-menu-button {
+  --background: black;
+  --background-hover-opacity: 0.5;
+  --color: $col-3;
+  margin: 5px;
+}
+
+//header
 .bg-1 {
   height: 320px;
   width: 100%;
