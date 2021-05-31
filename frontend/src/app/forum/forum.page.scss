@@ -1,0 +1,25 @@
+ion-row ion-title {
+  margin: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+ion-slide {
+  white-space: normal;
+  height: 260px;
+  width: 200px;
+  overflow: auto;
+  display: inline-block;
+  p {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 18px;
+  }
+  ion-col img {
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
