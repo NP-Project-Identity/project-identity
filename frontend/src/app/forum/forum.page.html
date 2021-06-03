@@ -5,14 +5,15 @@
     <ion-slides
       [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
     >
-      <ion-slide *ngFor="let card of [0,1,2,3,4,5,6,7]">
+      <ion-slide tappable (click)="subCat($event)" id="school" *ngFor="let card of ['InfoComm Technoogy','Business & Accountancy', 'Design & Environment', 'Engineering', 'Film & Media Studies', 'Health Sciences', 'Interdisciplinary Studies', 'Life Sciences & Chemical Technology']; index as i">
         <ion-col>
-          <img style="pointer-events: none" src="./assets/NP-ICT.png" />
-          <ion-label>INFOCOMM TECHNOLOGY</ion-label>
+          <img style="pointer-events: none" src="./assets/forum/school-{{i+1}}.png" onerror="this.onerror=null;this.src='./assets/forum/school.png';" /><br/>
+          <ion-label>{{ card }}</ion-label>
         </ion-col>
       </ion-slide>
     </ion-slides>
   </ion-row>
+  <app-forum-cat cat={{cat}}></app-forum-cat>
   <ion-row>
     <ion-title>CCA</ion-title>
     <ion-slides
@@ -20,8 +21,8 @@
     >
       <ion-slide *ngFor="let card of [0,1,2,3,4,5,6,7]">
         <ion-col>
-          <img style="pointer-events: none" src="./assets/NP-ICT.png" />
-          <ion-label>OverFlow</ion-label>
+          <img style="pointer-events: none" src="./assets/forum/NP-ICT.png" />
+          <ion-label>OverFlow {{ card }}</ion-label>
         </ion-col>
       </ion-slide>
     </ion-slides>
