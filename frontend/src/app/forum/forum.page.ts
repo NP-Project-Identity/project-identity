@@ -11,13 +11,14 @@ export class ForumPage implements OnInit {
 
   ngOnInit() {
   }
-  subSchool: any;
-  cat: "";
-  subCat(event: any){
-    let selectedCat = event.srcElement.outerText;
-    let cat = event.srcElement.id;
-    let tmp = document.getElementsByClassName('sub-'+ cat );
-    console.log(tmp);
+  cat=""
+  subCat = [];
+  isSchoolShowing = false;
+  clickSubCat(event: any){
+    //console.log(event);
+    //this.cat = event.srcElement.attributes.name.value;
+    this.subCat = event.srcElement.id;
+    this.isSchoolShowing = true;
   }
 
 }
