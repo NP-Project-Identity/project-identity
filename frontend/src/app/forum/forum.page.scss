@@ -2,13 +2,14 @@ ion-row ion-title {
   margin: 20px;
   font-size: 22px;
   font-weight: bold;
+  display: block;
 }
 ion-slide {
   white-space: normal;
   height: 260px;
   width: 200px;
   overflow: auto;
-  display: inline-block;
+  display: block;
   p {
     text-align: center;
     width: 100%;

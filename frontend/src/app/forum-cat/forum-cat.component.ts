@@ -6,18 +6,23 @@ import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
   styleUrls: ['./forum-cat.component.scss'],
 })
 export class ForumCatComponent implements OnInit {
-  //@Input() cat: string;
+  @Input() cat: string;
   @Input() subCat: string;
   //@ViewChild('') myElement: ElementRef;
 
-  constructor() { }
-  cardList = []
-  list= [["CSF", "ICT", "DS"],["a","b","c","d","e"]]
+  constructor() {}
+  cardList = [];
+  schoolList = [
+    ['CSF', 'ICT', 'DS'],
+    ['a', 'b', 'c', 'd', 'e'],
+    ['1', '2'],
+  ];
+  ccaList = [['Overflow', 'bababa']];
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
   ngOnChanges(changes: SimpleChanges) {
-    this.cardList = this.list[this.subCat];
-    }
+    console.log(this.cat);
+    if (this.cat == 'school') this.cardList = this.schoolList[this.subCat];
+    else if (this.cat == 'cca') this.cardList = this.ccaList[this.subCat];
   }
+}

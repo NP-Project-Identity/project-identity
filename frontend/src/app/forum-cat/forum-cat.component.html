@@ -1,10 +1,16 @@
-<ion-slides
-[options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
->
-<ion-slide *ngFor="let card of cardList; index as i">
-  <ion-col>
-    <img style="pointer-events: none" src="./assets/forum/school-{{i+1}}.png" onerror="this.onerror=null;this.src='./assets/forum/school.png';" /><br/>
-    <ion-label>{{ card }}</ion-label>
-  </ion-col>
-</ion-slide>
-</ion-slides>
+<ion-row>
+  <ion-slides
+    [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}"
+  >
+    <ion-slide *ngFor="let card of cardList; index as i">
+      <ion-col>
+        <img
+          style="pointer-events: none"
+          src="./assets/forum/school-{{ i + 1 }}.png"
+          onerror="this.onerror=null;this.src='./assets/forum/school.png';"
+        /><br />
+        <ion-label>{{ card }}</ion-label>
+      </ion-col>
+    </ion-slide>
+  </ion-slides>
+</ion-row>
