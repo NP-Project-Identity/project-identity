@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-forum-cat',
@@ -8,9 +9,8 @@ import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 export class ForumCatComponent implements OnInit {
   @Input() cat: string;
   @Input() subCat: string;
-  //@ViewChild('') myElement: ElementRef;
 
-  constructor() {}
+  constructor(private router: Router) {}
   cardList = [];
   schoolList = [
     ['CSF', 'ICT', 'DS'],
@@ -21,8 +21,11 @@ export class ForumCatComponent implements OnInit {
 
   ngOnInit() {}
   ngOnChanges(changes: SimpleChanges) {
-    console.log(this.cat);
     if (this.cat == 'school') this.cardList = this.schoolList[this.subCat];
     else if (this.cat == 'cca') this.cardList = this.ccaList[this.subCat];
+  }
+
+  redirect(page: string) {
+    this.router.navigate(['./' + page]);
   }
 }

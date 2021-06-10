@@ -6,22 +6,15 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./forum.page.scss'],
 })
 export class ForumPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  cat=""
   subCatMap = new Map();
 
   isSchoolShowing = false;
-  clickSubCat(event: any, mapId: string){
-    //console.log(event);
-    //this.cat = event.srcElement.attributes.name.value;
+  clickSubCat(event: any, mapId: string) {
     this.subCatMap.set(mapId, event.srcElement.id);
     this.isSchoolShowing = true;
   }
-
-
 }
