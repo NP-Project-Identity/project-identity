@@ -2,12 +2,13 @@
   <ion-slides
     [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}"
   >
-    <ion-slide *ngFor="let card of cardList; index as i">
+    <ion-slide tappable *ngFor="let card of cardList; index as i" (click)="redirect('{{this.cat}}-{{this.subCat}}')">
       <ion-col>
         <img
           style="pointer-events: none"
-          src="./assets/forum/school-{{ i + 1 }}.png"
-          onerror="this.onerror=null;this.src='./assets/forum/school.png';"
+          src="./assets/forum/{{this.cat}}-{{this.subCat}}-{{ i + 1 }}.png"
+          onerror="this.onerror=null;this.src='./assets/forum/default.png';"
+          id="{{this.cat}}-{{this.subCat}}-{{ i + 1 }}"
         /><br />
         <ion-label>{{ card }}</ion-label>
       </ion-col>
