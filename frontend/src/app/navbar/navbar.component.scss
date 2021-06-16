@@ -1,0 +1,49 @@
+ion-menu ion-content {
+  --background: var(--ion-item-background, var(--ion-background-color, #07040A));
+  --ion-item-background: #07040A;
+}
+
+ion-menu.md ion-content {
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --padding-top: 30px;
+  --padding-bottom: 20px;
+}
+
+ion-menu.md ion-list {
+  padding: 10px 0;
+}
+
+ion-menu.md ion-list#accPages {
+  position: fixed;
+  bottom: 10px;
+}
+
+ion-menu.md ion-list#navPages ion-icon {
+  color: #EFEBE2;
+  position: center;
+}
+
+ion-menu.md ion-list#accPages ion-icon {
+  color: #EFEBE2;
+}
+
+ion-menu.md ion-item {
+  --padding-start: 46px;
+  --padding-end: 0;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  --background: #07040A;
+  --background-hover: #B175FF;
+  --background-hover-opacity: 1;
+}
+
+ion-split-pane {
+  --side-width: 120px;
+  --side-min-width: 90px;
+}
+
+ion-menu.md ion-item.selected {
+  --background: #B175FF;
+}
+
