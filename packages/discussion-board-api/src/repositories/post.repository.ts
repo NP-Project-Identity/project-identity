@@ -1,7 +1,11 @@
-import {inject, Getter} from '@loopback/core';
-import {DefaultCrudRepository, repository, HasManyRepositoryFactory} from '@loopback/repository';
+import {Getter, inject} from '@loopback/core';
+import {
+  DefaultCrudRepository,
+  HasManyRepositoryFactory,
+  repository
+} from '@loopback/repository';
 import {DbDataSource} from '../datasources';
-import {Post, PostRelations, PostComment} from '../models';
+import {Post, PostComment, PostRelations} from '../models';
 import {PostCommentRepository} from './post-comment.repository';
 
 export class PostRepository extends DefaultCrudRepository<
@@ -9,14 +13,24 @@ export class PostRepository extends DefaultCrudRepository<
   typeof Post.prototype.id,
   PostRelations
 > {
-
-  public readonly postComments: HasManyRepositoryFactory<PostComment, typeof Post.prototype.id>;
+  public readonly postComments: HasManyRepositoryFactory<
+    PostComment,
+    typeof Post.prototype.id
+  >;
 
   constructor(
-    @inject('datasources.Db') dataSource: DbDataSource, @repository.getter('PostCommentRepository') protected postCommentRepositoryGetter: Getter<PostCommentRepository>,
+    @inject('datasources.Db') dataSource: DbDataSource,
+    @repository.getter('PostCommentRepository')
+    protected postCommentRepositoryGetter: Getter<PostCommentRepository>,
   ) {
     super(Post, dataSource);
-    this.postComments = this.createHasManyRepositoryFactoryFor('postComments', postCommentRepositoryGetter,);
-    this.registerInclusionResolver('postComments', this.postComments.inclusionResolver);
+    this.postComments = this.createHasManyRepositoryFactoryFor(
+      'postComments',
+      postCommentRepositoryGetter,
+    );
+    this.registerInclusionResolver(
+      'postComments',
+      this.postComments.inclusionResolver,
+    );
   }
 }
