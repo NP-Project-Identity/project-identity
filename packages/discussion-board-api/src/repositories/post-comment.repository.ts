@@ -1,7 +1,11 @@
-import {inject, Getter} from '@loopback/core';
-import {DefaultCrudRepository, repository, BelongsToAccessor} from '@loopback/repository';
+import {Getter, inject} from '@loopback/core';
+import {
+  BelongsToAccessor,
+  DefaultCrudRepository,
+  repository
+} from '@loopback/repository';
 import {DbDataSource} from '../datasources';
-import {PostComment, PostCommentRelations, Post} from '../models';
+import {Post, PostComment, PostCommentRelations} from '../models';
 import {PostRepository} from './post.repository';
 
 export class PostCommentRepository extends DefaultCrudRepository<
@@ -9,13 +13,17 @@ export class PostCommentRepository extends DefaultCrudRepository<
   typeof PostComment.prototype.id,
   PostCommentRelations
 > {
-
-  public readonly post: BelongsToAccessor<Post, typeof PostComment.prototype.id>;
+  public readonly post: BelongsToAccessor<
+    Post,
+    typeof PostComment.prototype.id
+  >;
 
   constructor(
-    @inject('datasources.Db') dataSource: DbDataSource, @repository.getter('PostRepository') protected postRepositoryGetter: Getter<PostRepository>,
+    @inject('datasources.Db') dataSource: DbDataSource,
+    @repository.getter('PostRepository')
+    protected postRepositoryGetter: Getter<PostRepository>,
   ) {
     super(PostComment, dataSource);
-    this.post = this.createBelongsToAccessorFor('post', postRepositoryGetter,);
+    this.post = this.createBelongsToAccessorFor('post', postRepositoryGetter);
   }
 }
