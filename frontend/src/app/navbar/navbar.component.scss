@@ -40,10 +40,15 @@ ion-menu.md ion-item {
 
 ion-split-pane {
   --side-width: 120px;
-  --side-min-width: 90px;
+  --side-min-width: auto;
+  --side-max-width: 28%;
 }
 
 ion-menu.md ion-item.selected {
   --background: #B175FF;
 }
 
+ion-menu {
+  --min-width: 28%;
+  max-width: 120px;
+}
