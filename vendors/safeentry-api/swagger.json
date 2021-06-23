@@ -1,0 +1,179 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://sandbox.api.safeentry-qr.gov.sg",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://test.api.safeentry-qr.gov.sg",
+      "description": "Test"
+    },
+    {
+      "url": "https://api.safeentry-qr.gov.sg",
+      "description": "Production"
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "SafeEntry APIs",
+    "x-logo": {
+      "url": "https://public.cloud.myinfo.gov.sg/images/safeentry-icon.png"
+    },
+    "description": "API Specifications for integrating with SafeEntry QR.\n# Security\n## Request Signing\nAll server-to-server API requests are to be digitally signed, by including the following parameters and values in the `Authorization` header:\n\n```\nPKI_SIGN app_id=\"{app_id}\",\nnonce=\"{random_nonce}\",\nsignature_method=\"RS256\",\nsignature=\"{base64_url_percent_encoded_signature}\",\ntimestamp=\"{unix_epoch_in_milliseconds}\"\n```\n\n*__Note__: Above sample is separated by lines for ease-of-reading, and new-line denotations are to be omitted in the actual request.*\n\n* `{app_id}` is the APP ID credential supplied upon onboarding,\n* `{random_nonce}` is an unique randomly generated text used for replay prevention,\n* `{signature_method}` is the signature algorithm of the authenticating gateway.\n\n  * Value of __signature_method__ = `RS256`\n\n* `{base64_url_percent_encoded_signature}` is the binary of the generated signature encoded in __Base64__ URL-safe format,\n* `{unix_epoch_in_milliseconds}` is the UNIX epoch time in milliseconds\n\n\n### Sample header with authorization parameters\nBelow is an example of an Authorization header for the sample application. Make sure you list the parameters in the sequence shown below.\n```\n  Authorization: PKI_SIGN\n  app_id=\"STG2-SE-SELF-TEST\",\n  nonce=\"150590021034800\",\n  signature_method=\"RS256\",\n  signature=\"EEm+HEcNQajb5FkVd82zjojk+daYZXxSGPCOR2GHZeoyjZY1PK+aFMzHfWu7eJZYMa5WaEwWxdOdq5hjNbl8kHD7bMaOks7FgEPdjE++TNomfv7SMktDnIvZmPYAxhjb/C9POU2KT6tSlZT/Si/qMgD1cryaPwSeMoM59UZa1GzYmqlkveba7rma58uGwb3wZFH0n57UnouR6LYXDOOLkqi8uMZBuvRUvSJRXETAj2N0hT+4QJiN96Ct6IEQh/woZh0o74K5Ol9PpDSM08qC7Lj6N/k694J+hbBQVVviGn7/6mDkfbwdMDuoKs4t7NpqmAnwT+xaQSIZcexfrAVQYA==\",\n  timestamp=\"1505900210349\"\n\n```\n\n\n### Sample Code in `NodeJS`\n```\n  // generates the security headers for calling API gateway\n  function generateAuthorizationHeader(url, params, method, strContentType, authType, appId, keyCertContent, passphrase) {\n\n    if (authType == \"L2\") {\n      return generateRS256Header(url, params, method, strContentType, appId, keyCertContent, passphrase);\n    } else {\n      return \"\";\n    }\n  };\n\n  // Signing Your Requests\n  function generateRS256Header(url, params, method, strContentType, appId, keyCertContent, keyCertPassphrase) {\n    var nonceValue = nonce();\n    var timestamp = (new Date).getTime();\n\n    // A) Construct the Authorisation Token Parameters\n    var defaultAuthHeaders = {\n      \"app_id\": appId, // App ID assigned to your application\n      \"nonce\": nonceValue, // secure random number\n      \"signature_method\": \"RS256\",\n      \"timestamp\": timestamp // Unix epoch time\n    };\n\n    // B) Forming the Base String\n    // Base String is a representation of the entire request (ensures message integrity)\n\n    // i) Normalize request parameters\n    var baseParams = sortJSON(_.merge(defaultAuthHeaders, params));\n\n    var baseParamsStr = qs.stringify(baseParams);\n    baseParamsStr = qs.unescape(baseParamsStr); // url safe\n\n    // ii) concatenate request elements (HTTP method + url + base string parameters)\n    var baseString = method.toUpperCase() + \"&\" + url + \"&\" + baseParamsStr;\n\n    // C) Signing Base String to get Digital Signature\n    var signWith = {\n      key: fs.readFileSync(keyCertContent, 'utf8')\n    }; // Provides private key\n\n    // Load pem file containing the x509 cert & private key & sign the base string with it to produce the Digital Signature\n    var signature = crypto.createSign('RSA-SHA256')\n      .update(baseString)\n      .sign(signWith, 'base64');\n\n    // D) Assembling the Authorization Header\n    var strAuthHeader = \"PKI_SIGN app_id=\\\"\" + appId + // Defaults to 1st part of incoming request hostname\n      \"\\\",timestamp=\\\"\" + timestamp +\n      \"\\\",nonce=\\\"\" + nonceValue +\n      \"\\\",signature_method=\\\"RS256\\\"\" +\n      \",signature=\\\"\" + signature +\n      \"\\\"\";\n\n    return strAuthHeader;\n  };\n\n\n```\n   SafeEntry APIs\n\n# Authentication\n\n<!-- ReDoc-Inject: <security-definitions> -->"
+  },
+  "tags": [
+    {
+      "name": "SafeEntry",
+      "description": "SafeEntry is a Cloud-based check-in/check-out system that digitalises the check-in/check-out process and simplifies informtion submission as visitors can simply scan a QR code using integrated applications, and share their name and contact information for the purpose of contact tracing."
+    }
+  ],
+  "paths": {
+    "/partner/v1/entry": {
+      "post": {
+        "tags": [
+          "SafeEntry"
+        ],
+        "summary": null,
+        "description": "Register Check-in/Check-out transactions.\n\n- The request body should be a JWE string, with decrypted payload as specified in this specification. Algorithm used:\n  * RSA-OAEP (for content key wrapping)\n  * AES256GCM (for content encrytion)\n- Encryption is done using our public key provided to you during onboarding.",
+        "operationId": "SafeEntry Check-in/Check-out",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Add authorization token constructed containing the RSA digital signature of the base string. Refer to https://www.ndi-api.gov.sg/library/safeentry-api/tutorial2 on how this token should be generated.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/jose": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "venueId": {
+                    "description": "Refers to the unqiueID of your customer’s QR code. You can retrieve the venueId from the location’s QR code. E.g. https://www.safeentry-qr.gov.sg/login/PROD-201900099X-123456-MYCOMPANYNAME-SE.",
+                    "type": "string",
+                    "example": "PROD-201900099X-123456-MYCOMPANYNAME-SE"
+                  },
+                  "tenantId": {
+                    "description": "tenantId assigned.",
+                    "type": "string",
+                    "example": "sparkscreation"
+                  },
+                  "actionType": {
+                    "description": "Type of action.",
+                    "type": "string",
+                    "enum": [
+                      "checkin",
+                      "checkout"
+                    ]
+                  },
+                  "sub": {
+                    "description": "Personal Identifier e.g. S9960846C, G0057585U. NRIC/FIN checksum will be validated if \"uinfin\" is specified for subType. For \"others\" subType, characters allowed are limited to alphanumeric and \"-\", length between 3 to 20.",
+                    "type": "string",
+                    "example": "S9960846C, G0057585U"
+                  },
+                  "subType": {
+                    "description": "Type of Personal Identifier. NRIC/FIN checksum of \"sub\" will be validated if uinfin is specified.",
+                    "type": "string",
+                    "enum": [
+                      "uinfin",
+                      "others"
+                    ]
+                  },
+                  "mobileno": {
+                    "description": "Mobile Number. E.g. 92376345, +6584673736",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "venueId",
+                  "actionType",
+                  "sub",
+                  "subType",
+                  "mobileno"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Possible Scenarios:\n  - Invalid Body. Error message: [\"Missing venueId\",\"Missing mobileno\"...]\n    * Missing venueId\n    * Missing mobileno\n    * Invalid mobileno\n    * Missing actionType\n    * Invalid actionType\n    * Missing sub\n    * Invalid uinfin\n    * Invalid passport no\n    * Missing sub type\n    * Invalid sub type\n  - Invalid venue. Error message: Invalid venue\n  - Multi tenant app did not provide tenantId. Error message: Missing tenantId\n  - Multi tenant app provided wrong tenantId. Error message: Invalid tenantId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized.\n\nPossible scenarios:\n- Venue does not allow for check-in via SingPass Mobile or SafeEntry Web Application.\n- No security header given (HTTP 'Authorization' header)\n- Invalid App ID used. Digital service is not registered with SafeEntry\n- The timestamp of server is not synchronised. Check timestamp of server.\n- The value of the nonce in the authorisation header was deemed to be repeated. Check that the nonce is not re-used\n- Ensure HTTP 'Authorization' header to be 'PKI_SIGN'\n- Signature incorrect - Verify your signature by using our signature verifier tool and ensure correct key is used to sign the base string.\n  - Ensure that base string contains all parameters required\n  - Ensure attributes in base string are separate by comma(,), and not %2C\n  - Ensure that correct key is used to sign the base string\n  - Ensure that HTTP call is made with the same query/body parameters used to formulate the base string.\n  - Ensure the base string contains the following:\n      1. HTTP GET method(in uppercase)\n      2. API (e.g. https://..)\n      3. These parameters:\n        * app_id\n        * nonce\n        * signature\n        * signature_method\n        * timestamp\n\nDetails will be given in the error object returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden\n\nPossible scenarios:\n  - Incorrect API URL used. Refer to tutorial for the correct API URL(test/production)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "PKISign": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "PKISign": {
+        "type": "http",
+        "description": "PKI digital signature for server to server calls. See [Request Signing](#section/Security/Request-Signing) for more details.\n",
+        "scheme": "Mutual authentication via PKI digital signature in Authorization header"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

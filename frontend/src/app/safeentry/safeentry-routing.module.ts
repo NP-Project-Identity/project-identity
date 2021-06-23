@@ -1,8 +1,14 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { SafeentryCheckinPage } from './check-in.safeentry.page';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {SafeentryCheckinPage} from './check-in/check-in.safeentry.page';
+import {SafeentryHistoryPage} from './history/history.safeentry.page';
+import {SafeentryPage} from './safeentry.page';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: SafeentryPage,
+  },
   {
     path: 'check-in/:venueId',
     component: SafeentryCheckinPage,
@@ -10,6 +16,10 @@ const routes: Routes = [
   {
     path: 'check-in/:venueId/:tenantId',
     component: SafeentryCheckinPage,
+  },
+  {
+    path: 'history',
+    component: SafeentryHistoryPage,
   }
 ];
 

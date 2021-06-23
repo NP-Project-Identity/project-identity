@@ -1,12 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { IonicModule } from '@ionic/angular';
-
-import { SafeentryPageRoutingModule } from './safeentry-routing.module';
-
-import { SafeentryCheckinPage } from './check-in.safeentry.page';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {IonicModule} from '@ionic/angular';
+import {SafeentryCheckinPage} from './check-in/check-in.safeentry.page';
+import {SafeentryPageRoutingModule} from './safeentry-routing.module';
+import {SafeentryPage} from './safeentry.page';
 
 @NgModule({
   imports: [
@@ -14,7 +11,6 @@ import { SafeentryCheckinPage } from './check-in.safeentry.page';
     IonicModule,
     SafeentryPageRoutingModule
   ],
-  declarations: [SafeentryCheckinPage],
-  exports: [SafeentryCheckinPage]
+  declarations: [SafeentryCheckinPage, SafeentryPage]
 })
 export class SafeentryPageModule {}

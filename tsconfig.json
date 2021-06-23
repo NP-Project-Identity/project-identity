@@ -6,6 +6,9 @@
   "references": [
     {
       "path": "packages/discussion-board-api/tsconfig.json"
+    },
+    {
+      "path": "packages/safeentry-lib/tsconfig.json"
     }
   ],
   "files": []
