@@ -17,7 +17,7 @@ export class ForumCatComponent implements OnInit {
     ['a', 'b', 'c', 'd', 'e'],
     ['1', '2'],
   ];
-  ccaList = [['Overflow', 'bababa']];
+  ccaList = [['Overflow', 'Overwork', 'Overkill']];
 
   ngOnInit() {}
   ngOnChanges(changes: SimpleChanges) {
@@ -25,7 +25,7 @@ export class ForumCatComponent implements OnInit {
     else if (this.cat == 'cca') this.cardList = this.ccaList[this.subCat];
   }
 
-  redirect(page: string) {
-    this.router.navigate(['./' + page]);
+  redirect(page: string, subPageNo: string) {
+    this.router.navigate(['./forum/' + page + '/' + subPageNo]);
   }
 }

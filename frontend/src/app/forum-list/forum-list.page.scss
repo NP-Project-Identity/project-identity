@@ -1,0 +1,67 @@
+$col-1: white;
+$col-2: black;
+$col-3: #efebe2;
+$col-4: #c4c4c4;
+$col-5: #bdc3cb;
+
+p {
+  margin: 0;
+  color: black;
+}
+ion-icon {
+  pointer-events: none;
+}
+.post-con {
+  margin-top: 30px;
+  .post-box {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 80px;
+    background-color: $col-4;
+    .post-box-2 {
+      background-color: $col-1;
+      height: auto;
+      padding: 15px 25px;
+      .t-col-5 {
+        color: $col-5;
+      }
+      hr {
+        background-color: $col-4;
+      }
+      .post-btm {
+        display: flex;
+        .avatar {
+          height: 32px;
+          width: 32px;
+          justify-self: start;
+          margin: 2px 5px 2px 0px;
+        }
+        .post-user {
+          width: 100%;
+        }
+        .post-com {
+          width: 100%;
+          justify-self: end;
+          text-align: end;
+        }
+      }
+    }
+  }
+}
+
+.addBtn {
+  position: fixed;
+  right: 60px;
+  bottom: 25px;
+  .btn-circle {
+    background-color: #00a1cb;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 7px 8px;
+    font-size: 25px;
+    color: black;
+    line-height: 1.33;
+    border-radius: 100%;
+  }
+}

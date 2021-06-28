@@ -5,58 +5,71 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () =>
+      import('./folder/folder.module').then(m => m.FolderPageModule),
   },
   {
     path: 'safeentry',
-    loadChildren: () => import('./safeentry/safeentry.module').then(m => m.SafeentryPageModule),
+    loadChildren: () =>
+      import('./safeentry/safeentry.module').then(m => m.SafeentryPageModule),
   },
   {
     path: 'forum',
-    loadChildren: () => import('./forum/forum.module').then( m => m.ForumPageModule)
+    loadChildren: () =>
+      import('./forum/forum.module').then(m => m.ForumPageModule),
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./home/home.module').then(m => m.HomePageModule),
   },
   {
     path: 'events',
-    loadChildren: () => import('./events/events.module').then( m => m.EventsPageModule)
+    loadChildren: () =>
+      import('./events/events.module').then(m => m.EventsPageModule),
   },
   {
     path: 'learningmgtplatform',
-    loadChildren: () => import('./learningmgtplatform/learningmgtplatform.module').then( m => m.LearningmgtplatformPageModule)
+    loadChildren: () =>
+      import('./learningmgtplatform/learningmgtplatform.module').then(
+        m => m.LearningmgtplatformPageModule,
+      ),
   },
   {
     path: 'rewards',
-    loadChildren: () => import('./rewards/rewards.module').then( m => m.RewardsPageModule)
+    loadChildren: () =>
+      import('./rewards/rewards.module').then(m => m.RewardsPageModule),
   },
   {
     path: 'triumps',
-    loadChildren: () => import('./triumps/triumps.module').then( m => m.TriumpsPageModule)
+    loadChildren: () =>
+      import('./triumps/triumps.module').then(m => m.TriumpsPageModule),
   },
   {
     path: 'account',
-    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+    loadChildren: () =>
+      import('./account/account.module').then(m => m.AccountPageModule),
   },
   {
     path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+    loadChildren: () =>
+      import('./settings/settings.module').then(m => m.SettingsPageModule),
   },
   {
     path: 'logout',
-    loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule)
-  }
+    loadChildren: () =>
+      import('./logout/logout.module').then(m => m.LogoutPageModule),
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
