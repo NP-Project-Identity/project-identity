@@ -5,7 +5,7 @@
       class="post-box"
       *ngFor="let card of ['Welcome to CSF', 'How to hack the bank', 'help!!!!!!']; index as i"
     >
-      <div class="post-box-2">
+      <div class="post-box-2" [routerLink]="['./create']">
         <p class="post-title">{{card}}</p>
         <p class="post-desc t-col-5">testing</p>
         <hr />
