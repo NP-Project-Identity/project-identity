@@ -27,13 +27,14 @@ ion-menu-button {
   .header {
     position: absolute;
     top: 0px;
-    padding: 55px;
+    margin: 55px;
     width: 100%;
     z-index: 0;
     .avatar {
-      height: 200px;
-      width: 200px;
-      max-width: 200px;
+      margin-top: 15px;
+      height: 180px;
+      width: 180px;
+      max-width: 180px;
       float: left;
     }
     p,
@@ -52,7 +53,7 @@ ion-menu-button {
       width: 22%;
     }
     .right {
-      padding-top: 141px;
+      padding-top: 140px;
       width: 55%;
       text-align: center;
     }
@@ -70,26 +71,28 @@ ion-menu-button {
   .bg-1 {
     height: 280px;
     .header {
-      padding: 40px;
-      .avatar {
-        height: 120px;
-        width: 120px;
-        max-width: 120px;
-      }
+      margin: 20px 40px;
       p,
       ion-title {
         color: $col-2;
-        font-size: 30px;
+        font-size: 20px;
         width: 100%;
+        padding: 0;
+      }
+      ion-title{
+        margin-left: 20px;
       }
       .avatar {
-        margin-top: 50px;
+        margin-top: 100px;
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
       }
       .left {
         width: 30%;
       }
       .right {
-        padding-top: 141px;
+        padding-top: 150px;
         width: 50%;
         text-align: center;
       }

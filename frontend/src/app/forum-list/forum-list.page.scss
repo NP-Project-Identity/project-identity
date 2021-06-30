@@ -18,6 +18,7 @@ ion-icon {
     padding: 10px;
     margin: 15px 80px;
     background-color: $col-4;
+    cursor: pointer;
     .post-box-2 {
       background-color: $col-1;
       height: auto;
@@ -63,5 +64,16 @@ ion-icon {
     color: black;
     line-height: 1.33;
     border-radius: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .addBtn {
+    right: 48%;
+  }
+  .post-con {
+    .post-box {
+      margin: 15px 30px;
+    }
   }
 }
