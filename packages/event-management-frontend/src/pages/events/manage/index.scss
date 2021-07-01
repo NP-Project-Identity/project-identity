@@ -1,0 +1,16 @@
+.event-dl {
+  padding: 15px 0;
+
+  dt {
+    display: inline-block;
+
+    &::after {
+      content: ':';
+      padding: 0.5rem;
+    }
+  }
+
+  dd {
+    display: inline-block;
+  }
+}
