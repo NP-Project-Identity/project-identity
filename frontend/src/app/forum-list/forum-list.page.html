@@ -3,21 +3,24 @@
   <ion-row class="ion-justify-content-start ion-align-items-start post-con">
     <div
       class="post-box"
-      *ngFor="let card of ['Welcome to CSF', 'How to hack the bank', 'help!!!!!!']; index as i"
+      *ngFor="let card of list; index as i"
     >
       <div class="post-box-2" [routerLink]="[i]">
-        <p class="post-title">{{card}}</p>
-        <p class="post-desc t-col-5">testing</p>
+        <p class="post-title">{{card[0]}}</p>
+        <p class="post-desc t-col-5">{{card[1][0]}}</p>
         <hr />
         <div class="post-btm">
           <img src="./assets/square-frame.png" class="avatar" />
           <div class="post-user">
-            <p class="t-col-5"></p>
-            <p class="t-col-5">2 hour ago</p>
+            <p class="t-col-5">{{card[1][1]}}</p>
+            <p class="t-col-5">{{card[1][2]}}</p>
           </div>
           <div class="post-com">
             <p class="t-col-5">
-              <ion-icon name="chatbox-outline"></ion-icon>20+
+              <ion-icon name="chatbox-outline"></ion-icon>{{card.length -1}}
+            </p>
+            <p class="t-col-5">
+              <ion-icon name="heart-outline"></ion-icon>{{card[1][3]}}
             </p>
           </div>
         </div>
