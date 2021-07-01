@@ -64,6 +64,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./logout/logout.module').then(m => m.LogoutPageModule),
   },
+  {
+    path: 'forum-content',
+    loadChildren: () => import('./forum-content/forum-content.module').then( m => m.ForumContentPageModule)
+  },
 ];
 
 @NgModule({

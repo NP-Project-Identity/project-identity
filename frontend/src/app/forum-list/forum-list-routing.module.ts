@@ -14,6 +14,13 @@ const routes: Routes = [
         path: 'create',
         component: ForumListPage /*WIP*/,
       },
+      {
+        path: ':id',
+        loadChildren: () =>
+          import('../forum-content/forum-content.module').then(
+            m => m.ForumContentPageModule,
+          ),
+      }
     ],
   },
 ];

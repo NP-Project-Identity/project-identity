@@ -13,7 +13,6 @@ export class ForumListPage implements OnInit {
 
   ngOnInit() {
     this.title = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.activatedRoute.snapshot.paramMap);
   }
 
   createPost() {
