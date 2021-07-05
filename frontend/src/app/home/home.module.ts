@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {IonicModule} from '@ionic/angular';
 import {ComponentsModule} from '../components.module';
-import {SubbarComponent} from '../subbar/subbar.component';
 import {HomePageRoutingModule} from './home-routing.module';
 import {HomePage} from './home.page';
 
@@ -18,6 +17,6 @@ import {HomePage} from './home.page';
     HomePageRoutingModule,
     ComponentsModule
   ],
-  declarations: [HomePage, SubbarComponent]
+  declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }
