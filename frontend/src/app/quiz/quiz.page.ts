@@ -15,6 +15,7 @@ export class QuizPage implements OnInit {
   public quizOption: string[] = [];
   public title: string;
   public isAnswerShowing = false;
+  public result = false;
   private quiz: any;
   private selectedQuiz: any;
 
@@ -31,9 +32,10 @@ export class QuizPage implements OnInit {
     }
   }
   quizAns(ans:any){
-    console.log(ans, this.selectedQuiz[5]);
+    console.log(ans, this.selectedQuiz[5]-1)
     if(ans == (this.selectedQuiz[5]-1)){
-      this.isAnswerShowing = true;
+      this.result = true;
     }
+    this.isAnswerShowing = true;
   }
 }
