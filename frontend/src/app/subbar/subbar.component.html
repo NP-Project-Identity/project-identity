@@ -1,0 +1,10 @@
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="apps-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button *ngFor="let n of navItems" routerDirection="root" [routerLink]="[n.url]" routerLinkActive="activated">
+      <ion-icon name="{{n.icon}}"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
