@@ -1,10 +1,13 @@
+import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 import {MainHeaderComponent} from './main-header/main-header.component';
+import {SubbarComponent} from './subbar/subbar.component';
 
 @NgModule({
-  declarations: [MainHeaderComponent],
-  exports: [MainHeaderComponent],
-  imports: [IonicModule],
+  declarations: [MainHeaderComponent, SubbarComponent],
+  exports: [MainHeaderComponent, SubbarComponent],
+  imports: [IonicModule, RouterModule, CommonModule],
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

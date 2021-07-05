@@ -23,4 +23,8 @@ export class ForumContentPage implements OnInit {
     this.postList = this.postList.slice(2);
   }
 
+  navItems = [
+    {title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers'},
+    {title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline'}
+  ];
 }

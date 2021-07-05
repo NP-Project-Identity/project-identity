@@ -52,25 +52,25 @@ ion-icon {
 
 .addBtn {
   position: fixed;
-  right: 60px;
+  left: calc(50% - 20px);
   bottom: 25px;
   .btn-circle {
     background-color: #00a1cb;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    padding: 7px 8px;
+    padding: 13px;
     font-size: 25px;
     color: black;
     line-height: 1.33;
     border-radius: 100%;
   }
+  .btn-circle:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12) 0 0);
+  }
 }
 
 @media only screen and (max-width: 700px) {
-  .addBtn {
-    right: 48%;
-  }
   .post-con {
     .post-box {
       margin: 15px 30px;
