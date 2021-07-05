@@ -1,0 +1,10 @@
+<ion-content>
+  <main-header title="{{quizTitle}}"></main-header>
+  <div class="quiz">
+    <div *ngFor="let option of quizOption; index as i">
+      <button class="quizBtn" (click)="quizAns(i)">{{option}}</button>
+      <br/>
+    </div>
+  </div>
+  <quiz-popup *ngIf="isAnswerShowing"></quiz-popup>
+</ion-content>

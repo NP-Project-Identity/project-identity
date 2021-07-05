@@ -11,6 +11,11 @@ const routes: Routes = [
     path: '',
     children: [
       {
+        path: 'quiz',
+        loadChildren: () =>
+          import('../quiz/quiz.module').then(m => m.QuizPageModule),
+      },
+      {
         path: 'create',
         component: ForumListPage /*WIP*/,
       },

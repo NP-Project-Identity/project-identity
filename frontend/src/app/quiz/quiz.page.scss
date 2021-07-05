@@ -1,0 +1,20 @@
+$col-1: white;
+$col-2: black;
+$col-3: #efebe2;
+$col-4: #c4c4c4;
+$col-5: #bdc3cb;
+$col-6: #00a1cb;
+$col-7: #fcb100;
+
+.quiz{
+    .quizBtn{
+      margin: auto;
+      display: block;
+      padding: 22px 40px;
+      border-radius: 10px;
+      background-color: $col-6;
+    }
+    .quizBtn:hover{
+      background-color: $col-7;
+    }
+}

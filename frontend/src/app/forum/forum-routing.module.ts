@@ -21,7 +21,7 @@ const routes: Routes = [
         path: ':id',
         redirectTo: '/forum',
         pathMatch: 'full',
-      },
+      }
     ],
   },
 ];
