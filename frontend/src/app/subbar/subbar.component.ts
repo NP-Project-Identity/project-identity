@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-subbar',
@@ -6,10 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./subbar.component.scss'],
 })
 export class SubbarComponent implements OnInit {
-  public navItems= [
-    { title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers' },
-    { title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline' }
-  ];
+  @Input() navItems: any;
   constructor() { }
 
   ngOnInit() {}
