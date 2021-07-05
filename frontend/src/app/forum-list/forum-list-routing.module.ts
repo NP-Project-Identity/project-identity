@@ -16,6 +16,11 @@ const routes: Routes = [
           import('../quiz/quiz.module').then(m => m.QuizPageModule),
       },
       {
+        path: '-1',
+        redirectTo: 'quiz',
+        pathMatch: 'full',
+      },
+      {
         path: 'create',
         component: ForumListPage /*WIP*/,
       },
@@ -34,4 +39,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ForumListPageRoutingModule {}
+export class ForumListPageRoutingModule { }
