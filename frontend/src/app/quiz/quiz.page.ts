@@ -27,13 +27,12 @@ export class QuizPage implements OnInit {
     this.quiz = this.quizService.crateQuiz(this.activatedRoute.snapshot.parent.parent.paramMap.get('id'));
     this.selectedQuiz = this.quiz[this.getRandomInt(this.quiz.length)];
     this.quizTitle = this.selectedQuiz[0];
-    for (let i=0; i< 4; i++){
-      this.quizOption.push(this.selectedQuiz[i+1]);
+    for (let i = 0; i < 4; i++) {
+      this.quizOption.push(this.selectedQuiz[i + 1]);
     }
   }
-  quizAns(ans:any){
-    console.log(ans, this.selectedQuiz[5]-1)
-    if(ans == (this.selectedQuiz[5]-1)){
+  quizAns(ans: any) {
+    if (ans == (this.selectedQuiz[5] - 1)) {
       this.result = true;
     }
     this.isAnswerShowing = true;

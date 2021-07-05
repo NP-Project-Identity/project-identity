@@ -14,18 +14,17 @@ export class QuizPopupComponent implements OnInit {
   public Result: string;
   public Reward: string;
 
-  ngOnInit() {}
+  ngOnInit() { }
   goBack() {
     this.navCtrl.back();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(this.result)
-    if(this.result == "true"){
+    if (this.result == "true") {
       this.Result = "You are correct!"
       this.Reward = "20 point added to the bank."
     }
-    else{
+    else {
       this.Result = "Answer is incorrect!"
       this.Reward = "Good luck nice time."
     }
