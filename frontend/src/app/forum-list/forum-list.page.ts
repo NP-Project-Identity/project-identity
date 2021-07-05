@@ -29,4 +29,9 @@ export class ForumListPage implements OnInit {
   createPost() {
     this.router.navigate(['test']);
   }
+
+  navItems = [
+    {title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers'},
+    {title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline'}
+  ];
 }
