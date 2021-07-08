@@ -24,7 +24,7 @@ export class ForumContentPage implements OnInit {
   }
 
   navItems = [
-    {title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers'},
-    {title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline'}
+    {title: 'Lmgtplatform', url: '/learningmgtplatform', icon: 'layers'},
+    {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
   ];
 }

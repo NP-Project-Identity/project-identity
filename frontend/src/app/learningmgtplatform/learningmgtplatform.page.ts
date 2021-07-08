@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-learningmgtplatform',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LearningmgtplatformPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+  isSchoolShowing = true;
 
   ngOnInit() {
+  }
+
+  redirect(cat: string) {
+    if (cat == "Forum") {
+      this.router.navigate(['./forum/']);
+    }
+    else if (cat == "Class") {
+      this.router.navigate(['./Class/']);
+    }
   }
 
 }
