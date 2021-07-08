@@ -1,6 +1,14 @@
 <ion-content>
   <main-header title="Learning"></main-header>
-  <button shape="round" class="btn-circle" title="New post" [routerLink]="['/forum']">
-      forum
-  </button>
+  <ion-slides [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}">
+    <ion-slide tappable *ngFor="let card of ['Class','Forum']; index as i" (click)='redirect(card)'>
+      <ion-col>
+        <img
+          style="pointer-events: none"
+          src="./assets/forum/default.png"
+        /><br />
+        <ion-label>{{ card }}</ion-label>
+      </ion-col>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
