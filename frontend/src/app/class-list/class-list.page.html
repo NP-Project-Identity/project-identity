@@ -1,0 +1,13 @@
+<ion-content>
+  <main-header title="{{title}}"></main-header>
+  <app-subbar [navItems]="navItems"></app-subbar>
+  <ion-row class="ion-justify-content-start ion-align-items-start post-con">
+    <div class="post-box">
+      <div class="post-box2" *ngFor="let card of list; index as i" [routerLink]="card">
+        <p class="post-title">
+          <ion-icon name="folder-outline"> </ion-icon>{{card}}
+        </p>
+      </div>
+    </div>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,48 @@
+$col-1: white;
+$col-2: black;
+$col-3: #efebe2;
+$col-4: #c4c4c4;
+$col-5: #bdc3cb;
+
+p {
+  margin: 0;
+  color: black;
+}
+ion-icon {
+  pointer-events: none;
+}
+.post-con {
+  margin-top: 30px;
+  .post-box{
+    border: 3px solid $col-4;
+    width: 100%;
+    margin: 0px 80px;
+    background-color: $col-1;
+    .post-box2 {
+      width: 100%;
+      padding: 10px;
+      background-color: $col-1;
+      padding: 20px 30px;
+      cursor: pointer;
+      border-bottom: 3px solid $col-4;
+        .t-col-5 {
+          color: $col-5;
+        }
+        ion-icon{
+          color: black;
+          position: relative;
+          padding-right: 10px;
+          top: 8px;
+          font-size: 30px;
+        }
+      }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+  .post-con {
+    .post-box {
+      margin: 15px 30px;
+    }
+  }
+}
