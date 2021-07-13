@@ -19,7 +19,7 @@ export class LearningmgtplatformPage implements OnInit {
       this.router.navigate(['./forum/']);
     }
     else if (cat == "Class") {
-      this.router.navigate(['./Class/']);
+      this.router.navigate(['./class/']);
     }
   }
 
