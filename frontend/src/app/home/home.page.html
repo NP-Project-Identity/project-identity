@@ -1,4 +1,29 @@
 <ion-content>
-  <main-header title="Home"></main-header>
+  <main-header title="Welcome Back, Rifa Achrinza"></main-header>
   <app-subbar [navItems]="navItems"></app-subbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-row class="scrollmenu">
+          <ion-button *ngFor="let m of modules">{{m.name}}</ion-button>
+        </ion-row>
+        <ion-row>
+          <ion-list>
+            <div>Test</div>
+            <div>Test</div>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+      <ion-col size="6" class="news">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Test Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            This is to test the content inside the card
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
