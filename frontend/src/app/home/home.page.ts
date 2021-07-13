@@ -6,9 +6,16 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
- navItems = [
+  navItems = [
     { title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers' },
     { title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline' }
+  ];
+  modules = [
+    {name: 'Capstone'},
+    {name: 'EH'},
+    {name: 'FP3'},
+    {name: 'NS'},
+    {name: 'ISProid'}
   ];
   constructor() { }
 

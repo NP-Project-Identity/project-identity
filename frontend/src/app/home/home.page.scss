@@ -1,0 +1,32 @@
+ion-row ion-button {
+  width: 120px;
+  border-radius: 30px;
+  --background: #EFEBE2;
+  --color: #07040A;
+}
+ion-row.scrollmenu {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-left: 5%;
+}
+
+ion-card {
+  --background:#07040A;
+  height: 650px;
+  border-radius: 2%;
+}
+ion-card ion-card-content {
+  padding-top: 20px;
+  padding-left: 30px;
+}
+ion-list {
+  padding-left: 15%;
+  background: transparent;
+}
+ion-card ion-card-title {
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .news {display: none}
+}
