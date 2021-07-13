@@ -13,10 +13,15 @@ const routes: Routes = [
     redirectTo: '/forum',
     pathMatch: 'full',
   },
+  {
+    path: 'class',
+    redirectTo: '/class',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class LearningmgtplatformPageRoutingModule {}
+export class LearningmgtplatformPageRoutingModule { }

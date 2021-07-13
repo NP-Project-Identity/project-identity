@@ -7,11 +7,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./forum-cat.component.scss'],
 })
 export class ForumCatComponent implements OnInit {
+  @Input() page: string;
   @Input() cat: string;
   @Input() subCat: string;
+  @Input() list: string[];
 
-  constructor(private router: Router) {}
-  cardList = [];
+  constructor(private router: Router) { }
+  cardList: string[] = [];
   schoolList = [
     ['CSF', 'ICT', 'DS'],
     ['a', 'b', 'c', 'd', 'e'],
@@ -19,13 +21,21 @@ export class ForumCatComponent implements OnInit {
   ];
   ccaList = [['Overflow', 'Overwork', 'Overkill']];
 
-  ngOnInit() {}
+  ngOnInit() { }
   ngOnChanges(changes: SimpleChanges) {
-    if (this.cat == 'school') this.cardList = this.schoolList[this.subCat];
-    else if (this.cat == 'cca') this.cardList = this.ccaList[this.subCat];
+    if (this.page == 'forum') {
+      if (this.cat == 'school') this.cardList = this.schoolList[this.subCat];
+      else if (this.cat == 'cca') this.cardList = this.ccaList[this.subCat];
+    }
+    else {
+      this.cardList = this.list;
+    }
   }
 
-  redirect(page: string, subPageNo: string) {
-    this.router.navigate(['./forum/' + page + '/' + subPageNo]);
+  redirect(pages: string, subPageNo: string) {
+    if (this.page == 'forum')
+      this.router.navigate(['./' + this.page + '/' + pages + '/' + subPageNo]);
+    else
+      this.router.navigate(['./' + this.page + '/' + subPageNo]);
   }
 }
