@@ -1,8 +1,9 @@
 ion-row ion-button {
-  width: 120px;
+  width: 150px;
   border-radius: 30px;
   --background: #EFEBE2;
   --color: #07040A;
+  font-size: 17px;
 }
 ion-row.scrollmenu {
   display: block;
@@ -13,20 +14,75 @@ ion-row.scrollmenu {
 
 ion-card {
   --background:#07040A;
-  height: 650px;
+  height: 640px;
+  max-height: 640px;
   border-radius: 2%;
 }
-ion-card ion-card-content {
-  padding-top: 20px;
+ion-card ion-content {
+  padding-top: 10px;
   padding-left: 30px;
+  padding-right: 30px;
+  --background: #07040A;
 }
 ion-list {
-  padding-left: 15%;
   background: transparent;
+}
+div.taskcontainer {
+  padding-left: 7%;
+}
+h2.taskheader {
+  margin-top: 10px;
+  font-size: 22px;
 }
 ion-card ion-card-title {
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  font-size: 30px;
 }
+ion-item.ncontainer {
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+ion-item.ncontainer:last-child {
+  margin-bottom: 100px;
+}
+div.newsbox {
+  height: 90px;
+  width: 100%;
+  background:#1f1f1f;
+  display:inline-block;
+
+}
+h1.newstitle {
+  padding-top: 20px;
+  padding-left: 20px;
+  color: #AB0552;
+  float: left;
+}
+div.divider {
+  background: #EFEBE2;
+  height: 90px;
+  width: 3px;
+  position: absolute;
+  float: right;
+  border-radius: 35%;
+  left: 13%;
+  display: block;
+}
+p.newscontent {
+  padding-top: 5px;
+  padding-left: 50px;
+  overflow: auto;
+  font-size: 16px;
+  color: #AB0552;
+}
+
 @media (max-width: 1024px) {
   .news {display: none}
+  ion-row ion-button {
+    width: 120px;
+    font-size: 14px;
+  }
 }
