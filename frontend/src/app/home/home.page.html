@@ -8,20 +8,35 @@
           <ion-button *ngFor="let m of modules">{{m.name}}</ion-button>
         </ion-row>
         <ion-row>
-          <ion-list>
-            <div>Test</div>
-            <div>Test</div>
-          </ion-list>
+          <div class="taskcontainer"><h2 class="taskheader">Upcoming Tasks:</h2>
+            <ion-content>
+              <ion-list class="tasklist">
+                <div>Test</div>
+              </ion-list>
+            </ion-content>
+          </div>
         </ion-row>
       </ion-col>
       <ion-col size="6" class="news">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Test Title</ion-card-title>
+            <ion-card-title>Latest News</ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            This is to test the content inside the card
-          </ion-card-content>
+          <ion-content>
+            <ion-list id="list">
+              <ion-item *ngFor="let n of selectednews; let i=index" class="ncontainer">
+                <div class="newsbox">
+                  <h1 class="newstitle">{{n.title}}</h1>
+                  <div class="divider"></div>
+                  <p class="newscontent">{{n.content}}</p>
+                  </div>
+              </ion-item>
+            </ion-list>
+            <ion-infinite-scroll threshold="100px" (ionInfinite)="loadNews($event)">
+              <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+              </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+          </ion-content>
         </ion-card>
       </ion-col>
     </ion-row>
