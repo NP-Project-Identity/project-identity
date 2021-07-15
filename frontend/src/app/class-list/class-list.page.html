@@ -3,10 +3,29 @@
   <app-subbar [navItems]="navItems"></app-subbar>
   <ion-row class="ion-justify-content-start ion-align-items-start post-con">
     <div class="post-box">
-      <div class="post-box2" *ngFor="let card of list; index as i" [routerLink]="card">
-        <p class="post-title">
-          <ion-icon name="folder-outline"> </ion-icon>{{card}}
-        </p>
+      <div class="post-box2" *ngFor="let card of list; index as i">
+        <div class="post-box3" *ngIf="checkType(card.type)" [routerLink]="routeLink(card.title)">
+          <div class="left">
+            <ion-icon name="folder-outline"> </ion-icon>
+          </div>
+          <div class="right">
+            <p class="post-title">
+              {{card.title}}
+            </p>
+            <p class="post-desc">{{card.desc}}</p>
+          </div>
+        </div>
+        <div class="post-box3" *ngIf="!checkType(card.type)">
+          <div class="left">
+            <ion-icon name="newspaper-outline"> </ion-icon>
+          </div>
+          <div class="right">
+            <p class="post-title">
+              {{card.title}}
+            </p>
+            <p class="post-desc">{{card.desc}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </ion-row>
