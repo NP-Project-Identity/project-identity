@@ -10,7 +10,7 @@ import {ClassService} from '../services/class.service';
 export class ClassListPage implements OnInit {
   public title: string;
   public list: any;
-  private mission: (string | string[])[] = ["-1", "You got a sudden quest", ["Enter the quest to earn currency", "GOD", "Unknown", "-1"]];
+  private mission = {title: "You got a sudden quest", desc: "Enter the quest to earn currency"};
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private classService: ClassService) { }
 
@@ -20,15 +20,31 @@ export class ClassListPage implements OnInit {
 
   ngOnInit() {
     this.title = this.activatedRoute.snapshot.paramMap.get('id');
-    this.list = this.classService.LoadClass(this.title);
-
-    if (this.getRandomInt(50) == this.getRandomInt(2)) { //appear rate is 1/100 try
+    if (this.activatedRoute.snapshot.parent.params.id == this.title) {
+      this.list = this.classService.LoadClass(this.title);
+    }
+    else {
+      this.list = this.classService.LoadClassContent(this.title, this.activatedRoute.snapshot.parent.params.id);
+    }
+    if (this.getRandomInt(2) == this.getRandomInt(2)) { //appear rate is 1/100 try
       this.list.splice(this.getRandomInt(this.list.length), 0, this.mission);
     }
   }
 
-  createPost() {
-    this.router.navigate(['test']);
+  routeLink(page: string) {
+    if (page == 'You got a sudden quest')
+      return '-1';
+    else
+      return page;
+  }
+
+  checkType(type: string) {
+    if (type == "folder") {
+      return true;
+    }
+
+    else
+      return false;
   }
 
   navItems = [

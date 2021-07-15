@@ -25,15 +25,24 @@ ion-icon {
       padding: 20px 30px;
       cursor: pointer;
       border-bottom: 3px solid $col-4;
-        .t-col-5 {
-          color: $col-5;
-        }
-        ion-icon{
-          color: black;
-          position: relative;
-          padding-right: 10px;
-          top: 8px;
-          font-size: 30px;
+        .post-box3{
+          display: flex;
+          .left{
+            float: left;
+          }
+          .t-col-5 {
+            color: $col-5;
+          }
+          .post-title{
+            font-weight:bold;
+            padding: 7px 0;
+          }
+          ion-icon{
+            color: black;
+            position: relative;
+            padding-right: 10px;
+            font-size: 30px;
+          }
         }
       }
     }
