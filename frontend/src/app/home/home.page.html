@@ -5,13 +5,21 @@
     <ion-row>
       <ion-col>
         <ion-row class="scrollmenu">
-          <ion-button *ngFor="let m of modules">{{m.name}}</ion-button>
+          <ion-button *ngFor="let m of modules" id="{{m.name}}" (click)="filterTasks($event)"><b>{{m.name}}</b></ion-button>
         </ion-row>
         <ion-row>
-          <div class="taskcontainer"><h2 class="taskheader">Upcoming Tasks:</h2>
+          <div class="taskcontainer">
+            <h2 class="taskheader">Upcoming Tasks:</h2>
             <ion-content>
               <ion-list class="tasklist">
-                <div>Test</div>
+                <div *ngFor="let t of selectedtasks">
+                  <div class="taskbox" style.background="{{t.color}}">
+                    <h4 class="taskmod"><b>{{t.name}}</b></h4>
+                    <p class="taskdesc"><b>{{t.desc}}</b></p>
+                    <p class="tasktime"><b>{{t.deadline}}</b></p>
+                  </div>
+                  <div style='clear:both;'></div>
+                </div>
               </ion-list>
             </ion-content>
           </div>

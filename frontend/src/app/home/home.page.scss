@@ -4,12 +4,46 @@ ion-row ion-button {
   --background: #EFEBE2;
   --color: #07040A;
   font-size: 17px;
+  opacity: 100%;
+  --background-hover: #B175FF;
+  --background-hover-opacity: 1;
 }
 ion-row.scrollmenu {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
   padding-left: 5%;
+}
+
+div.taskbox {
+  background:#ABABAB;
+  width: 95%;
+  height: 50px;
+  color: #07040A;
+  box-shadow: inset 0 2px 7px #000;
+  position: relative;
+}
+
+h4.taskmod {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 14px;
+  padding-left: 15px;
+  float: left;
+}
+p.taskdesc {
+  font-size: 18px;
+  left: 110px;
+  margin-top: 16px;
+  padding-left: 20px;
+  float: left;
+  position: absolute;
+}
+p.tasktime {
+  float: right;
+  padding-right: 14px;
+  font-size: 18px;
+  margin-top: 16px;
 }
 
 ion-card {
@@ -27,8 +61,11 @@ ion-card ion-content {
 ion-list {
   background: transparent;
 }
+
 div.taskcontainer {
   padding-left: 7%;
+  width: 100%;
+  height: 600px;
 }
 h2.taskheader {
   margin-top: 10px;
@@ -83,6 +120,25 @@ p.newscontent {
   .news {display: none}
   ion-row ion-button {
     width: 120px;
+    font-size: 14px;
+  }
+  div.taskcontainer {
+    height: 300px;
+  }
+  div.taskbox {
+    height: 40px;
+  }
+  h2.taskheader {
+    font-size: 18px;
+  }
+  h4.taskmod {
+    font-size: 15px;
+  }
+  p.taskdesc {
+    font-size: 14px;
+    left: 80px;
+  }
+  p.tasktime {
     font-size: 14px;
   }
 }
