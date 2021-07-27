@@ -42,6 +42,71 @@ jobs:
       - name: Run tests
         run: npm test --ignore-scripts
 
+  cf-deployment-test:
+    name: Cloud Foundry Deployment Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: engineerd/setup-kind@v0.5.0
+        with:
+          name: kubecf
+      - name: Test Deployment
+        run: |
+          kubectl cluster-info
+          kubectl get pods -n kube-system
+          echo "current-context:" $(kubectl config current-context)
+          echo "environment-kubeconfig:" ${KUBECONFIG}
+      - name: Clone KubeCF Git Repo
+        run: git clone --depth=1 https://github.com/cloudfoundry-incubator/kubecf.git
+
+      - name: Download cf-operator and KubeCF Helm Charts Bundle
+        run: |
+          curl -s https://api.github.com/repos/cloudfoundry-incubator/kubecf/releases/latest \
+            | grep -oP '"browser_download_url": "\K(.*)kubecf-bundle(.*)(?=")' \
+            | wget -qi -
+            tar xf kubecf-bundle-v*.tgz
+
+      - name: Install KubeCF Required Tools
+        run: |
+          pushd ./kubecf
+            make -I ./kubecf tools-install
+          popd
+
+      - name: Install cf-operator
+        run: |
+          kubectl create ns cfo
+          helm install cf-operator \
+            --namespace cfo \
+            --set "global.singleNamespace.name=kubecf" \
+            ./cf-operator.tgz
+          kubectl wait \
+            --namespace cfo \
+            --for=condition=ready pod \
+            --timeout=30m \
+            --all
+      - name: Install KubeCF
+        run: |
+          # Configure KubeCF with Node IP address
+          node_ip=$(kubectl get node kubecf-control-plane \
+            --output jsonpath='{ .status.addresses[?(@.type == "InternalIP")].address }')
+          cat << _EOF_  > values.yaml
+          system_domain: ${node_ip}.nip.io
+          services:
+            router:
+              externalIPs:
+              - ${node_ip}
+          _EOF_
+
+          # Trust the kubernetes root CA on the kind docker container:
+          docker exec -t "kubecf-control-plane" bash -c 'cp /etc/kubernetes/pki/ca.crt /etc/ssl/certs/ && \
+            update-ca-certificates && \
+            (systemctl list-units | grep containerd > /dev/null && systemctl restart containerd)'
+
+          # Install KubeCF
+          helm install kubecf \
+            --namespace kubecf \
+            --values values.yaml \
+            ./kubecf_release.tgz
+
   code-lint:
     name: Code Lint
     runs-on: ubuntu-latest
