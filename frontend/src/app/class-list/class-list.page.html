@@ -4,7 +4,7 @@
   <ion-row class="ion-justify-content-start ion-align-items-start post-con">
     <div class="post-box">
       <div class="post-box2" *ngFor="let card of list; index as i">
-        <div class="post-box3" *ngIf="checkType(card.type)" [routerLink]="routeLink(card.title)">
+        <div class="post-box3" *ngIf="checkType(card.type, 'folder')" [routerLink]="routeLink(card.title)">
           <div class="left">
             <ion-icon name="folder-outline"> </ion-icon>
           </div>
@@ -15,9 +15,20 @@
             <p class="post-desc">{{card.desc}}</p>
           </div>
         </div>
-        <div class="post-box3" *ngIf="!checkType(card.type)">
+        <div class="post-box3" *ngIf="checkType(card.type, 'text')">
           <div class="left">
             <ion-icon name="newspaper-outline"> </ion-icon>
+          </div>
+          <div class="right">
+            <p class="post-title">
+              {{card.title}}
+            </p>
+            <p class="post-desc">{{card.desc}}</p>
+          </div>
+        </div>
+        <div class="post-box3" *ngIf="checkType(card.type, 'quest')" [routerLink]="routeLink(card.title)">
+          <div class="left">
+            <ion-icon name="diamond-outline"> </ion-icon>
           </div>
           <div class="right">
             <p class="post-title">
