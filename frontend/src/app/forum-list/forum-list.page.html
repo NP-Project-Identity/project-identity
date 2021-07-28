@@ -5,8 +5,8 @@
     <div
       class="post-box"
       *ngFor="let card of list; index as i"
+      [routerLink]="[card.id]"
     >
-      <div class="post-box-2" [routerLink]="[card.id]">
         <p class="post-title">{{card.title}}</p>
         <p class="post-desc t-col-5">{{card.content[0].text}}</p>
         <hr />
@@ -26,7 +26,6 @@
           </div>
         </div>
       </div>
-    </div>
   </ion-row>
   <div class="addBtn">
     <button shape="round" class="btn-circle" title="New post" [routerLink]="['./create']">

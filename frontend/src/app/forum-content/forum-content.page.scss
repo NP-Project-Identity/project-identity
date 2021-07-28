@@ -16,40 +16,39 @@ ion-row{
 }
 .post-con {
   margin-top: 30px;
+  margin-bottom: 30px;
   .post-box {
     width: 100%;
     padding: 10px;
-    margin: 15px 80px;
-    background-color: $col-4;
-    .post-box-2 {
-      background-color: $col-1;
-      height: auto;
-      padding: 15px 25px;
-      .t-col-2{
-        color: $col-2;
+    margin: 5px 80px;
+    border: 5px solid $col-4;
+    background-color: $col-1;
+    height: auto;
+    padding: 15px 25px;
+    .t-col-2{
+      color: $col-2;
+    }
+    .t-col-5 {
+      color: $col-5;
+    }
+    hr {
+      background-color: $col-4;
+    }
+    .post-btm {
+      display: flex;
+      .avatar {
+        height: 32px;
+        width: 32px;
+        justify-self: start;
+        margin: 2px 5px 2px 0px;
       }
-      .t-col-5 {
-        color: $col-5;
+      .post-user {
+        width: 100%;
       }
-      hr {
-        background-color: $col-4;
-      }
-      .post-btm {
-        display: flex;
-        .avatar {
-          height: 32px;
-          width: 32px;
-          justify-self: start;
-          margin: 2px 5px 2px 0px;
-        }
-        .post-user {
-          width: 100%;
-        }
-        .post-com {
-          width: 100%;
-          justify-self: end;
-          text-align: end;
-        }
+      .post-com {
+        width: 100%;
+        justify-self: end;
+        text-align: end;
       }
     }
   }
