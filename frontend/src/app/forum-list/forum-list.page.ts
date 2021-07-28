@@ -10,7 +10,12 @@ import {ForumService} from '../services/forum.service';
 export class ForumListPage implements OnInit {
   public title: string;
   public list: any;
-  private mission: (string | string[])[] = ["-1", "You got a sudden quest", ["Enter the quest to earn currency", "GOD", "Unknown", "-1"]];
+  private mission: any = {id: "-1", title: "You got a sudden quest", content: [{text: "Enter the quest to earn currency", user: "GOD", date: "Unknown", like: "-1"}]};
+
+  navItems = [
+    {title: 'Lmgtplatform', url: '/learningmgtplatform', icon: 'layers'},
+    {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
+  ];
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private forumService: ForumService) { }
 
@@ -30,8 +35,8 @@ export class ForumListPage implements OnInit {
     this.router.navigate(['test']);
   }
 
-  navItems = [
-    {title: 'Lmgtplatform', url: '/learningmgtplatform', icon: 'layers'},
-    {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
-  ];
+  addLike(index: number) {
+    this.forumService.addLike(this.title, undefined, index);
+    this.list = this.forumService.loadList(this.title);
+  }
 }
