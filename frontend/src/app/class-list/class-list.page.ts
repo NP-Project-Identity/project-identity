@@ -26,7 +26,7 @@ export class ClassListPage implements OnInit {
     else {
       this.list = this.classService.LoadClassContent(this.title, this.activatedRoute.snapshot.parent.params.id);
     }
-    if (this.getRandomInt(2) == this.getRandomInt(2)) { //appear rate is 1/100 try
+    if (this.getRandomInt(50) == this.getRandomInt(2)) { //appear rate is 1/100 try
       this.list.splice(this.getRandomInt(this.list.length), 0, this.mission);
     }
   }
