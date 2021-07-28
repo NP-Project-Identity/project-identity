@@ -7,17 +7,17 @@
       *ngFor="let card of postList; index as i"
     >
       <div class="post-box-2">
-        <p class="post-desc t-col-2">{{card[0]}}</p>
+        <p class="post-desc t-col-2">{{card.text}}</p>
         <hr />
         <div class="post-btm">
           <img src="./assets/user.png" class="avatar" />
           <div class="post-user">
-            <p class="t-col-5">{{card[1]}}</p>
-            <p class="t-col-5">{{card[2]}}</p>
+            <p class="t-col-5">{{card.user}}</p>
+            <p class="t-col-5">{{card.date}}</p>
           </div>
           <div class="post-com">
             <p class="t-col-5">
-              <ion-icon name="heart-outline"></ion-icon>{{card[3]}}
+              <ion-icon name="heart-outline"></ion-icon>{{card.like}}
             </p>
           </div>
         </div>

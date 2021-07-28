@@ -19,8 +19,8 @@ export class ForumContentPage implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.cat = this.activatedRoute.snapshot.parent.parent.paramMap.get('id');
     this.postList = this.forumService.loadPost(this.cat, this.id);
-    this.title = this.postList[1];
-    this.postList = this.postList.slice(2);
+    this.title = this.postList.title;
+    //this.postList = this.postList.slice(2);
   }
 
   navItems = [

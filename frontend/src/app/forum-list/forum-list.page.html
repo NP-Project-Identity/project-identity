@@ -6,22 +6,22 @@
       class="post-box"
       *ngFor="let card of list; index as i"
     >
-      <div class="post-box-2" [routerLink]="[card[0]]">
-        <p class="post-title">{{card[1]}}</p>
-        <p class="post-desc t-col-5">{{card[2][0]}}</p>
+      <div class="post-box-2" [routerLink]="[card.id]">
+        <p class="post-title">{{card.title}}</p>
+        <p class="post-desc t-col-5">{{card.content[0].text}}</p>
         <hr />
         <div class="post-btm">
           <img src="./assets/user.png" class="avatar" />
           <div class="post-user">
-            <p class="t-col-5">{{card[2][1]}}</p>
-            <p class="t-col-5">{{card[2][2]}}</p>
+            <p class="t-col-5">{{card.content[0].user}}</p>
+            <p class="t-col-5">{{card.content[0].date}}</p>
           </div>
           <div class="post-com">
             <p class="t-col-5">
-              <ion-icon name="chatbox-outline"></ion-icon>{{card.length -2}}
+              <ion-icon name="chatbox-outline"></ion-icon>{{card.content.length -1}}
             </p>
             <p class="t-col-5">
-              <ion-icon name="heart-outline"></ion-icon>{{card[2][3]}}
+              <ion-icon name="heart-outline"></ion-icon>{{card.content[0].like}}
             </p>
           </div>
         </div>

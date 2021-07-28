@@ -9,7 +9,7 @@ import {ForumService} from '../services/forum.service';
 })
 export class ForumListPage implements OnInit {
   public title: string;
-  public list: (string | string[])[][];
+  public list: any;
   private mission: (string | string[])[] = ["-1", "You got a sudden quest", ["Enter the quest to earn currency", "GOD", "Unknown", "-1"]];
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private forumService: ForumService) { }
