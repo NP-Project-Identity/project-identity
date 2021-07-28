@@ -41,4 +41,8 @@ export class ForumService {
   loadPost(cat: any, id: any) {
     return (this.forumDB.find(el => el.cat === cat).content.find(el => el.id === id).content);
   }
+
+  postTitle(cat: any, id: any) {
+    return (this.forumDB.find(el => el.cat === cat).content.find(el => el.id === id).title);
+  }
 }
