@@ -1,0 +1,19 @@
+form{
+  width: 860px;
+  margin: 0 auto;
+  ion-label{
+    color: black;
+  }
+  input, textarea{
+    width: 100%;
+    color: black;
+    background-color: white;
+  }
+  ion-textarea{
+    width: 240px;
+  }
+}
+
+.mTop{
+  margin-top: 15px;
+}
