@@ -1,22 +1,17 @@
 <ion-content>
   <main-header title="New post"></main-header>
   <app-subbar [navItems]="navItems"></app-subbar>
-  <ion-row class="ion-justify-content-start ion-align-items-start post-con">
-    <form [formGroup]="createForm" (ngSubmit)="submit()">
-      <ion-list inset padding>
-        <ion-item>
-          <ion-label>Title</ion-label>
-          <ion-input type="text" placeholder="Title" formControlName="title"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Description</ion-label>
-          <ion-textarea type="text" formControlName="description"></ion-textarea>
-          <button clear>Forgot</button>
-        </ion-item>
-        <ion-button [disabled]="!createForm.valid" type="submit" expand="block">Post <ion-icon slot="end" name="create">
-          </ion-icon>
-        </ion-button>
-      </ion-list>
-    </form>
-  </ion-row>
+  <form [formGroup]="createForm" (ngSubmit)="submit()">
+    <div>
+      <label>Title</label>
+      <input type="text" formControlName="title">
+    </div>
+    <div class="mTop">
+      <label>Description</label>
+      <textarea rows="10" type="text" formControlName="description"></textarea>
+    </div>
+    <ion-button [disabled]="!createForm.valid" type="submit" expand="block">Post <ion-icon slot="end" name="create">
+      </ion-icon>
+    </ion-button>
+  </form>
 </ion-content>
