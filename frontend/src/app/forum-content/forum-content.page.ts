@@ -13,6 +13,11 @@ export class ForumContentPage implements OnInit {
   public title: string;
   public postList: any;
 
+  navItems = [
+    {title: 'Lmgtplatform', url: '/learningmgtplatform', icon: 'layers'},
+    {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
+  ];
+
   constructor(private activatedRoute: ActivatedRoute, private forumService: ForumService) { }
 
   ngOnInit() {
@@ -22,8 +27,8 @@ export class ForumContentPage implements OnInit {
     this.title = this.forumService.postTitle(this.cat, this.id);
   }
 
-  navItems = [
-    {title: 'Lmgtplatform', url: '/learningmgtplatform', icon: 'layers'},
-    {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
-  ];
+  addLike(index: number) {
+    this.forumService.addLike(this.cat, this.id, index);
+    this.postList = this.forumService.loadPost(this.cat, this.id);
+  }
 }

@@ -2,34 +2,32 @@
   <main-header title="{{title}}"></main-header>
   <app-subbar [navItems]="navItems"></app-subbar>
   <ion-row class="ion-justify-content-start ion-align-items-start post-con">
-    <div
-      class="post-box"
-      *ngFor="let card of list; index as i"
-      [routerLink]="[card.id]"
-    >
+    <div class="post-box" *ngFor="let card of list; index as i">
+      <div class="post-top" [routerLink]="[card.id]">
         <p class="post-title">{{card.title}}</p>
         <p class="post-desc t-col-5">{{card.content[0].text}}</p>
         <hr />
-        <div class="post-btm">
-          <img src="./assets/user.png" class="avatar" />
-          <div class="post-user">
-            <p class="t-col-5">{{card.content[0].user}}</p>
-            <p class="t-col-5">{{card.content[0].date}}</p>
-          </div>
-          <div class="post-com">
-            <p class="t-col-5">
-              <ion-icon name="chatbox-outline"></ion-icon>{{card.content.length -1}}
-            </p>
-            <p class="t-col-5">
-              <ion-icon name="heart-outline"></ion-icon>{{card.content[0].like}}
-            </p>
-          </div>
+      </div>
+      <div class="post-btm">
+        <img src="./assets/user.png" class="avatar" />
+        <div class="post-user">
+          <p class="t-col-5">{{card.content[0].user}}</p>
+          <p class="t-col-5">{{card.content[0].date}}</p>
+        </div>
+        <div class="post-com">
+          <p class="t-col-5">
+            <ion-icon name="chatbox-outline"></ion-icon>{{card.content.length -1}}
+          </p>
+          <p class="t-col-5" (click)="addLike(i)">
+            <ion-icon name="heart-outline"></ion-icon>{{card.content[0].like}}
+          </p>
         </div>
       </div>
+    </div>
   </ion-row>
   <div class="addBtn">
     <button shape="round" class="btn-circle" title="New post" [routerLink]="['./create']">
-        <ion-icon slot="icon-only" name="add"></ion-icon>
+      <ion-icon slot="icon-only" name="add"></ion-icon>
     </button>
   </div>
 </ion-content>

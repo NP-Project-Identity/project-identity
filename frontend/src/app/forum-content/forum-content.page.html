@@ -11,7 +11,7 @@
           <p class="t-col-5">{{card.user}}</p>
           <p class="t-col-5">{{card.date}}</p>
         </div>
-        <div class="post-com">
+        <div class="post-com"  (click)="addLike(i)">
           <p class="t-col-5">
             <ion-icon name="heart-outline"></ion-icon>{{card.like}}
           </p>
