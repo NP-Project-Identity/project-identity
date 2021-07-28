@@ -22,7 +22,7 @@ export class QuizPopupComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     if (this.result == "true") {
       this.Result = "You are correct!"
-      this.Reward = "you receice 20 point"
+      this.Reward = "you received 20 point"
     }
     else {
       this.Result = "Answer is incorrect!"
