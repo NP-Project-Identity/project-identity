@@ -47,11 +47,20 @@ export class ForumService {
     else
       this.forumDB.find(el => el.cat === cat).content.find(el => el.id === id).content[index].like += 1;
   }
+  getDate() {
+    let date = new Date();
+    return date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes()
+  }
   createPost(cat: string, title: string, desc: string, user: string) {
     let id = this.forumDB.find(el => el.cat === cat).content.length.toString();
-    let date = new Date();
-    let currentDate = date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
+    let currentDate = this.getDate()
     let tmp = {id: id, title: title, content: [{text: desc, user: user, date: currentDate, like: 0}]}
     this.forumDB.find(el => el.cat === cat).content.push(tmp);
+  }
+  createComment(cat: string, id: string, desc: string, user: string) {
+    let date = new Date();
+    let currentDate = this.getDate();
+    let tmp = {text: desc, user: user, date: currentDate, like: 0}
+    this.forumDB.find(el => el.cat === cat).content.find(el => el.id === id).content.push(tmp);
   }
 }
