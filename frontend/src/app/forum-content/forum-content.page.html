@@ -2,31 +2,26 @@
   <main-header title="{{title}}"></main-header>
   <app-subbar [navItems]="navItems"></app-subbar>
   <ion-row class="ion-justify-content-start ion-align-items-start post-con">
-    <div
-      class="post-box"
-      *ngFor="let card of postList; index as i"
-    >
-      <div class="post-box-2">
-        <p class="post-desc t-col-2">{{card.text}}</p>
-        <hr />
-        <div class="post-btm">
-          <img src="./assets/user.png" class="avatar" />
-          <div class="post-user">
-            <p class="t-col-5">{{card.user}}</p>
-            <p class="t-col-5">{{card.date}}</p>
-          </div>
-          <div class="post-com">
-            <p class="t-col-5">
-              <ion-icon name="heart-outline"></ion-icon>{{card.like}}
-            </p>
-          </div>
+    <div class="post-box" *ngFor="let card of postList; index as i">
+      <p class="post-desc t-col-2">{{card.text}}</p>
+      <hr />
+      <div class="post-btm">
+        <img src="./assets/user.png" class="avatar" />
+        <div class="post-user">
+          <p class="t-col-5">{{card.user}}</p>
+          <p class="t-col-5">{{card.date}}</p>
+        </div>
+        <div class="post-com">
+          <p class="t-col-5">
+            <ion-icon name="heart-outline"></ion-icon>{{card.like}}
+          </p>
         </div>
       </div>
     </div>
   </ion-row>
   <div class="addBtn">
     <button shape="round" class="btn-circle" title="Comment" [routerLink]="['./create']">
-        <ion-icon slot="icon-only" name="chatbox"></ion-icon>
+      <ion-icon slot="icon-only" name="chatbox"></ion-icon>
     </button>
   </div>
 </ion-content>
