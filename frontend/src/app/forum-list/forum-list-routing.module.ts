@@ -22,7 +22,8 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: ForumListPage /*WIP*/,
+        loadChildren: () =>
+          import('../forum-create/forum-create.module').then(m => m.ForumCreatePageModule),
       },
       {
         path: ':id',

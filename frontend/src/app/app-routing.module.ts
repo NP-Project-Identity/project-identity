@@ -66,11 +66,11 @@ const routes: Routes = [
   },
   {
     path: 'class',
-    loadChildren: () => import('./class/class.module').then( m => m.ClassPageModule)
+    loadChildren: () => import('./class/class.module').then(m => m.ClassPageModule)
   },
   {
     path: 'class-list',
-    loadChildren: () => import('./class-list/class-list.module').then( m => m.ClassListPageModule)
+    loadChildren: () => import('./class-list/class-list.module').then(m => m.ClassListPageModule)
   }
 ];
 
@@ -80,4 +80,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
