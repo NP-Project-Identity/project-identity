@@ -10,7 +10,7 @@ import {ClassService} from '../services/class.service';
 export class ClassListPage implements OnInit {
   public title: string;
   public list: any;
-  private mission = {title: "You got a sudden quest", desc: "Enter the quest to earn currency"};
+  private mission = {title: "You got a sudden quest", desc: "Enter the quest to earn currency", type: "quest"};
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private classService: ClassService) { }
 
@@ -38,8 +38,8 @@ export class ClassListPage implements OnInit {
       return page;
   }
 
-  checkType(type: string) {
-    if (type == "folder") {
+  checkType(type: string, isType: string) {
+    if (type == isType) {
       return true;
     }
 

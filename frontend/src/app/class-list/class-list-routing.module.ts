@@ -22,6 +22,11 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: ':id/-1',
+        redirectTo: 'quiz',
+        pathMatch: 'full',
+      },
+      {
         path: ':id',
         component: ClassListPage
       }
