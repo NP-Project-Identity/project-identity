@@ -1,0 +1,35 @@
+.outer-cir {
+  fill: transparent;
+  stroke: #ab0552;
+  stroke-width: 1;
+}
+.inner-cir {
+  fill: #b175ff;
+}
+.main {
+  position: absolute;
+  width: 100vw;
+  .container {
+    position: relative;
+    width: 80vw;
+    margin: 25vh auto 0 auto;
+    .logo {
+      margin: 0px auto;
+      width: fit-content;
+    }
+    .input {
+      width: fit-content;
+      background-color: #EFEBE2;
+      padding: 0 60px 10px 60px;
+      margin: 0px auto;
+      input[type="text"] {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+img {
+  width: 400px;
+}

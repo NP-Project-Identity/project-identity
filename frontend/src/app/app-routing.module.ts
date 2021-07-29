@@ -70,6 +70,10 @@ const routes: Routes = [
   {
     path: 'achievement',
     loadChildren: () => import('./achievement/achievement.module').then(m => m.AchievementPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 

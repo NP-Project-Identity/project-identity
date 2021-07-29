@@ -1,0 +1,22 @@
+<svg width="100%" height="100%" viewBox="0 0 100 100">
+  <circle cx="50%" cy="50%" r="70" class="outer-cir">
+  </circle>
+  <circle cx="50" cy="50" r="50" class="inner-cir">
+  </circle>
+</svg>
+<div class="main">
+  <div class="container">
+    <div class="logo">
+      <img src="./assets/NP-login.png">
+    </div>
+    <div class="input">
+      <form [formGroup]="createForm" (ngSubmit)="submit()">
+        <div class="left">
+          <input type="text" placeholder="Email"><br>
+          <input type="text" placeholder="Password">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
