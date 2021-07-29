@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
     {title: 'SafeEntry', url: 'safeentry', icon: 'id-card'},
     {title: 'Events', url: 'events', icon: 'newspaper'},
     {title: 'LMgtPlatform', url: 'learningmgtplatform', icon: 'layers'},
-    {title: 'Triumps', url: 'triumps', icon: 'medal'},
+    {title: 'Achievement', url: 'achievement', icon: 'medal'},
     {title: 'Reward Shop', url: 'rewards', icon: 'storefront'},
     {title: 'My pet', url: 'pet', icon: 'game-controller'}
   ];
