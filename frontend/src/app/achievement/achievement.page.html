@@ -1,0 +1,35 @@
+<ion-content>
+  <main-header title="Achievement"></main-header>
+  <div class="medal">
+    <p>Medals (Total: {{medal.length}})</p>
+    <ion-slides
+    [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}"
+  >
+    <ion-slide tappable *ngFor="let card of medal; index as i">
+      <ion-col>
+        <img
+          style="pointer-events: none"
+          src="./assets/achievement/medal/{{card.id}}.png"
+        /><br />
+        <ion-label>{{ capitalize(card.id) }} Teir {{card.rank}}</ion-label>
+      </ion-col>
+    </ion-slide>
+  </ion-slides>
+  </div>
+  <div class="trophy">
+    <p>Trophy (Total: {{trophy.length}})</p>
+    <ion-slides
+    [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}"
+  >
+    <ion-slide tappable *ngFor="let card of trophy; index as i">
+      <ion-col>
+        <img
+          style="pointer-events: none"
+          src="./assets/achievement/trophy/{{card}}.png"
+        /><br />
+        <ion-label>Top {{ capitalize(card) }}</ion-label>
+      </ion-col>
+    </ion-slide>
+  </ion-slides>
+  </div>
+</ion-content>

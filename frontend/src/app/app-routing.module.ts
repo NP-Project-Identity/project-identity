@@ -45,11 +45,6 @@ const routes: Routes = [
       import('./rewards/rewards.module').then(m => m.RewardsPageModule),
   },
   {
-    path: 'triumps',
-    loadChildren: () =>
-      import('./triumps/triumps.module').then(m => m.TriumpsPageModule),
-  },
-  {
     path: 'account',
     loadChildren: () =>
       import('./account/account.module').then(m => m.AccountPageModule),
@@ -71,6 +66,10 @@ const routes: Routes = [
   {
     path: 'class-list',
     loadChildren: () => import('./class-list/class-list.module').then(m => m.ClassListPageModule)
+  },
+  {
+    path: 'achievement',
+    loadChildren: () => import('./achievement/achievement.module').then(m => m.AchievementPageModule)
   }
 ];
 

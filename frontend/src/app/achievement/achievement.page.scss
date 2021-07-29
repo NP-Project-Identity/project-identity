@@ -1,0 +1,49 @@
+ion-row ion-title {
+  margin: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+ion-slides {
+  background-color: #182026;
+  width: 100%;
+  ion-slide {
+    white-space: normal;
+    padding: 12px;
+    height: 170px;
+    width: 150px;
+    overflow: auto;
+    display: block;
+    p {
+      text-align: center;
+      width: 100%;
+      color: white;
+      font-size: 18px;
+    }
+    ion-col img {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.trophy,.medal{
+  margin: 0px auto;
+  padding: 20px;
+  border-radius: 20px;
+  width: 70%;
+  background-color: black;
+  p{
+    margin: 0;
+  }
+}
+.trophy{
+  margin: 30px auto;
+}
+
+.swiper-container {
+  margin: 0;
+  margin-top: 7px;
+}
