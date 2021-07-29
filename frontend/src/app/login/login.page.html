@@ -10,10 +10,16 @@
       <img src="./assets/NP-login.png">
     </div>
     <div class="input">
-      <form [formGroup]="createForm" (ngSubmit)="submit()">
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
         <div class="left">
-          <input type="text" placeholder="Email"><br>
-          <input type="text" placeholder="Password">
+          <input type="text" placeholder="Email" formControlName="email"><br>
+          <input type="text" placeholder="Password" formControlName="password">
+        </div>
+        <div class="right">
+          <ion-button [disabled]="!loginForm.valid" type="submit" expand="block">Login <ion-icon slot="end"
+              name="login">
+            </ion-icon>
+          </ion-button>
         </div>
       </form>
     </div>
