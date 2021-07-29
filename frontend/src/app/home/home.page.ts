@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {IonInfiniteScroll} from '@ionic/angular';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,10 @@ import {IonInfiniteScroll} from '@ionic/angular';
 })
 export class HomePage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  public username;
   navItems = [
-    { title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers' },
-    { title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline' }
+    {title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers'},
+    {title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline'}
   ];
   modules = [
     {name: 'Capstone'},
@@ -20,15 +22,15 @@ export class HomePage implements OnInit {
     {name: 'ISProid'}
   ];
   tasks = [
-    {name: 'ISProid', desc: 'Prototype & E-Poster', color:'#FA0000', deadline:'3d'},
-    {name: 'EH', desc: 'EH Assignment', color:'#FA0000', deadline: '5d'},
-    {name: 'Capstone', desc: 'Capstone Assignment', color:'#FA4B00', deadline: '1w'},
-    {name: 'FP3', desc: 'FP3 Pair Interview', color:'#FA4B00', deadline: '1w'},
-    {name: 'NS', desc: 'NS Group Assignment', color:'#FA4B00', deadline: '1w'},
-    {name: 'NS', desc: 'NS Individual Assignment', color:'#FA4B00', deadline: '1w'},
-    {name: 'NS', desc: 'NS CA2 Test', color:'#FA4B00', deadline: '1w'},
-    {name: 'NS', desc: 'NS Final Test', color:'#7E7E7E', deadline:'2w'},
-    {name: 'EH', desc: 'EH Practical Test 2', color:'#ABABAB', deadline:'3w'}
+    {name: 'ISProid', desc: 'Prototype & E-Poster', color: '#FA0000', deadline: '3d'},
+    {name: 'EH', desc: 'EH Assignment', color: '#FA0000', deadline: '5d'},
+    {name: 'Capstone', desc: 'Capstone Assignment', color: '#FA4B00', deadline: '1w'},
+    {name: 'FP3', desc: 'FP3 Pair Interview', color: '#FA4B00', deadline: '1w'},
+    {name: 'NS', desc: 'NS Group Assignment', color: '#FA4B00', deadline: '1w'},
+    {name: 'NS', desc: 'NS Individual Assignment', color: '#FA4B00', deadline: '1w'},
+    {name: 'NS', desc: 'NS CA2 Test', color: '#FA4B00', deadline: '1w'},
+    {name: 'NS', desc: 'NS Final Test', color: '#7E7E7E', deadline: '2w'},
+    {name: 'EH', desc: 'EH Practical Test 2', color: '#ABABAB', deadline: '3w'}
 
   ];
   news = [
@@ -55,7 +57,7 @@ export class HomePage implements OnInit {
   tasklength: number;
   selectedmod: string;
 
-  constructor() {
+  constructor(private userService: UserService) {
     this.newslength = 0;
     this.tasklength = 7;
     this.selectedmod = '';
@@ -63,6 +65,7 @@ export class HomePage implements OnInit {
     this.selectTasks(this.selectedmod);
   }
   ngOnInit() {
+    this.username = this.userService.getUserName();
   }
   list = document.getElementById('list');
   loadNews(event) {
@@ -110,4 +113,5 @@ export class HomePage implements OnInit {
         v++;
       }
     }
-}}
+  }
+}

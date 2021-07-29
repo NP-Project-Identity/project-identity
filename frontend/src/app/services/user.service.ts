@@ -10,7 +10,12 @@ export class UserService {
       id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "abcde", name: "Alan Tan", achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
       }
-    }
+    },
+    {
+      id: "s10198161b", email: "a@a.com", password: "abc", name: "Rifa Achrinza", achievement: {
+        medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
+      }
+    },
   ]
 
   constructor() { }
@@ -34,5 +39,9 @@ export class UserService {
   getTrophy() {
     this.setUser("s10198161@connect.np.edu.sg", "abcde") //TO BE REMOVE
     return this.currentUser.achievement.trophy;
+  }
+  getUserName() {
+    this.setUser("s10198161@connect.np.edu.sg", "abcde") //TO BE REMOVE
+    return this.currentUser.name;
   }
 }
