@@ -3,6 +3,7 @@ import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NavController} from '@ionic/angular';
 import {ForumService} from '../services/forum.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-forum-create',
@@ -22,13 +23,13 @@ export class ForumCreatePage implements OnInit {
     description: ''
   });
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private forumService: ForumService, private navCtrl: NavController) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private forumService: ForumService, private navCtrl: NavController, private userService: UserService) { }
 
   ngOnInit() {
   }
 
   submit() {
-    this.forumService.createPost(this.activatedRoute.snapshot.paramMap.get('id'), this.createForm.get("title").value, this.createForm.get("description").value, "Alan");
+    this.forumService.createPost(this.activatedRoute.snapshot.paramMap.get('id'), this.createForm.get("title").value, this.createForm.get("description").value, this.userService.getUserName());
     this.navCtrl.back();
   }
 

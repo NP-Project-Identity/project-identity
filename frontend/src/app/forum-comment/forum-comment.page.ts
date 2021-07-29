@@ -3,6 +3,7 @@ import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NavController} from '@ionic/angular';
 import {ForumService} from '../services/forum.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-forum-comment',
@@ -11,7 +12,7 @@ import {ForumService} from '../services/forum.service';
 })
 export class ForumCommentPage implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private forumService: ForumService, private navCtrl: NavController) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private forumService: ForumService, private navCtrl: NavController, private userService: UserService) { }
 
   navItems = [
     {title: 'Lmgtplatform', url: '/learningmgtplatform', icon: 'layers'},
@@ -24,7 +25,7 @@ export class ForumCommentPage implements OnInit {
   ngOnInit() {
   }
   submit() {
-    this.forumService.createComment(this.activatedRoute.snapshot.parent.parent.parent.parent.paramMap.get('id'), this.activatedRoute.snapshot.paramMap.get('id'), this.createForm.get("comment").value, "Alan");
+    this.forumService.createComment(this.activatedRoute.snapshot.parent.parent.parent.parent.paramMap.get('id'), this.activatedRoute.snapshot.paramMap.get('id'), this.createForm.get("comment").value, this.userService.getUserName());
     this.navCtrl.back();
   }
 }
