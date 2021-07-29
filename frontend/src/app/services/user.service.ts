@@ -32,6 +32,9 @@ export class UserService {
       return true;
     }
   }
+  removeUser() {
+    this.currentUser = undefined;
+  }
   getMedal() {
     this.setUser("s10198161@connect.np.edu.sg", "abcde") //TO BE REMOVE
     return this.currentUser.achievement.medal;
