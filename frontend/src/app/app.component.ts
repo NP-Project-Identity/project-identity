@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {Storage} from '@ionic/storage-angular';
+import {UserService} from './services/user.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,5 +18,22 @@ export class AppComponent {
   //   { title: 'Forum', url: '/forum', icon: 'warning' },
   // ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor(public auth: UserService, private router: Router, private storage: Storage) {
+    this.initialzeApp()
+  }
+
+  async ngOnInit() {
+    await this.storage.create();
+  }
+
+  initialzeApp() {
+    this.auth.authenticationState.subscribe(state => {
+      console.log(state);
+      if (state) {
+        this.router.navigate(['home']);
+      } else {
+        this.router.navigate(['login']);
+      }
+    });
+  }
 }

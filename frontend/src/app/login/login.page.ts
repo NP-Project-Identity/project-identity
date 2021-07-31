@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
     password: ''
   });
 
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, private formBuilder: FormBuilder, private auth: UserService, private router: Router) {
     this.menuCtrl.enable(false)
   }
 
@@ -23,10 +23,9 @@ export class LoginPage implements OnInit {
   }
 
   submit() {
-    let result: Boolean = this.userService.setUser(this.loginForm.get("email").value, this.loginForm.get("password").value)
+    let result = this.auth.login(this.loginForm.get("email").value, this.loginForm.get("password").value)
     if (result) {
       this.menuCtrl.enable(true)
-      this.router.navigate(['./home']);
     }
   }
 }
