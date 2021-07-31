@@ -88,6 +88,10 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'pet',
+    loadChildren: () => import('./pet/pet.module').then( m => m.PetPageModule)
   }
 ];
 

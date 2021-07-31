@@ -1,0 +1,69 @@
+$val-width: calc(100vh * 0.65);
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+p {
+  margin: 0;
+}
+
+.bg {
+  margin: 0 auto;
+  width: min($val-width, 100%);
+  height: 100vh;
+  background-image: url("../../assets/game/bg/2.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.pet {
+  max-width: 270px;
+  width: 72%;
+  margin: 0 auto;
+}
+.indicator {
+  margin: 0 auto;
+  padding-top: 70px;
+  .level {
+    margin-bottom: 30px;
+    #account-bar {
+      background-color: black;
+      border-radius: 20px;
+      width: fit-content;
+      max-width: 966px;
+      height: 100%;
+      margin: 0px auto;
+      padding: 10px 20px;
+    }
+
+    #account-bar-level {
+      font-size: 30px;
+      display: inline-block;
+      margin: 0px 15px;
+    }
+
+    #account-bar-next-level {
+      padding-left: 6px;
+      display: inline-block;
+      font-size: 25px;
+    }
+
+    #xp-bar {
+      height: 10px;
+      width: 75%;
+      background: #035;
+      margin: 0px 0px 0px 15px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    #xp-bar-fill {
+      height: 100%;
+      background: #3af;
+      font-size: 12px;
+      line-height: 10px;
+      text-align: right;
+    }
+  }
+}
