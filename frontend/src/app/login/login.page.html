@@ -12,8 +12,9 @@
     <div class="input">
       <form [formGroup]="loginForm" (ngSubmit)="submit()">
         <div class="left">
-          <input type="text" placeholder="Email" formControlName="email" (keyup.enter)="submit()><br>
-          <input type="text" placeholder="Password" formControlName="password" (keyup.enter)="submit()">
+          <input type="email" placeholder="Email" formControlName="email" (keyup.enter)="submit()" [required]><br>
+          <input type="password" placeholder="Password" formControlName="password" (keyup.enter)="submit()" required>
+          <span class="error-msg" *ngIf="isSubmitted && errorMsg != ''"><br>{{errorMsg}}</span>
         </div>
         <div class="right">
           <ion-button [disabled]="!loginForm.valid" type="submit" expand="block">Login <ion-icon slot="end"
