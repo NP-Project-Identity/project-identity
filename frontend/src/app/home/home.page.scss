@@ -1,11 +1,11 @@
 ion-row ion-button {
   width: 150px;
   border-radius: 30px;
-  --background: #EFEBE2;
-  --color: #07040A;
+  --background: #efebe2;
+  --color: #07040a;
   font-size: 17px;
   opacity: 100%;
-  --background-hover: #B175FF;
+  --background-hover: #b175ff;
   --background-hover-opacity: 1;
 }
 ion-row.scrollmenu {
@@ -18,10 +18,10 @@ ion-col.taskcol {
   width: 50%;
 }
 div.taskbox {
-  background:#ABABAB;
+  background: #ababab;
   width: 95%;
   height: 50px;
-  color: #07040A;
+  color: #07040a;
   box-shadow: inset 0 2px 7px #000;
   position: relative;
 }
@@ -49,7 +49,7 @@ p.tasktime {
 }
 
 ion-card {
-  --background:#07040A;
+  --background: #07040a;
   height: 640px;
   max-height: 640px;
   border-radius: 2%;
@@ -58,7 +58,7 @@ ion-card ion-content {
   padding-top: 10px;
   padding-left: 30px;
   padding-right: 30px;
-  --background: #07040A;
+  --background: #07040a;
 }
 ion-list {
   background: transparent;
@@ -90,18 +90,17 @@ ion-item.ncontainer:last-child {
 div.newsbox {
   height: 90px;
   width: 100%;
-  background:#1f1f1f;
-  display:inline-block;
-
+  background: #1f1f1f;
+  display: inline-block;
 }
 h1.newstitle {
   padding-top: 20px;
   padding-left: 20px;
-  color: #AB0552;
+  color: #ab0552;
   float: left;
 }
 div.divider {
-  background: #EFEBE2;
+  background: #efebe2;
   height: 90px;
   width: 3px;
   position: absolute;
@@ -115,11 +114,13 @@ p.newscontent {
   padding-left: 50px;
   overflow: auto;
   font-size: 16px;
-  color: #AB0552;
+  color: #ab0552;
 }
 
 @media (max-width: 1024px) {
-  .news {display: none}
+  .news {
+    display: none;
+  }
   ion-row ion-button {
     width: 120px;
     font-size: 14px;

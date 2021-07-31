@@ -82,4 +82,7 @@ export class UserService {
   getUserName() {
     return this.currentUser.name;
   }
+  getUserID() {
+    return this.currentUser.id;
+  }
 }
