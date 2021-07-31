@@ -22,11 +22,15 @@
       background-color: #EFEBE2;
       padding: 0 60px 10px 60px;
       margin: 0px auto;
-      input[type="text"] {
+      input[type="email"],
+      input[type="password"] {
         margin-top: 10px;
         padding: 10px;
         border-radius: 10px;
       }
+    }
+    .error-msg{
+      color: red;
     }
   }
 }
