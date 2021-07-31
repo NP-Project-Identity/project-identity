@@ -19,16 +19,15 @@ export class AppComponent {
   // ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(public auth: UserService, private router: Router, private storage: Storage) {
-    this.initialzeApp()
+
   }
 
   async ngOnInit() {
-    await this.storage.create();
+    this.initialzeApp()
   }
 
   initialzeApp() {
     this.auth.authenticationState.subscribe(state => {
-      console.log(state);
       if (state) {
         this.router.navigate(['home']);
       } else {
