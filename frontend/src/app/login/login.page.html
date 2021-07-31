@@ -12,8 +12,8 @@
     <div class="input">
       <form [formGroup]="loginForm" (ngSubmit)="submit()">
         <div class="left">
-          <input type="text" placeholder="Email" formControlName="email"><br>
-          <input type="text" placeholder="Password" formControlName="password">
+          <input type="text" placeholder="Email" formControlName="email" (keyup.enter)="submit()><br>
+          <input type="text" placeholder="Password" formControlName="password" (keyup.enter)="submit()">
         </div>
         <div class="right">
           <ion-button [disabled]="!loginForm.valid" type="submit" expand="block">Login <ion-icon slot="end"
