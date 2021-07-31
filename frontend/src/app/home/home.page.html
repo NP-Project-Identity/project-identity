@@ -5,7 +5,7 @@
     <ion-row>
       <ion-col>
         <ion-row class="scrollmenu">
-          <ion-button *ngFor="let m of modules" id="{{m.name}}" (click)="filterTasks($event)"><b>{{m.name}}</b></ion-button>
+          <ion-button *ngFor="let m of modules" id="{{m.name}}" (click)="filterTasks($event)"><b id="{{m.name}}">{{m.name}}</b></ion-button>
         </ion-row>
         <ion-row>
           <div class="taskcontainer">
