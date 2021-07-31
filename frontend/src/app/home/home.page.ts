@@ -15,6 +15,7 @@ export class HomePage implements OnInit {
     {title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline'}
   ];
   modules = [
+    {name: 'All'},
     {name: 'Capstone'},
     {name: 'EH'},
     {name: 'FP3'},
@@ -98,7 +99,7 @@ export class HomePage implements OnInit {
   }
   selectTasks(selectedmod) {
     const maxlength = this.tasklength;
-    if (selectedmod == '') {
+    if (selectedmod == '' || selectedmod == 'All') {
       for (var i = 0; i < maxlength; i++) {
         this.selectedtasks.push(this.tasks[i]);
       }
