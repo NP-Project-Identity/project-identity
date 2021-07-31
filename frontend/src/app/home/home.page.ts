@@ -66,8 +66,8 @@ export class HomePage implements OnInit {
     this.selectTasks(this.selectedmod);
   }
   ngOnInit() {
-    this.menuCtrl.enable(true)
     this.username = this.userService.getUserName();
+    this.menuCtrl.enable(true)
   }
   list = document.getElementById('list');
   loadNews(event) {
