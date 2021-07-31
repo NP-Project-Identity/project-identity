@@ -31,6 +31,8 @@ ion-icon {
   .level {
     margin-bottom: 30px;
     #account-bar {
+      display: flex;
+      flex-wrap: wrap;
       background-color: black;
       border-radius: 20px;
       width: fit-content;
@@ -43,10 +45,11 @@ ion-icon {
     #account-bar-level {
       font-size: 30px;
       display: inline-block;
-      margin: 0px 15px;
+      margin: 0px auto;
     }
 
     #account-bar-next-level {
+      margin: 0 auto;
       padding-left: 6px;
       display: inline-block;
       font-size: 25px;
@@ -54,7 +57,7 @@ ion-icon {
 
     #xp-bar {
       height: 10px;
-      width: 75%;
+      width: calc(100% - 15px);
       background: #035;
       margin: 0px 0px 0px 15px;
       display: inline-block;
