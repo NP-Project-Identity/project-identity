@@ -1,5 +1,9 @@
 import {Injectable} from '@angular/core';
+import {Platform} from '@ionic/angular';
+import {Storage} from '@ionic/storage-angular';
+import {BehaviorSubject} from 'rxjs';
 
+const TOKEN_KEY = 'auth-token';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,10 +21,25 @@ export class UserService {
       }
     },
   ]
+  authenticationState = new BehaviorSubject(false)
 
-  constructor() { }
-  setUser(email: string, pass: string) {
-    let emails = this.userDB.find(el => el.email);
+  constructor(private storage: Storage, private plt: Platform) {
+    this.plt.ready().then(() => {
+      this.checkToken();
+    });
+  }
+
+  checkToken() {
+    this.storage.get(TOKEN_KEY).then(res => {
+      if (res) {
+        this.storage.get(TOKEN_KEY).then(data => this.setUser(data));
+        this.authenticationState.next(true);
+      }
+    })
+  }
+
+  login(email: string, pass: string) {
+    let emails = this.userDB.find(el => el.email === email);
     if (email == undefined || email == null) {
       return false;
     }
@@ -29,22 +48,36 @@ export class UserService {
     }
     else {
       this.currentUser = emails;
-      return true;
+      return this.storage.set(TOKEN_KEY, emails.id).then(() => {
+        this.storage.get(TOKEN_KEY).then(data => this.setUser(data));
+        this.authenticationState.next(true);
+      });
     }
+  }
+
+  logout() {
+    return this.storage.remove(TOKEN_KEY).then(() => {
+      this.authenticationState.next(false);
+    });
+  }
+
+  isAuthenticated() {
+    return this.authenticationState.value;
+  }
+
+  setUser(id: string) {
+    this.currentUser = this.userDB.find(el => el.id === id);
   }
   removeUser() {
     this.currentUser = undefined;
   }
   getMedal() {
-    this.setUser("s10198161@connect.np.edu.sg", "abcde") //TO BE REMOVE
     return this.currentUser.achievement.medal;
   }
   getTrophy() {
-    this.setUser("s10198161@connect.np.edu.sg", "abcde") //TO BE REMOVE
     return this.currentUser.achievement.trophy;
   }
   getUserName() {
-    this.setUser("s10198161@connect.np.edu.sg", "abcde") //TO BE REMOVE
     return this.currentUser.name;
   }
 }

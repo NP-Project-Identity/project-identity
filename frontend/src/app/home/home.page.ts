@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {IonInfiniteScroll} from '@ionic/angular';
+import {IonInfiniteScroll, MenuController} from '@ionic/angular';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -57,7 +57,7 @@ export class HomePage implements OnInit {
   tasklength: number;
   selectedmod: string;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, public menuCtrl: MenuController) {
     this.newslength = 0;
     this.tasklength = 7;
     this.selectedmod = '';
@@ -65,6 +65,7 @@ export class HomePage implements OnInit {
     this.selectTasks(this.selectedmod);
   }
   ngOnInit() {
+    this.menuCtrl.enable(true)
     this.username = this.userService.getUserName();
   }
   list = document.getElementById('list');

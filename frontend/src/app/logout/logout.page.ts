@@ -9,10 +9,10 @@ import {UserService} from '../services/user.service';
 })
 export class LogoutPage implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private auth: UserService, private router: Router) { }
 
   ngOnInit() {
-    this.userService.removeUser();
+    this.auth.logout();
     this.router.navigate(['./login']);
   }
 
