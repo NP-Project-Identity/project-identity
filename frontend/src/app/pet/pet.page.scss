@@ -7,6 +7,9 @@ $val-width: calc(100vh * 0.65);
 p {
   margin: 0;
 }
+ion-icon {
+  pointer-events: none;
+}
 
 .bg {
   margin: 0 auto;
@@ -65,5 +68,21 @@ p {
       line-height: 10px;
       text-align: right;
     }
+  }
+}
+
+.action {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  bottom: 0;
+  width: min($val-width, 100%);
+  padding: 35px 15px;
+  .btn {
+    ion-icon {
+      font-size: 40px;
+    }
+    padding: 15px;
+    border-radius: 100%;
   }
 }
