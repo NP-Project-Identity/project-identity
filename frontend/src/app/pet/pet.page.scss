@@ -88,4 +88,16 @@ ion-icon {
     padding: 15px;
     border-radius: 100%;
   }
+  .btn:hover {
+    background-color: crimson;
+  }
+  .feed {
+    background-color: limegreen;
+  }
+  .play {
+    background-color: deepskyblue;
+  }
+  .sleep {
+    background-color: darkorange;
+  }
 }
