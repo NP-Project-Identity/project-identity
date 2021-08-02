@@ -3,7 +3,7 @@
   <app-subbar [navItems]="navItems"></app-subbar>
   <ion-grid>
     <ion-row>
-      <ion-col>
+      <ion-col class="taskcol">
         <ion-row class="scrollmenu">
           <ion-button *ngFor="let m of modules" id="{{m.name}}" (click)="filterTasks($event)"><b id="{{m.name}}">{{m.name}}</b></ion-button>
         </ion-row>

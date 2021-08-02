@@ -14,7 +14,9 @@ ion-row.scrollmenu {
   white-space: nowrap;
   padding-left: 5%;
 }
-
+ion-col.taskcol {
+  width: 50%;
+}
 div.taskbox {
   background:#ABABAB;
   width: 95%;
@@ -121,6 +123,9 @@ p.newscontent {
   ion-row ion-button {
     width: 120px;
     font-size: 14px;
+  }
+  ion-col.taskcol {
+    width: 100%;
   }
   div.taskcontainer {
     height: 300px;
