@@ -11,12 +11,12 @@
     </div>
     <div class="input">
       <form [formGroup]="loginForm" (ngSubmit)="submit()">
-        <div class="left">
+        <div class="top">
           <input type="email" placeholder="Email" formControlName="email" (keyup.enter)="submit()" [required]><br>
           <input type="password" placeholder="Password" formControlName="password" (keyup.enter)="submit()" required>
           <span class="error-msg" *ngIf="isSubmitted && errorMsg != ''"><br>{{errorMsg}}</span>
         </div>
-        <div class="right">
+        <div class="bottom">
           <ion-button [disabled]="!loginForm.valid" type="submit" expand="block">Login <ion-icon slot="end"
               name="login">
             </ion-icon>
