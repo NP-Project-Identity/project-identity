@@ -49,7 +49,8 @@ export class PetPage implements OnInit {
     }
   }
   onFeed() {
-    if (this.hunger <= 90) {
+    if (this.hunger <= 90 && this.pet.checkFood()) {
+      this.pet.reduceInvFoodAmt();
       this.pet.setHunger(this.getRandomInt(2, 5));
       this.reloadStat()
     }
