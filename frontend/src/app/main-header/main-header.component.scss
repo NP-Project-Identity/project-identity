@@ -24,6 +24,8 @@ ion-menu-button {
   width: 100%;
   clip-path: polygon(0 100%, 100% 80%, 100% 0, 0 0);
   margin-bottom: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
   .header {
     height: 260px;
     clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
@@ -46,8 +48,7 @@ ion-menu-button {
       margin-right: 15px;
       float: left;
     }
-    p,
-    ion-title {
+    p {
       color: $col-2;
       font-size: 38px;
       width: 100%;
@@ -61,7 +62,7 @@ ion-menu-button {
     }
     .right {
       max-width: 80%;
-      height: 160px !important;
+      height: 100% !important;
       text-align: center;
       height: fit-content;
       p {
@@ -74,8 +75,7 @@ ion-menu-button {
 @media only screen and (max-width: 980px) {
   .bg-1 {
     .header {
-      p,
-      ion-title {
+      p {
         font-size: 30px;
       }
     }
@@ -84,33 +84,23 @@ ion-menu-button {
 
 @media only screen and (max-width: 670px) {
   .bg-1 {
-    height: 240px;
+    height: 220px;
     .header {
-      margin: 20px 40px;
-      p,
-      ion-title {
+      height: 160px;
+      .contant {
+        padding: 25px;
+      }
+      p {
         color: $col-2;
         font-size: 20px;
         width: 100%;
         padding: 0;
       }
-      ion-title {
-        margin-left: 20px;
-      }
       .avatar {
-        margin-top: 70px;
         width: 80px;
         height: 80px;
         max-width: 100px;
       }
-      .right {
-        padding-top: 100px;
-        width: 50%;
-        text-align: center;
-      }
-    }
-    .banner {
-      height: 120px;
     }
   }
 }
