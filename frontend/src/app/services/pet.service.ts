@@ -29,6 +29,9 @@ export class PetService {
   getPet() {
     return this.getUser().pet;
   }
+  getPetBG() {
+    return this.getUser().bg;
+  }
   getLevel() {
     return this.getUser().level.toString();
   }

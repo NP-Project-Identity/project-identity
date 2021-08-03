@@ -1,12 +1,23 @@
 <div class="container">
-  <div class="bg">
-    <ion-header [translucent]="true">
-      <div class="menu">
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-      </div>
-    </ion-header>
+  <div class="bg" [style.background-image]="'url(' + petBG + ')'">
+    <ion-row>
+      <ion-col size="6">
+        <ion-header [translucent]="true">
+          <div class="menu">
+            <ion-buttons slot="start">
+              <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+          </div>
+        </ion-header>
+      </ion-col>
+      <ion-col size="6">
+        <div class="inv">
+          <button [routerLink]="['inv']">
+            <img src="../../assets/game/chest.png">
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
     <div class="indicator">
       <div class="level">
         <div id='account-bar'>
@@ -23,7 +34,9 @@
       <img src="../../assets/game/pet/{{petID}}.png">
     </div>
     <div id='energy-bar'>
-      <div id='energy-bar-level'><span title="Hunger bar"><ion-icon name="fast-food-outline"></ion-icon></span></div>
+      <div id='energy-bar-level'><span title="Hunger bar">
+          <ion-icon name="fast-food-outline"></ion-icon>
+        </span></div>
       <div class='bar'>
         <div class='bar-fill' style="width: {{hunger}}%;">
         </div>
@@ -31,9 +44,15 @@
       <div id='account-bar-next-level'>{{hunger}}%</div>
     </div>
     <div class="action">
-      <button class="btn feed" (click)="onFeed()"><span title="Feed"><ion-icon name="fast-food-outline"></ion-icon></span></button>
-      <button class="btn play" (click)="onPlay()"><span title="Play"><ion-icon name="basketball-outline"></ion-icon></span></button>
-      <button class="btn sleep" [ngStyle]="{'border': sleeping}" (click)="onSleep()"><span title="Sleep"><ion-icon name="bed-outline"></ion-icon></span></button>
+      <button class="btn feed" (click)="onFeed()"><span title="Feed">
+          <ion-icon name="fast-food-outline"></ion-icon>
+        </span></button>
+      <button class="btn play" (click)="onPlay()"><span title="Play">
+          <ion-icon name="basketball-outline"></ion-icon>
+        </span></button>
+      <button class="btn sleep" [ngStyle]="{'border': sleeping}" (click)="onSleep()"><span title="Sleep">
+          <ion-icon name="bed-outline"></ion-icon>
+        </span></button>
     </div>
   </div>
 </div>
