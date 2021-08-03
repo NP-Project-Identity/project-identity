@@ -7,6 +7,7 @@ import {PetService} from '../services/pet.service';
   styleUrls: ['./pet.page.scss'],
 })
 export class PetPage implements OnInit {
+  public petID;
   public level;
   public rExp;
   public perExp;
@@ -22,6 +23,7 @@ export class PetPage implements OnInit {
   }
 
   ngOnInit() {
+    this.petID = this.pet.getPet();
     this.reloadStat()
   }
   reloadStat() {
