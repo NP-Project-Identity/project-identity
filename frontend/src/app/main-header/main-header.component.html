@@ -5,14 +5,15 @@
     </ion-buttons>
   </div>
 </ion-header>
-<div class="bg-1">
-  <div class="banner"></div>
+<div class="bg-1" [style.background-image]="'url(' + bg + ')'">
   <div class="header">
-    <div class="left">
-      <img src="./assets/user.png" class="avatar" />
-    </div>
-    <div class="right">
-      <<p>{{ title }}</p>>
+    <div class="contant">
+      <div class="left">
+        <img src="{{profile}}" class="avatar" />
+      </div>
+      <div class="right">
+        <p>{{ title }}</p>
+      </div>
     </div>
   </div>
 </div>

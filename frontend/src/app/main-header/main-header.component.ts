@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'main-header',
@@ -7,7 +8,12 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MainHeaderComponent implements OnInit {
   @Input() title: any;
-  constructor() { }
-  ngOnInit() {}
+  public profile;
+  public bg;
+  constructor(private user: UserService) { }
+  ngOnInit() {
+    this.profile = "./assets/user/profile/" + this.user.getUserImg();
+    this.bg = "./assets/user/bg/" + this.user.getUserBG();
+  }
 
 }
