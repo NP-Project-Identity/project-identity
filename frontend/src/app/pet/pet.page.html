@@ -4,8 +4,8 @@
       <div class="level">
         <div id='account-bar'>
           <div id='account-bar-level'>Level {{level}}</div><br>
-          <div id='xp-bar'>
-            <div id='xp-bar-fill' style="width: {{perExp}}%;">
+          <div class='bar'>
+            <div class='bar-fill' style="width: {{perExp}}%;">
             </div>
           </div><br>
           <div id='account-bar-next-level'>{{rExp}} exp more to level up</div>
@@ -15,10 +15,18 @@
     <div class="pet">
       <img src="../../assets/game/pet/1.png">
     </div>
+    <div id='energy-bar'>
+      <div id='energy-bar-level'><span title="Hunger bar"><ion-icon name="fast-food-outline"></ion-icon></span></div>
+      <div class='bar'>
+        <div class='bar-fill' style="width: {{hunger}}%;">
+        </div>
+      </div>
+      <div id='account-bar-next-level'>{{hunger}}%</div>
+    </div>
     <div class="action">
-      <button class="btn feed"><span title="Feed" style="font-size: x-large;"><ion-icon name="fast-food-outline"></ion-icon></span></button>
-      <button class="btn play"><span title="Play" style="font-size: x-large;"><ion-icon name="basketball-outline"></ion-icon></span></button>
-      <button class="btn sleep"><span title="Sleep" style="font-size: x-large;"><ion-icon name="bed-outline"></ion-icon></span></button>
+      <button class="btn feed" (click)="onFeed()"><span title="Feed" style="font-size: x-large;"><ion-icon name="fast-food-outline"></ion-icon></span></button>
+      <button class="btn play" (click)="onPlay()"><span title="Play" style="font-size: x-large;"><ion-icon name="basketball-outline"></ion-icon></span></button>
+      <button class="btn sleep" [ngStyle]="{'border': sleeping}" (click)="onSleep()"><span title="Sleep" style="font-size: x-large;"><ion-icon name="bed-outline"></ion-icon></span></button>
     </div>
   </div>
 </div>

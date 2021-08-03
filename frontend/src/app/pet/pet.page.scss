@@ -27,19 +27,17 @@ ion-icon {
 }
 .indicator {
   margin: 0 auto;
-  padding-top: 70px;
+  padding-top: 80px;
   .level {
     margin-bottom: 30px;
     #account-bar {
       display: flex;
       flex-wrap: wrap;
       background-color: black;
-      border-radius: 20px;
-      width: fit-content;
-      max-width: 966px;
-      height: 100%;
+      border-radius: 36px;
+      width: min($val-width, 85%);
       margin: 0px auto;
-      padding: 10px 20px;
+      padding: 12px 18px;
     }
 
     #account-bar-level {
@@ -54,24 +52,39 @@ ion-icon {
       display: inline-block;
       font-size: 25px;
     }
-
-    #xp-bar {
-      height: 10px;
-      width: calc(100% - 15px);
-      background: #035;
-      margin: 0px 0px 0px 15px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    #xp-bar-fill {
-      height: 100%;
-      background: #3af;
-      font-size: 12px;
-      line-height: 10px;
-      text-align: right;
-    }
   }
+}
+
+#energy-bar {
+  display: flex;
+  background-color: darkcyan;
+  border-radius: 25px;
+  width: min($val-width, 50%);
+  margin: 0px auto;
+  padding: 4px 10px;
+  .bar {
+    background-color: aquamarine;
+  }
+  .bar-fill {
+    background: limegreen;
+  }
+}
+
+.bar {
+  height: 10px;
+  width: calc(100% - 15px);
+  background: #035;
+  margin: auto 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #3af;
+  font-size: 12px;
+  line-height: 10px;
+  text-align: right;
 }
 
 .action {
