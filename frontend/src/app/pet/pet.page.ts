@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {PetService} from '../services/pet.service';
 
 @Component({
@@ -8,13 +9,14 @@ import {PetService} from '../services/pet.service';
 })
 export class PetPage implements OnInit {
   public petID;
+  public petBG;
   public level;
   public rExp;
   public perExp;
   public hunger;
   public sleeping = "none";
 
-  constructor(private pet: PetService) { }
+  constructor(private pet: PetService, private router: Router) { }
 
   getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -24,6 +26,7 @@ export class PetPage implements OnInit {
 
   ngOnInit() {
     this.petID = this.pet.getPet();
+    this.petBG = "../../assets/game/bg/" + this.pet.getPetBG() + ".jpg";
     this.reloadStat()
   }
   reloadStat() {

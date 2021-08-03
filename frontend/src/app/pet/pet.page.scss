@@ -1,4 +1,4 @@
-$val-width: calc(100vh * 0.65);
+$val-width: calc(100vh * 0.64);
 
 @function min($numbers...) {
   @return m#{i}n(#{$numbers});
@@ -15,10 +15,18 @@ ion-icon {
   margin: 0 auto;
   width: min($val-width, 100%);
   height: 100vh;
-  background-image: url("../../assets/game/bg/2.jpg");
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
+}
+.inv {
+  button {
+    float: right;
+    background-color: transparent;
+    img {
+      width: 60px;
+    }
+  }
 }
 .pet {
   max-width: 270px;
@@ -27,7 +35,6 @@ ion-icon {
 }
 .indicator {
   margin: 0 auto;
-  padding-top: 70px;
   .level {
     margin-bottom: 30px;
     #account-bar {
@@ -117,7 +124,6 @@ ion-icon {
 
 @media only screen and (max-width: 991px) {
   .indicator {
-    padding-top: 0px;
     .level {
       #account-bar-level {
         font-size: 25px;
