@@ -11,7 +11,7 @@ export class UserService {
   private currentUser;
   private userDB = [
     {
-      id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "abcde", name: "Alan Tan", achievement: {
+      id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "abcde", name: "Alan Tan", coin: 0, achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
       },
       resource: {
@@ -19,7 +19,7 @@ export class UserService {
       }
     },
     {
-      id: "s10198161b", email: "a@a.com", password: "abc", name: "Rifa Achrinza", achievement: {
+      id: "s10198161b", email: "a@a.com", password: "abc", name: "Rifa Achrinza", coin: 10, achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021"]
       },
       resource: {
@@ -75,6 +75,9 @@ export class UserService {
 
   setUser(id: string) {
     this.currentUser = this.userDB.find(el => el.id === id);
+  }
+  addCoin(coin: number) {
+    return this.currentUser.coin += coin;
   }
   removeUser() {
     this.currentUser = undefined;
