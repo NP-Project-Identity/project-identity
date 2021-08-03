@@ -10,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   public navSection = [
     {title: 'Home', url: 'home', icon: 'home'},
-    {title: 'SafeEntry', url: 'safeentry', icon: 'id-card'},
+    //{title: 'SafeEntry', url: 'safeentry', icon: 'id-card'},
     {title: 'Events', url: 'events', icon: 'newspaper'},
     {title: 'LMgtPlatform', url: 'learningmgtplatform', icon: 'layers'},
     {title: 'Achievement', url: 'achievement', icon: 'medal'},
