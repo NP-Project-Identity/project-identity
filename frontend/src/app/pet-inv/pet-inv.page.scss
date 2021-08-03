@@ -1,0 +1,75 @@
+$val-width: calc(100vh * 0.64);
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+p {
+  margin: 0;
+}
+ion-icon {
+  pointer-events: none;
+}
+.back {
+  button {
+    float: right;
+    background-color: transparent;
+    img {
+      width: 60px;
+    }
+  }
+}
+
+.bg {
+  margin: 0 auto;
+  width: min($val-width, 100%);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  .inv-box {
+    display: flex;
+    justify-content: center;
+    margin: 0 40px;
+    padding: 15px;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    border-radius: 25px;
+    .item {
+      background-color: rgba($color: #f7d4a7, $alpha: 0.8);
+      border-radius: 20px;
+      padding: 10px;
+      width: 80px;
+      height: 80px;
+      margin: 6px;
+      .food {
+        position: relative;
+        img {
+          width: 80%;
+          padding-bottom: 4px;
+        }
+        .amount {
+          position: absolute;
+          bottom: -6px;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+.inv-selector {
+  margin: 10px 55px;
+  .btn {
+    ion-icon {
+      font-size: 38px;
+    }
+    padding: 15px;
+    border-radius: 100%;
+    margin-left: 6px;
+  }
+  .pet {
+    background-color: aqua;
+  }
+  .food {
+    background-color: limegreen;
+  }
+}
