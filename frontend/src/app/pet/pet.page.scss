@@ -27,7 +27,7 @@ ion-icon {
 }
 .indicator {
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 70px;
   .level {
     margin-bottom: 30px;
     #account-bar {
@@ -96,7 +96,7 @@ ion-icon {
   padding: 35px 15px;
   .btn {
     ion-icon {
-      font-size: 40px;
+      font-size: 38px;
     }
     padding: 15px;
     border-radius: 100%;
@@ -112,5 +112,28 @@ ion-icon {
   }
   .sleep {
     background-color: darkorange;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .indicator {
+    padding-top: 0px;
+    .level {
+      #account-bar-level {
+        font-size: 25px;
+      }
+      #account-bar-next-level {
+        font-size: 20px;
+      }
+    }
+  }
+  .action {
+    padding: 20px 15px;
+    .btn {
+      ion-icon {
+        font-size: 30px;
+      }
+      padding: 10px;
+    }
   }
 }

@@ -26,6 +26,9 @@ export class PetService {
   private getUser() {
     return this.userDB.find(el => el.id === this.auth.getUserID())
   }
+  getPet() {
+    return this.getUser().pet;
+  }
   getLevel() {
     return this.getUser().level.toString();
   }
