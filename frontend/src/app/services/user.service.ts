@@ -13,11 +13,17 @@ export class UserService {
     {
       id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "abcde", name: "Alan Tan", achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
+      },
+      resource: {
+        profile: "default.png", bg: "s10198161d.jpg"
       }
     },
     {
       id: "s10198161b", email: "a@a.com", password: "abc", name: "Rifa Achrinza", achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021"]
+      },
+      resource: {
+        profile: "default.png", bg: "default.jpg"
       }
     },
   ]
@@ -84,5 +90,11 @@ export class UserService {
   }
   getUserID() {
     return this.currentUser.id;
+  }
+  getUserImg() {
+    return this.currentUser.resource.profile;
+  }
+  getUserBG() {
+    return this.currentUser.resource.bg;
   }
 }
