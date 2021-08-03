@@ -95,4 +95,12 @@ export class PetService {
   setFood(food: string) {
     this.getUser().selectedFood = food;
   }
+  reduceInvFoodAmt() {
+    this.getUser().inv.food.find(el => el.name === this.getUser().selectedFood).amount -= 1;
+  }
+  checkFood() {
+    if (this.getUser().inv.food.find(el => el.name === this.getUser().selectedFood).amount >= 1)
+      return true;
+    return false;
+  }
 }
