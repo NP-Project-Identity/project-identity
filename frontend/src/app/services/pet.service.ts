@@ -7,10 +7,10 @@ import {UserService} from './user.service';
 export class PetService {
   private userDB = [
     {
-      id: "s10198161d", bg: "1", pet: "1", level: 1, exp: 0, energy: 10, hunger: 100, lastFeed: "1/7/2021 09:01:00", lastEnergy: "1/7/2021 09:01:00"
+      id: "s10198161d", bg: "1", pet: "1", level: 1, exp: 0, hunger: 100, sleep: false, lastSleep: Date.now()
     },
     {
-      id: "s10198161b", bg: "1", pet: "1", level: 1, exp: 14, energy: 10, hunger: 100, lastFeed: "1/7/2021 09:01:00", lastEnergy: "1/7/2021 09:01:00"
+      id: "s10198161b", bg: "1", pet: "1", level: 1, exp: 14, hunger: 100, sleep: false, lastSleep: Date.now()
     }
   ]
   private levelDB = [
@@ -35,7 +35,42 @@ export class PetService {
   getExpProgress() {
     return (this.getUser().exp / this.levelDB.find(el => el.level === this.getUser().level).maxExp * 100)
   }
+  getHunger() {
+    return (this.getUser().hunger)
+  }
   levelUp() {
     return true;
+  }
+  findMaxExp() {
+    return this.levelDB.find(el => el.level === this.getUser().level).maxExp;
+  }
+  setExp(exp: number) {
+    let newExp = this.getUser().exp + exp;
+    while (newExp >= this.findMaxExp()) {
+      newExp = newExp - this.findMaxExp();
+      this.getUser().level += 1;
+    }
+    this.getUser().exp = newExp;
+  }
+  setHunger(hunger: number) {
+    if (this.getUser().hunger + hunger >= 100) {
+      this.getUser().hunger = 100
+    }
+    else {
+      this.getUser().hunger += hunger
+    }
+  }
+  getSleep() {
+    return this.getUser().sleep;
+  }
+  setSleep() {
+    console.log("sleep");
+    this.getUser().sleep = true;
+    this.getUser().lastSleep = Date.now();
+  }
+  endSleep() {
+    console.log("no sleep");
+    this.getUser().sleep = false;
+    return Math.floor((Date.now() - this.getUser().lastSleep) / 60000);
   }
 }
