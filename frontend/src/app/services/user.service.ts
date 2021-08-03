@@ -17,7 +17,7 @@ export class UserService {
     },
     {
       id: "s10198161b", email: "a@a.com", password: "abc", name: "Rifa Achrinza", achievement: {
-        medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
+        medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021"]
       }
     },
   ]
