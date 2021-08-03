@@ -15,6 +15,7 @@ export class PetPage implements OnInit {
   public perExp;
   public hunger;
   public sleeping = "none";
+  public error;
 
   constructor(private pet: PetService, private router: Router) { }
 
@@ -47,12 +48,21 @@ export class PetPage implements OnInit {
       this.pet.setExp(1);
       this.reloadStat()
     }
+    else {
+      this.errorMsg("Pet is low on hunger");
+    }
   }
   onFeed() {
     if (this.hunger <= 90 && this.pet.checkFood()) {
       this.pet.reduceInvFoodAmt();
       this.pet.setHunger(this.getRandomInt(2, 5));
       this.reloadStat()
+    }
+    else if (!this.pet.checkFood()) {
+      this.errorMsg("Run out of food");
+    }
+    else {
+      this.errorMsg("Pet is too full to eat");
     }
   }
   onSleep() {
@@ -66,5 +76,10 @@ export class PetPage implements OnInit {
       this.pet.setSleep();
     }
     this.reloadStat()
+  }
+  errorMsg(err: string) {
+    this.error = err;
+    document.getElementById("error").setAttribute("style", "display:block");
+    setTimeout(function () {document.getElementById("error").setAttribute("style", "display:none");}, 5000);
   }
 }
