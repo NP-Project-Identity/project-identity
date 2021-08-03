@@ -7,10 +7,14 @@ import {UserService} from './user.service';
 export class PetService {
   private userDB = [
     {
-      id: "s10198161d", bg: "1", pet: "1", level: 1, exp: 0, hunger: 100, sleep: false, lastSleep: Date.now()
+      id: "s10198161d", bg: "1", pet: "1", level: 1, exp: 0, hunger: 100, sleep: false, lastSleep: Date.now(), selectedFood: "apple", inv: {
+        pets: [{pet: "1"}], food: [{name: "Apple", amount: 2}, {name: "Banana", amount: 5}]
+      }
     },
     {
-      id: "s10198161b", bg: "1", pet: "1", level: 1, exp: 14, hunger: 100, sleep: false, lastSleep: Date.now()
+      id: "s10198161b", bg: "1", pet: "1", level: 1, exp: 14, hunger: 100, sleep: false, lastSleep: Date.now(), selectedFood: "banana", inv: {
+        pets: [{pet: "1"}, {pet: "1"}, {pet: "1"}, {pet: "1"}, {pet: "1"}, {pet: "1"}], food: [{name: "apple", amount: 2}, {name: "banana", amount: 5}]
+      }
     }
   ]
   private levelDB = [
@@ -70,13 +74,25 @@ export class PetService {
     return this.getUser().sleep;
   }
   setSleep() {
-    console.log("sleep");
     this.getUser().sleep = true;
     this.getUser().lastSleep = Date.now();
   }
   endSleep() {
-    console.log("no sleep");
     this.getUser().sleep = false;
     return Math.floor((Date.now() - this.getUser().lastSleep) / 60000);
+  }
+  getInv(type: string) {
+    if (type == "pets")
+      return this.getUser().inv.pets;
+    else if (type == "food")
+      return this.getUser().inv.food;
+  }
+  setPet(petID: string) {
+    if (this.getUser().inv.pets.find(el => el.pet === petID)) {
+      this.getUser().pet = petID;
+    }
+  }
+  setFood(food: string) {
+    this.getUser().selectedFood = food;
   }
 }

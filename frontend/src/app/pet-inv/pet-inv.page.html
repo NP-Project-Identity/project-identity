@@ -1,13 +1,42 @@
 <div class="container">
-  <div class="bg">
+  <div class="bg" [style.background-image]="'url(' + petBG + ')'">
     <ion-row>
-      <ion-header [translucent]="true">
-        <div class="menu">
-          <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
+      <ion-col size="6">
+        <ion-header [translucent]="true">
+          <div class="menu">
+            <ion-buttons slot="start">
+              <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+          </div>
+        </ion-header>
+      </ion-col>
+      <ion-col size="6">
+        <div class="back">
+          <button (click)="back()">
+            <img src="../../assets/game/house.png">
+          </button>
         </div>
-      </ion-header>
+      </ion-col>
     </ion-row>
+    <ion-row class="inv-selector">
+      <button class="btn pet" (click)="onPet()"><span title="Pets">
+        <ion-icon name="fish-outline"></ion-icon>
+      </span></button>
+      <button class="btn food" (click)="onFood()"><span title="Food">
+        <ion-icon name="fast-food-outline"></ion-icon>
+      </span></button>
+    </ion-row>
+    <ion-row class="inv-box">
+      <div class="item" *ngFor="let card of inv">
+        <div class="pet" *ngIf="invType == 'pets'" (click)="selectPet(card.pet)">
+          <img src="../../assets/game/pet/{{card.pet}}.png">
+        </div>
+        <div class="food" *ngIf="invType == 'food'" (click)="selectFood(card.name)">
+          <img src="../../assets/game/food/{{card.name}}.png">
+          <p class="amount">{{card.amount}}</p>
+        </div>
+      </div>
+    </ion-row>
+
   </div>
 </div>
