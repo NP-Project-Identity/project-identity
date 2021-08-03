@@ -6,7 +6,7 @@
       <p class="post-desc t-col-2">{{card.text}}</p>
       <hr />
       <div class="post-btm">
-        <img src="./assets/user.png" class="avatar" />
+        <img src="{{this.getProfileImg(card.user)}}" class="avatar" />
         <div class="post-user">
           <p class="t-col-5">{{card.user}}</p>
           <p class="t-col-5">{{card.date}}</p>

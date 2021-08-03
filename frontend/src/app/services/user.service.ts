@@ -91,8 +91,12 @@ export class UserService {
   getUserID() {
     return this.currentUser.id;
   }
-  getUserImg() {
-    return this.currentUser.resource.profile;
+  getUserImg(user?: string) {
+    if (user == undefined)
+      return this.currentUser.resource.profile;
+    else {
+      return this.userDB.find(el => el.name === user).resource.profile;
+    }
   }
   getUserBG() {
     return this.currentUser.resource.bg;

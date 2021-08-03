@@ -8,7 +8,6 @@ export class QuizService {
 
   constructor() { }
   crateQuiz(cat: string) {
-    console.log(cat);
     if (cat == "CSF") {
       return this.db[0];
     }

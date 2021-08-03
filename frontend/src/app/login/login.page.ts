@@ -35,7 +35,6 @@ export class LoginPage implements OnInit {
       }
     }
     else {
-      console.log(this.formError);
       if (this.formError.email.errors?.required) {
         this.isSubmitted = true;
         this.errorMsg = "Email is required";
