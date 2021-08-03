@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ForumService} from '../services/forum.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-forum-content',
@@ -18,7 +19,7 @@ export class ForumContentPage implements OnInit {
     {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
   ];
 
-  constructor(private activatedRoute: ActivatedRoute, private forumService: ForumService) { }
+  constructor(private activatedRoute: ActivatedRoute, private forumService: ForumService, private user: UserService) { }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -30,5 +31,8 @@ export class ForumContentPage implements OnInit {
   addLike(index: number) {
     this.forumService.addLike(this.cat, this.id, index);
     this.postList = this.forumService.loadPost(this.cat, this.id);
+  }
+  getProfileImg(user: string) {
+    return "./assets/user/profile/" + this.user.getUserImg(user);
   }
 }

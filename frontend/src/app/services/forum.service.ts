@@ -13,13 +13,13 @@ export class ForumService {
         {id: "0", title: "Welcome to CSF", content: [{text: "Welcome everyone", user: "Alan Tan", date: "1/7/2021 09:01", like: 50}]},
         {
           id: "1", title: "How to hack the bank?", content: [
-            {text: "Anyone know how?", user: "John", date: "1/7/2021 09:01", like: 3},
-            {text: "Nope, it is not that easy to hack", user: "Rifa", date: "1/7/2021 10:01", like: 8},
-            {text: "Nope", user: "Tom", date: "1/8/2021 10:01", like: 2}
+            {text: "Anyone know how?", user: "Rifa Achrinza", date: "1/7/2021 09:01", like: 3},
+            {text: "Nope, it is not that easy to hack", user: "Alan Tan", date: "1/7/2021 10:01", like: 8},
+            {text: "Nope", user: "Alan Tan", date: "1/8/2021 10:01", like: 2}
           ]
         },
         {
-          id: "2", title: "help!!!!!", content: [{text: "Anyone have old EH textbook i can lent?", user: "Alan", date: "1/7/2021 09:11", like: 0}]
+          id: "2", title: "help!!!!!", content: [{text: "Anyone have old EH textbook i can lent?", user: "Rifa Achrinza", date: "1/7/2021 09:11", like: 0}]
         }]
     },
     {

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ForumService} from '../services/forum.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-forum-list',
@@ -17,7 +18,7 @@ export class ForumListPage implements OnInit {
     {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
   ];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private forumService: ForumService) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private forumService: ForumService, private user: UserService) { }
 
   getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -38,5 +39,8 @@ export class ForumListPage implements OnInit {
   addLike(index: number) {
     this.forumService.addLike(this.title, undefined, index);
     this.list = this.forumService.loadList(this.title);
+  }
+  getProfileImg(user: string) {
+    return "./assets/user/profile/" + this.user.getUserImg(user);
   }
 }

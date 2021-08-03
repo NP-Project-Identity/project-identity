@@ -31,7 +31,6 @@ export class PetPage implements OnInit {
     this.rExp = this.pet.getExp();
     this.perExp = this.pet.getExpProgress();
     this.hunger = this.pet.getHunger()
-    console.log(this.pet.getSleep());
     if (this.pet.getSleep()) {
       this.sleeping = "red solid 4px";
     }
