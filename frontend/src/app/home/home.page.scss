@@ -117,6 +117,25 @@ p.newscontent {
   color: #ab0552;
 }
 
+ion-slides {
+  width: 100%;
+  ion-slide {
+    white-space: normal;
+    width: fit-content;
+    overflow: auto;
+    display: block;
+    p {
+      text-align: center;
+      width: 100%;
+      color: white;
+      font-size: 18px;
+    }
+  }
+}
+.swiper-container {
+  margin: 0;
+}
+
 @media (max-width: 1024px) {
   .news {
     display: none;

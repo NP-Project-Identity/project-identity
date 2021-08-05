@@ -5,7 +5,11 @@
     <ion-row>
       <ion-col class="taskcol">
         <ion-row class="scrollmenu">
-          <ion-button *ngFor="let m of modules" id="{{m.name}}" (click)="filterTasks($event)"><b id="{{m.name}}">{{m.name}}</b></ion-button>
+          <ion-slides [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}">
+            <ion-slide tappable *ngFor="let m of modules">
+              <ion-button id="{{m.name}}" (click)="filterTasks($event)"><b id="{{m.name}}">{{m.name}}</b></ion-button>
+            </ion-slide>
+          </ion-slides>
         </ion-row>
         <ion-row>
           <div class="taskcontainer">
@@ -37,7 +41,7 @@
                   <h1 class="newstitle">{{n.title}}</h1>
                   <div class="divider"></div>
                   <p class="newscontent">{{n.content}}</p>
-                  </div>
+                </div>
               </ion-item>
             </ion-list>
             <ion-infinite-scroll threshold="100px" (ionInfinite)="loadNews($event)">
