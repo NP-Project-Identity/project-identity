@@ -1,6 +1,6 @@
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #07040A));
-  --ion-item-background: #07040A;
+  --background: var(--ion-item-background, var(--ion-background-color, #07040a));
+  --ion-item-background: #07040a;
 }
 
 ion-menu.md ion-content {
@@ -20,21 +20,17 @@ ion-menu.md ion-list#accPages {
 }
 
 ion-menu.md ion-list#navPages ion-icon {
-  color: #EFEBE2;
-  position: center;
+  color: #efebe2;
+  align-self: center;
 }
 
 ion-menu.md ion-list#accPages ion-icon {
-  color: #EFEBE2;
+  color: #efebe2;
 }
 
 ion-menu.md ion-item {
-  --padding-start: 46px;
-  --padding-end: 0;
-  --padding-top: 6px;
-  --padding-bottom: 6px;
-  --background: #07040A;
-  --background-hover: #B175FF;
+  --background: #07040a;
+  --background-hover: #b175ff;
   --background-hover-opacity: 1;
 }
 
@@ -45,10 +41,33 @@ ion-split-pane {
 }
 
 ion-menu.md ion-item.selected {
-  --background: #B175FF;
+  --background: #b175ff;
 }
 
 ion-menu {
   --min-width: 28%;
   max-width: 120px;
+}
+
+ion-icon {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+ion-item::part(native) {
+  padding-inline-start: calc(var(--ion-safe-area-right, 0px) + var(--inner-padding-end));
+  padding-inline-end: 0 !important;
+  .item-inner {
+    padding: 0 !important;
+    flex: none !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  ion-menu,
+  ion-content {
+    --min-width: 20%;
+    max-width: 70px;
+  }
 }
