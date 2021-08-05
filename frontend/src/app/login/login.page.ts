@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {MenuController, NavController} from '@ionic/angular';
+import {Md5} from 'ts-md5/dist/md5';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -29,7 +30,7 @@ export class LoginPage implements OnInit {
 
   submit() {
     if (this.loginForm.valid) {
-      let result = this.auth.login(this.loginForm.get("email").value, this.loginForm.get("password").value)
+      let result = this.auth.login(this.loginForm.get("email").value, Md5.hashStr(this.loginForm.get("password").value))
       if (result) {
         this.menuCtrl.enable(true);
       }
