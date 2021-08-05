@@ -1,6 +1,7 @@
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #07040a));
   --ion-item-background: #07040a;
+  position: relative;
 }
 
 ion-menu.md ion-content {
@@ -11,11 +12,12 @@ ion-menu.md ion-content {
 }
 
 ion-menu.md ion-list {
+  width: 100%;
   padding: 10px 0;
 }
 
 ion-menu.md ion-list#accPages {
-  position: fixed;
+  position: absolute;
   bottom: 10px;
 }
 
