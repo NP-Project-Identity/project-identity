@@ -1,14 +1,15 @@
 <ion-split-pane contentId="main-content">
   <ion-menu contentId="main-content" type="overlay">
     <ion-content>
-      <ion-list id="navPages">
+      <ion-list id="navPages" lines="none">
         <ion-menu-toggle auto-hide="false" *ngFor="let n of navSection; let i = index">
           <ion-item routerDirection="root" [routerLink]="[n.url]" lines="none" detail="false" routerLinkActive="selected">
+
             <ion-icon slot="start" [ios]="n.icon" [md]="n.icon"></ion-icon>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
-      <ion-list id="accPages">
+      <ion-list id="accPages" lines="none">
         <ion-menu-toggle auto-hide="false" *ngFor="let a of accSection; let i = index">
           <ion-item routerDirection="root" [routerLink]="[a.url]" lines="none" detail="false" routerLinkActive="selected">
             <ion-icon slot="start" [ios]="a.icon" [md]="a.icon"></ion-icon>
