@@ -11,7 +11,7 @@ export class UserService {
   private currentUser;
   private userDB = [
     {
-      id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "abcde", name: "Alan Tan", coin: 0, achievement: {
+      id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "ab56b4d92b40713acc5af89985d4b786", name: "Alan Tan", coin: 0, achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
       },
       resource: {
@@ -19,7 +19,7 @@ export class UserService {
       }
     },
     {
-      id: "s10198161b", email: "a@a.com", password: "abc", name: "Rifa Achrinza", coin: 10, achievement: {
+      id: "s10198161b", email: "a@a.com", password: "900150983cd24fb0d6963f7d28e17f72", name: "Rifa Achrinza", coin: 10, achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021"]
       },
       resource: {
