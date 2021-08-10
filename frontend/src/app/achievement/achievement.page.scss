@@ -9,7 +9,7 @@ ion-slides {
   ion-slide {
     white-space: normal;
     padding: 12px;
-    height: 170px;
+    min-height: 170px;
     width: 150px;
     overflow: auto;
     display: block;
@@ -29,17 +29,18 @@ ion-slides {
   }
 }
 
-.trophy,.medal{
+.trophy,
+.medal {
   margin: 0px auto;
   padding: 20px;
   border-radius: 20px;
   width: 70%;
   background-color: black;
-  p{
+  p {
     margin: 0;
   }
 }
-.trophy{
+.trophy {
   margin: 30px auto;
 }
 
