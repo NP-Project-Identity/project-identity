@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MenuController} from '@ionic/angular';
 
 @Component({
   selector: 'app-events',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsPage implements OnInit {
 
-  constructor() { }
+  constructor(public menuCtrl: MenuController) {
+    this.menuCtrl.enable(false);
+  }
 
   ngOnInit() {
   }
