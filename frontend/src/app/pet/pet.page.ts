@@ -61,7 +61,7 @@ export class PetPage implements OnInit {
       loadingAnimation.play();
       setTimeout(() => {
         this.animation = false;
-      }, 380);
+      }, 385);
     }
     else if (this.animation)
       return;
