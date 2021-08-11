@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
-import {NavController} from '@ionic/angular';
+import {NavController, NavParams} from '@ionic/angular';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {UserService} from '../services/user.service';
 })
 export class QuizPopupComponent implements OnInit {
 
-  constructor(private navCtrl: NavController, private userService: UserService) { }
+  constructor(private navCtrl: NavController, private userService: UserService, public navParams: NavParams) { }
 
   @Input() result: string;
   public Result: string;
