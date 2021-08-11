@@ -38,16 +38,17 @@ export class UserService {
   authenticationState = new BehaviorSubject(false)
 
   constructor(private storage: Storage, private plt: Platform) {
-    this.storage.create();
-    this.plt.ready().then(() => {
-      this.checkToken();
-    });
   }
 
-  checkToken() {
-    this.storage.get(TOKEN_KEY).then(res => {
-      if (res) {
-        this.storage.get(TOKEN_KEY).then(data => this.setUser(data));
+  ngOnInit() {
+    this.checkToken();
+  }
+
+  async checkToken() {
+    await this.storage.create()
+    await this.storage.get(TOKEN_KEY).then(res => {
+      if (res != undefined) {
+        this.setUser(res);
         this.authenticationState.next(true);
       }
     })
@@ -77,12 +78,13 @@ export class UserService {
     });
   }
 
-  isAuthenticated() {
-    return this.authenticationState.value;
+  async isAuthenticated() {
+    await this.checkToken()
+    return await this.authenticationState.value;
   }
 
-  setUser(id: string) {
-    this.currentUser = this.userDB.find(el => el.id === id);
+  async setUser(id: string) {
+    this.currentUser = await this.userDB.find(el => el.id === id);
   }
   addCoin(coin: number) {
     return this.currentUser.coin += coin;
@@ -103,12 +105,10 @@ export class UserService {
     return this.currentUser.id;
   }
   getUserImg(user?: string) {
-    console.log(user);
     if (user == undefined) {
       return this.currentUser.resource.profile;
     }
     else {
-      console.log(this.userDB.find(el => el.name === user).resource.profile);
       return this.userDB.find(el => el.name === user).resource.profile;
     }
   }

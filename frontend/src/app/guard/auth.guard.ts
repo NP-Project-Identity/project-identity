@@ -9,8 +9,8 @@ import {UserService} from '../services/user.service';
 export class AuthGuard implements CanActivate {
   constructor(public auth: UserService) { }
 
-  canActivate(): boolean {
-    return this.auth.isAuthenticated();
+  async canActivate() {
+    return await this.auth.isAuthenticated();
   }
 
 }

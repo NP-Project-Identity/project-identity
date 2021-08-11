@@ -29,7 +29,6 @@ export class QuizService {
 
   constructor() { }
   crateQuiz(cat: string) {
-    console.log(cat);
     return (this.db.find(el => el.type === cat).quiz);
   }
 }
