@@ -8,12 +8,16 @@ p {
   margin: 0;
   color: black;
 }
+ion-content {
+  margin-bottom: 30px;
+}
+
 ion-icon {
   pointer-events: none;
 }
 .post-con {
   margin-top: 30px;
-  .post-box{
+  .post-box {
     border: 3px solid $col-4;
     width: 100%;
     margin: 0px 80px;
@@ -25,27 +29,27 @@ ion-icon {
       padding: 20px 30px;
       cursor: pointer;
       border-bottom: 3px solid $col-4;
-        .post-box3{
-          display: flex;
-          .left{
-            float: left;
-          }
-          .t-col-5 {
-            color: $col-5;
-          }
-          .post-title{
-            font-weight:bold;
-            padding: 7px 0;
-          }
-          ion-icon{
-            color: black;
-            position: relative;
-            padding-right: 10px;
-            font-size: 30px;
-          }
+      .post-box3 {
+        display: flex;
+        .left {
+          float: left;
+        }
+        .t-col-5 {
+          color: $col-5;
+        }
+        .post-title {
+          font-weight: bold;
+          padding: 7px 0;
+        }
+        ion-icon {
+          color: black;
+          position: relative;
+          padding-right: 10px;
+          font-size: 30px;
         }
       }
     }
+  }
 }
 
 @media only screen and (max-width: 700px) {
