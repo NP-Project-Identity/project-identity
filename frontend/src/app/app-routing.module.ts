@@ -91,6 +91,7 @@ const routes: Routes = [
   },
   {
     path: 'pet',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pet/pet.module').then(m => m.PetPageModule)
   }
 ];
