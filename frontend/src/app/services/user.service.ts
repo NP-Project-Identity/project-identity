@@ -11,6 +11,14 @@ export class UserService {
   private currentUser;
   private userDB = [
     {
+      id: "-1", email: "-1", password: "-1", name: "GOD", coin: -1, achievement: {
+        medal: [], trophy: []
+      },
+      resource: {
+        profile: "quest.png", bg: "default.jpg"
+      }
+    },
+    {
       id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "ab56b4d92b40713acc5af89985d4b786", name: "Alan Tan", coin: 0, achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
       },
@@ -95,9 +103,12 @@ export class UserService {
     return this.currentUser.id;
   }
   getUserImg(user?: string) {
-    if (user == undefined)
+    console.log(user);
+    if (user == undefined) {
       return this.currentUser.resource.profile;
+    }
     else {
+      console.log(this.userDB.find(el => el.name === user).resource.profile);
       return this.userDB.find(el => el.name === user).resource.profile;
     }
   }
