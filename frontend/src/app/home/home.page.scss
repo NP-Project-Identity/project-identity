@@ -49,17 +49,20 @@ p.tasktime {
 }
 
 ion-card {
-  --background: #07040a;
+  --background: #EFEBE2;
   height: 640px;
   max-height: 640px;
   border-radius: 2%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 ion-card ion-content {
   padding-top: 10px;
   padding-left: 30px;
   padding-right: 30px;
-  --background: #07040a;
+  --background: #EFEBE2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.38), 0 6px 6px rgba(0,0,0,0.23);
 }
+
 ion-list {
   background: transparent;
 }
@@ -78,11 +81,15 @@ ion-card ion-card-title {
   padding-top: 20px;
   padding-bottom: 5px;
   font-size: 30px;
+  color: #07040A;
 }
+
+
 ion-item.ncontainer {
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  --background: transparent;
 }
 ion-item.ncontainer:last-child {
   margin-bottom: 100px;
@@ -90,7 +97,7 @@ ion-item.ncontainer:last-child {
 div.newsbox {
   height: 90px;
   width: 100%;
-  background: #1f1f1f;
+  // background: #1f1f1f;
   display: inline-block;
 }
 h1.newstitle {
@@ -114,7 +121,7 @@ p.newscontent {
   padding-left: 50px;
   overflow: auto;
   font-size: 16px;
-  color: #ab0552;
+  color:#07040A;
 }
 
 ion-slides {
