@@ -6,11 +6,11 @@ import {Injectable} from '@angular/core';
 export class QuizService {
   private db = [{
     type: "CSF", quiz: [
-      {type: "mcq", question: "What does CSF stand for?", option: ["Cybersecurity & Logical Forensics", "Cybersecurity & Digital Forensics", "Cybersecurity & Forensics", "Cyber Safety & Digital Forensics"], answer: 1},
-      {type: "mcq", question: "Which application use TCP?", option: ["DNS", "TFTP", "FTP", "HLS"], answer: 2},
-      {type: "mcq", question: "Which application use UDP?", option: ["DNS", "HTTP", "HTTPS", "SMTP"], answer: 0},
+      //{type: "mcq", question: "What does CSF stand for?", option: ["Cybersecurity & Logical Forensics", "Cybersecurity & Digital Forensics", "Cybersecurity & Forensics", "Cyber Safety & Digital Forensics"], answer: 1},
+      //{type: "mcq", question: "Which application use TCP?", option: ["DNS", "TFTP", "FTP", "HLS"], answer: 2},
+      //{type: "mcq", question: "Which application use UDP?", option: ["DNS", "HTTP", "HTTPS", "SMTP"], answer: 0},
       {type: "img", src: "1.png", question: "What does this image show?", answer: "router"},
-      {type: "img", src: "2.png", question: "What does this image show?", answer: "router"}
+      {type: "img", src: "2.png", question: "What does this image show?", answer: "switch"}
     ]
   },
   {

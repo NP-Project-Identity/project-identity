@@ -1,10 +1,25 @@
 <ion-content>
   <main-header title="{{quizTitle}}"></main-header>
-  <div class="quiz">
+  <div class="quiz" *ngIf="quizType=='mcq'">
     <div *ngFor="let option of quizOption; index as i">
       <button class="quizBtn" (click)="quizAns(i)">{{option}}</button>
       <br/>
     </div>
+  </div>
+  <div class="imgQuiz" *ngIf="quizType=='img'">
+    <div class="img">
+      <img src={{quizImg}}>
+    </div>
+    <form [formGroup]="quizForm" (ngSubmit)="submit()">
+      <div class="center">
+        <input type="text" formControlName="answer" (keyup.enter)="submit()">
+      </div>
+      <div class="center">
+        <ion-button [disabled]="!quizForm.valid" type="submit" expand="block">
+          Submit
+        </ion-button>
+      </div>
+    </form>
   </div>
   <quiz-popup *ngIf="isAnswerShowing" result={{result}} ></quiz-popup>
 </ion-content>
