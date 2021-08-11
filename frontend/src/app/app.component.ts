@@ -18,21 +18,21 @@ export class AppComponent {
   //   { title: 'Forum', url: '/forum', icon: 'warning' },
   // ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(public auth: UserService, private router: Router, private storage: Storage) {
-
+  constructor(private router: Router, private storage: Storage, public auth: UserService) {
+    this.storage = storage;
   }
 
   async ngOnInit() {
-    this.initialzeApp()
+    await this.storage.create().then(() =>
+      this.initialzeApp()
+    )
   }
 
-  initialzeApp() {
-    this.auth.authenticationState.subscribe(state => {
-      if (state) {
-        this.router.navigate(['home']);
-      } else {
-        this.router.navigate(['login']);
-      }
-    });
+  async initialzeApp() {
+    if (await this.auth.isAuthenticated()) {
+      return;
+    } else {
+      this.router.navigate(['login']);
+    }
   }
 }

@@ -65,8 +65,8 @@ export class HomePage implements OnInit {
     this.appendNews(6);
     this.selectTasks(this.selectedmod);
   }
-  ngOnInit() {
-    this.username = this.userService.getUserName();
+  async ngOnInit() {
+    this.username = await this.userService.getUserName();
     this.menuCtrl.enable(true)
   }
   list = document.getElementById('list');

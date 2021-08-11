@@ -11,9 +11,9 @@ export class MainHeaderComponent implements OnInit {
   public profile;
   public bg;
   constructor(private user: UserService) { }
-  ngOnInit() {
-    this.profile = "./assets/user/profile/" + this.user.getUserImg();
-    this.bg = "./assets/user/bg/" + this.user.getUserBG();
+  async ngOnInit() {
+    this.profile = "./assets/user/profile/" + await this.user.getUserImg();
+    this.bg = "./assets/user/bg/" + await this.user.getUserBG();
   }
 
 }
