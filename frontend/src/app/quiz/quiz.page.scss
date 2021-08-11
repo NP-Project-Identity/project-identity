@@ -6,15 +6,33 @@ $col-5: #bdc3cb;
 $col-6: #00a1cb;
 $col-7: #fcb100;
 
-.quiz{
-    .quizBtn{
-      margin: auto;
-      display: block;
-      padding: 22px 40px;
-      border-radius: 10px;
-      background-color: $col-6;
+.quiz {
+  .quizBtn {
+    margin: auto;
+    display: block;
+    padding: 22px 40px;
+    border-radius: 10px;
+    background-color: $col-6;
+  }
+  .quizBtn:hover {
+    background-color: $col-7;
+  }
+}
+
+.imgQuiz {
+  margin: 0 20px 30px 20px;
+  .img {
+    margin: auto;
+    width: fit-content;
+    max-width: 400px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    input,
+    ion-button {
+      width: 100%;
+      max-width: 400px;
     }
-    .quizBtn:hover{
-      background-color: $col-7;
-    }
+  }
 }
