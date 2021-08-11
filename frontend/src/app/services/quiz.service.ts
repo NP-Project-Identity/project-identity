@@ -4,20 +4,32 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class QuizService {
-  private db = [[["What CSF stand for?", "Cybersecurity & Logical Forensics", "Cybersecurity & Digital Forensics", "Cybersecurity & Forensics", "Cyber Safety & Digital Forensics", "2"], ["What module is not teach for CSF?", "FP2", "Prog1", "SSD", "HDD", "4"]], [["What ICT stand for?", "Information and Calling Technology", "Information and Communications Technology", "Infamous Communications Technology", "Information and Communications teaching", "2"]], [["What PROGI stand for?", "Programming 1", "Pro 1", "Progamme 1", "Python", "1"]]]
+  private db = [{
+    type: "CSF", quiz: [
+      {type: "mcq", question: "What does CSF stand for?", option: ["Cybersecurity & Logical Forensics", "Cybersecurity & Digital Forensics", "Cybersecurity & Forensics", "Cyber Safety & Digital Forensics"], answer: 1},
+      {type: "mcq", question: "Which application use TCP?", option: ["DNS", "TFTP", "FTP", "HLS"], answer: 2},
+      {type: "mcq", question: "Which application use UDP?", option: ["DNS", "HTTP", "HTTPS", "SMTP"], answer: 0},
+      {type: "img", src: "1.png", question: "What does this image show?", answer: "router"},
+      {type: "img", src: "2.png", question: "What does this image show?", answer: "router"}
+    ]
+  },
+  {
+    type: "ICT", quiz: [
+      {type: "mcq", question: "What ICT stand for?", option: ["Information and Calling Technology", "Information and Communications Technology", "Infamous Communications Technology", "Information and Communications teaching"], answer: 1},
+      {type: "mcq", question: "What does PROGI stand for?", option: ["Programming 1", "Pro 1", "Progamme 1", "Python 1.0"], answer: 0}
+    ]
+  },
+  {
+    type: "PROGI", quiz: [
+      {type: "mcq", question: "What does PROGI stand for?", option: ["Programming 1", "Pro 1", "Progamme 1", "Python 1.0"], answer: 0},
+      {type: "mcq", question: "Which is not a programming language?", option: ["JavaScript", "HTML", "C++", "Python"], answer: 1}
+    ]
+  },
+  ]
 
   constructor() { }
   crateQuiz(cat: string) {
-    if (cat == "CSF") {
-      return this.db[0];
-    }
-    else if (cat == "ICT") {
-      return this.db[1];
-    }
-    else if (cat == "PROGI") {
-      return this.db[2];
-    }
-    else
-      return 0;
+    console.log(cat);
+    return (this.db.find(el => el.type === cat).quiz);
   }
 }
