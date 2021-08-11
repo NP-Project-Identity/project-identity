@@ -26,13 +26,11 @@ export class QuizPage implements OnInit {
   ngOnInit() {
     this.quiz = this.quizService.crateQuiz(this.activatedRoute.snapshot.parent.parent.paramMap.get('id'));
     this.selectedQuiz = this.quiz[this.getRandomInt(this.quiz.length)];
-    this.quizTitle = this.selectedQuiz[0];
-    for (let i = 0; i < 4; i++) {
-      this.quizOption.push(this.selectedQuiz[i + 1]);
-    }
+    this.quizTitle = this.selectedQuiz.question;
+    this.quizOption = this.selectedQuiz.option;
   }
   quizAns(ans: any) {
-    if (ans == (this.selectedQuiz[5] - 1)) {
+    if (ans == this.selectedQuiz.answer) {
       this.result = true;
     }
     this.isAnswerShowing = true;
