@@ -34,6 +34,10 @@ export class LoginPage implements OnInit {
       if (result) {
         this.menuCtrl.enable(true);
       }
+      else {
+        this.isSubmitted = true;
+        this.errorMsg = "Invaild email or password";
+      }
     }
     else {
       if (this.formError.email.errors?.required) {
