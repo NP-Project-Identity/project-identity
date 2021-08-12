@@ -1,0 +1,45 @@
+<ion-content>
+  <main-header title="Journey Planner"></main-header>
+  <!-- <ion-slides [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}">
+    <ion-slide tappable *ngFor="let card of ['Class','Forum','JourneyPlanner']; index as i" (click)='redirect(card)'>
+      <ion-col>
+        <img
+          style="pointer-events: none"
+          src="./assets/forum/default.png"
+        /><br />
+        <ion-label>{{ card }}</ion-label>
+      </ion-col>
+    </ion-slide>
+  </ion-slides> -->
+  <ion-card>
+    <ion-card-header>
+      <img class='getting-started-pictogram' src='/assets/pictograms/ibm-progress.svg'>
+      <ion-card-subtitle>Getting Started</ion-card-subtitle>
+      <ion-card-title>
+        <span *ngIf="!journeyPlans.length">Nothing Yet...</span>
+        <span *ngIf="journeyPlans.length">Create a new Planner</span>
+      </ion-card-title>
+      <ion-card-content>
+        <p>
+          Journey Planner is a great way to keep tabs on your learning progress
+          throughout the year. Get started with a premade journey plan, or make
+          your own!
+        </p>
+        <ion-button [routerLink]="['./new']">Start a new plan</ion-button>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card *ngFor="let journeyPlan of journeyPlans">
+    <ion-card-header>
+      <ion-card-title>{{journeyPlan.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{journeyPlan.description}}<br>
+      {{journeyPlan.completionPercentage}}%
+      <ion-progress-bar></ion-progress-bar>
+      <ion-button (click)="removeJourneyPlan(journeyPlan.id)">Done</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

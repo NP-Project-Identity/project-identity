@@ -18,6 +18,11 @@ const routes: Routes = [
     redirectTo: '/class',
     pathMatch: 'full',
   },
+  {
+    path: 'journey-planner',
+    redirectTo: '/journey-planner',
+    pathMatch: 'full',
+  }
 ];
 
 @NgModule({

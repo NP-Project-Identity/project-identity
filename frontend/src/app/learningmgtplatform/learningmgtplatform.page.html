@@ -1,7 +1,7 @@
 <ion-content>
   <main-header title="Learning"></main-header>
   <ion-slides [options]="{slidesPerView: 'auto', zoom: false, grabCursor: true}">
-    <ion-slide tappable *ngFor="let card of ['Class','Forum']; index as i" (click)='redirect(card)'>
+    <ion-slide tappable *ngFor="let card of ['Class','Forum','JourneyPlanner']; index as i" (click)='redirect(card)'>
       <ion-col>
         <img
           style="pointer-events: none"
