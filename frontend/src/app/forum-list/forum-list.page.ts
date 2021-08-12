@@ -25,9 +25,15 @@ export class ForumListPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
     this.title = this.activatedRoute.snapshot.paramMap.get('id');
     this.list = this.forumService.loadList(this.title);
-    if (this.getRandomInt(2) == this.getRandomInt(2)) { //appear rate is 1/100 try
+    if (this.list.find(el => el.id == "-1") != undefined) {
+      this.list.splice(this.list.find(el => el.id == "-1").length(), 1);
+    }
+    if (this.getRandomInt(2) == 1) { //appear rate is 1/100 try
       this.list.splice(this.getRandomInt(this.list.length), 0, this.mission);
     }
   }
