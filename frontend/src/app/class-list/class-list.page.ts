@@ -19,6 +19,8 @@ export class ClassListPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+  ionViewWillEnter() {
     this.title = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.activatedRoute.snapshot.parent.params.id == this.title) {
       this.list = this.classService.LoadClass(this.title);
@@ -26,7 +28,10 @@ export class ClassListPage implements OnInit {
     else {
       this.list = this.classService.LoadClassContent(this.title, this.activatedRoute.snapshot.parent.params.id);
     }
-    if (this.getRandomInt(2) == this.getRandomInt(2)) { //appear rate is 1/100 try
+    if (this.list.find(el => el.title == "You got a sudden quest") != undefined) {
+      this.list.splice(this.list.find(el => el.title == "You got a sudden quest").length(), 1);
+    }
+    if (this.getRandomInt(2) == this.getRandomInt(2) && this.list.find(el => el.title == "You got a sudden quest") == undefined) { //appear rate is 1/100 try
       this.list.splice(this.getRandomInt(this.list.length), 0, this.mission);
     }
   }
