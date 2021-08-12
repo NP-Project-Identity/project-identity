@@ -29,7 +29,7 @@ export class ClassListPage implements OnInit {
       this.list = this.classService.LoadClassContent(this.title, this.activatedRoute.snapshot.parent.params.id);
     }
     if (this.list.find(el => el.title == "You got a sudden quest") != undefined) {
-      this.list.splice(this.list.find(el => el.title == "You got a sudden quest").length, 1);
+      this.list.splice((this.list.find(el => el.title == "You got a sudden quest").length - 1), 1);
     }
     if (this.getRandomInt(2) == this.getRandomInt(2) && this.list.find(el => el.title == "You got a sudden quest") == undefined) { //appear rate is 1/100 try
       this.list.splice(this.getRandomInt(this.list.length), 0, this.mission);
