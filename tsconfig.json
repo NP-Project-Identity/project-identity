@@ -6,6 +6,12 @@
   "references": [
     {
       "path": "packages/discussion-board-api/tsconfig.json"
+    },
+    {
+      "path": "packages/discussion-board-management-frontend/tsconfig.json"
+    },
+    {
+      "path": "packages/event-management-frontend/tsconfig.json"
     }
   ],
   "files": []

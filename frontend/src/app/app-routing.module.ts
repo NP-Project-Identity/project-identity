@@ -93,6 +93,11 @@ const routes: Routes = [
     path: 'pet',
     canActivate: [AuthGuard],
     loadChildren: () => import('./pet/pet.module').then(m => m.PetPageModule)
+  },
+  {
+    path: 'journey-planner',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./journey-planner/journey-planner.module').then(m => m.JourneyPlannerPageModule),
   }
 ];
 

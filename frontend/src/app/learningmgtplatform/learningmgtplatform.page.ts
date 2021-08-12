@@ -21,6 +21,9 @@ export class LearningmgtplatformPage implements OnInit {
     else if (cat == "Class") {
       this.router.navigate(['./class/']);
     }
+    else if (cat == "JourneyPlanner") {
+      this.router.navigate(['./journey-planner/'])
+    }
   }
 
 }
