@@ -55,7 +55,7 @@ export class UserService {
   }
 
   login(email: string, pass: string) {
-    let emails = this.userDB.find(el => el.email === email);
+    let emails = this.userDB.find(el => el.email === email.toLowerCase());
     if (email == undefined || email == null) {
       return false;
     }
