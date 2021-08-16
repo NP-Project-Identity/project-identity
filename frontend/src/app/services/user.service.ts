@@ -18,16 +18,16 @@ export class UserService {
         profile: "quest.png", bg: "default.jpg"
       }
     },
-    {
-      id: "s10198161d", email: "s10198161@connect.np.edu.sg", password: "ab56b4d92b40713acc5af89985d4b786", name: "Alan Tan", coin: 0, achievement: {
+    { //password is abcde
+      id: "s101123451d", email: "s10112345@connect.np.edu.sg", password: "ab56b4d92b40713acc5af89985d4b786", name: "Alan Tan", coin: 0, achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021", "Helper 2021"]
       },
       resource: {
         profile: "default.png", bg: "s10198161d.jpg"
       }
     },
-    {
-      id: "s10198161b", email: "a@a.com", password: "900150983cd24fb0d6963f7d28e17f72", name: "Rifa Achrinza", coin: 10, achievement: {
+    {//password is abc
+      id: "s101123451j", email: "a@a.com", password: "900150983cd24fb0d6963f7d28e17f72", name: "Rifa Achrinza", coin: 10, achievement: {
         medal: [{id: "dailyLogin", rank: 1}, {id: "comment", rank: 1}, {id: "feeder", rank: 1}, {id: "poster", rank: 1}], trophy: ["Poster 2021", "Comment 2021"]
       },
       resource: {
@@ -40,21 +40,19 @@ export class UserService {
   constructor(private storage: Storage, private plt: Platform) {
   }
 
-  ngOnInit() {
-    this.checkToken();
-  }
-
   async checkToken() {
-    await this.storage.create()
+    await this.storage.create();
     await this.storage.get(TOKEN_KEY).then(res => {
       if (res != undefined) {
         this.setUser(res);
         this.authenticationState.next(true);
       }
     })
+    return this.authenticationState.value;
   }
 
-  login(email: string, pass: string) {
+  async login(email: string, pass: string) {
+    await this.storage.create();
     let emails = this.userDB.find(el => el.email === email.toLowerCase());
     if (email == undefined || email == null) {
       return false;
@@ -63,11 +61,11 @@ export class UserService {
       return false;
     }
     else {
-      this.currentUser = emails;
-      return this.storage.set(TOKEN_KEY, emails.id).then(() => {
-        this.storage.get(TOKEN_KEY).then(data => this.setUser(data));
+      await this.storage.set(TOKEN_KEY, emails.id).then(() => {
         this.authenticationState.next(true);
+        this.setUser(emails.id);
       });
+      return this.authenticationState.value;
     }
   }
 
@@ -79,8 +77,8 @@ export class UserService {
   }
 
   async isAuthenticated() {
-    await this.checkToken()
-    return await this.authenticationState.value;
+    return await this.checkToken();
+    //return await this.authenticationState.value;
   }
 
   async setUser(id: string) {

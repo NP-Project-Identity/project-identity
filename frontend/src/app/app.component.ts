@@ -23,16 +23,5 @@ export class AppComponent {
   }
 
   async ngOnInit() {
-    await this.storage.create().then(() =>
-      this.initialzeApp()
-    )
-  }
-
-  async initialzeApp() {
-    if (await this.auth.isAuthenticated()) {
-      return;
-    } else {
-      this.router.navigate(['login']);
-    }
   }
 }
