@@ -1,8 +1,9 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {IonicModule} from '@ionic/angular';
 import {ComponentsModule} from '../components.module';
+import {ForumCommentPage} from './forum-comment/forum-comment.page';
 import {ForumContentPageRoutingModule} from './forum-content-routing.module';
 import {ForumContentPage} from './forum-content.page';
 
@@ -15,8 +16,9 @@ import {ForumContentPage} from './forum-content.page';
     FormsModule,
     IonicModule,
     ForumContentPageRoutingModule,
+    ReactiveFormsModule,
     ComponentsModule,
   ],
-  declarations: [ForumContentPage]
+  declarations: [ForumContentPage, ForumCommentPage]
 })
-export class ForumContentPageModule {}
+export class ForumContentPageModule { }

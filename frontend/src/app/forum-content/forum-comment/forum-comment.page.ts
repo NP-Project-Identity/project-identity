@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NavController} from '@ionic/angular';
-import {ForumService} from '../services/forum.service';
-import {UserService} from '../services/user.service';
+import {ForumService} from '../../services/forum.service';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-forum-comment',

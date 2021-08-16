@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {ForumCreatePage} from './forum-create/forum-create.page';
 import {ForumListPage} from './forum-list.page';
 
 const routes: Routes = [
@@ -22,8 +23,7 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        loadChildren: () =>
-          import('../forum-create/forum-create.module').then(m => m.ForumCreatePageModule),
+        component: ForumCreatePage
       },
       {
         path: ':id',
