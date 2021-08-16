@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {UserService} from '../../services/user.service';
 
@@ -20,7 +20,7 @@ export class QuizPopupComponent implements OnInit {
     this.navCtrl.pop();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     if (this.result == "true") {
       this.Result = "You are correct!"
       this.Reward = "You win 20 silver coin \nYou now have " + this.userService.addCoin(20) + " silver coin now"
