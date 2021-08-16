@@ -9,7 +9,6 @@ import {MenuController} from '@ionic/angular';
 export class EventsPage implements OnInit {
 
   constructor(public menuCtrl: MenuController) {
-    this.menuCtrl.enable(false);
   }
 
   ngOnInit() {
