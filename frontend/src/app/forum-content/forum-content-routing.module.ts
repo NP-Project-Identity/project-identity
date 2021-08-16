@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {ForumCommentPage} from './forum-comment/forum-comment.page';
 import {ForumContentPage} from './forum-content.page';
 
 
@@ -13,8 +14,7 @@ const routes: Routes = [
     children: [
       {
         path: 'comment',
-        loadChildren: () =>
-          import('../forum-comment/forum-comment.module').then(m => m.ForumCommentPageModule),
+        component: ForumCommentPage
       }
     ],
   },

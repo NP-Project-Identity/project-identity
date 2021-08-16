@@ -1,8 +1,9 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {IonicModule} from '@ionic/angular';
 import {ComponentsModule} from '../components.module';
+import {ForumCreatePage} from './forum-create/forum-create.page';
 import {ForumListPageRoutingModule} from './forum-list-routing.module';
 import {ForumListPage} from './forum-list.page';
 
@@ -12,8 +13,9 @@ import {ForumListPage} from './forum-list.page';
     FormsModule,
     IonicModule,
     ForumListPageRoutingModule,
+    ReactiveFormsModule,
     ComponentsModule,
   ],
-  declarations: [ForumListPage],
+  declarations: [ForumListPage, ForumCreatePage],
 })
-export class ForumListPageModule {}
+export class ForumListPageModule { }
