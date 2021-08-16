@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController} from '@ionic/angular';
-import {PetService} from '../services/pet.service';
+import {PetService} from 'src/app/services/pet.service';
 
 @Component({
   selector: 'app-pet-inv',

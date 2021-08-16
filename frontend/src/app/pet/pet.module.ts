@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {IonicModule} from '@ionic/angular';
+import {PetInvPage} from './pet-inv/pet-inv.page';
+import {PetPageRoutingModule} from './pet-routing.module';
+import {PetPage} from './pet.page';
 
-import { IonicModule } from '@ionic/angular';
 
-import { PetPageRoutingModule } from './pet-routing.module';
 
-import { PetPage } from './pet.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { PetPage } from './pet.page';
     IonicModule,
     PetPageRoutingModule
   ],
-  declarations: [PetPage]
+  declarations: [PetPage, PetInvPage]
 })
-export class PetPageModule {}
+export class PetPageModule { }
