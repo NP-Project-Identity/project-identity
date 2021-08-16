@@ -27,13 +27,19 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
+  async ionViewWillEnter() {
+    if (await this.auth.isAuthenticated()) {
+      this.router.navigate(['home']);
+    }
+  }
 
   submit() {
     if (this.loginForm.valid) {
       let result = this.auth.login(this.loginForm.get("email").value, Md5.hashStr(this.loginForm.get("password").value))
       if (result) {
-        this.router.navigate(['home']);
-        this.menuCtrl.enable(true);
+        this.menuCtrl.enable(true).then(() => {
+          this.router.navigate(['home']);
+        });
       }
       else {
         this.isSubmitted = true;
