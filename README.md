@@ -1,6 +1,14 @@
 # LearnSpot
-
+[![MIT](https://img.shields.io/github/license/NP-Project-Identity/project-identity.svg)](LICENSE)
+![issues](https://img.shields.io/github/issues/NP-Project-Identity/project-identity.svg)  
 LearnSpot (codenamed Project Identity) is an all-in-one gamified learning engagement management system.
+
+## Languages Used
+![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Node.js](	https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
 ## Deployment
 
@@ -44,9 +52,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 | - | -
 | [k8s-deployment](https://github.com/NP-Project-Identity/k8s-deployment) | Deployment manifests and scripts for k8s
 
-## License
-
-[MIT](LICENSE)
 
 [dodieboy]: https://avatars.githubusercontent.com/u/9015764?v=4&s=60
 [AlephaLim]: https://avatars.githubusercontent.com/u/51186021?v=4&s=60
