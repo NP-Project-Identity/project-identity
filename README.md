@@ -14,7 +14,7 @@ LearnSpot (codenamed Project Identity) is an all-in-one gamified learning engage
 
 This monorepo only consists of of TypeScript-based packages and development utilities. Deployment methods are documented in separate repos (See [Related Repositories](#related-repositories)).
 
-## Status: POC
+## Status: ![POC](https://img.shields.io/badge/Proof%20of%20Concept-blue)
 
 LearnSpot is currently an proof-of-concept product, and should not be used in production.
 
@@ -24,10 +24,10 @@ This monorepo consists of multiple packages:
 
 | Package Name | Status
 | - | -
-| [@learnspot/frontend](frontend/README) | Proof of Concept
-| [@learnspot/discussion-board-api](packages/discussion-board-api) | Proof of Concept
-| [@learnspot/discussion-board-management-frontend](packages/discussion-board-management-frontend) | Work in Progress
-| [@learnspot/event-management-frontend](packages/event-management-frontend) | Work in Progress
+| [@learnspot/frontend](frontend/README) | ![POC](https://img.shields.io/badge/Proof%20of%20Concept-blue)
+| [@learnspot/discussion-board-api](packages/discussion-board-api) | ![POC](https://img.shields.io/badge/Proof%20of%20Concept-blue)
+| [@learnspot/discussion-board-management-frontend](packages/discussion-board-management-frontend) | ![WIP](https://img.shields.io/badge/Work%20in%20Progress-yellow)
+| [@learnspot/event-management-frontend](packages/event-management-frontend) | ![WIP](https://img.shields.io/badge/Work%20in%20Progress-yellow)
 
 ## Team
 
