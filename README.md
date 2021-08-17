@@ -25,10 +25,10 @@ This monorepo consists of multiple packages:
 
 ### Project Maintainers
 
-||||
-|:-:|:-:|:-:
-| Alan Tan | Jun Hao | Rifa Achrinza
-| [![dodieboy]](https://github.com/dodieboy) | [![AlephaLim]](https://github.com/AlephaLim) | [![achrinza]](https://github.com/achirnza)
+
+| Alan Tan | Jun Hao | Rifa Achrinza |
+| - | - | - |
+| [![dodieboy]](https://github.com/dodieboy) | [![AlephaLim]](https://github.com/AlephaLim) | [![achrinza]](https://github.com/achirnza)|
 
 
 See
