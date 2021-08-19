@@ -36,7 +36,7 @@ This monorepo consists of multiple packages:
 
 
 | Alan Tan | Jun Hao | Rifa Achrinza |
-| - | - | - |
+| :-: | :-: | :-: |
 | [![dodieboy]](https://github.com/dodieboy) | [![AlephaLim]](https://github.com/AlephaLim) | [![achrinza]](https://github.com/achirnza)|
 
 
