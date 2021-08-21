@@ -1,9 +1,12 @@
 # LearnSpot
 [![MIT](https://img.shields.io/github/license/NP-Project-Identity/project-identity.svg)](LICENSE)
-![issues](https://img.shields.io/github/issues/NP-Project-Identity/project-identity.svg)  
+![issues](https://img.shields.io/github/issues/NP-Project-Identity/project-identity.svg)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5151/badge)](https://bestpractices.coreinfrastructure.org/projects/5151)
+
 LearnSpot (codenamed Project Identity) is an all-in-one gamified learning engagement management system.
 
 ## Languages Used
+
 ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
