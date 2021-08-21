@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: LearnSpot
+Upstream-Contact: LearnSpot
+Source: https://github.com/NP-Project-Identity/project-identity
+
+Files: *
+Copyright: 2021 The LearnSpot Authors
+License: MIT

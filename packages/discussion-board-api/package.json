@@ -1,5 +1,5 @@
 {
-  "name": "discussion-board-api",
+  "name": "@learnspot/discussion-board-api",
   "version": "0.0.1",
   "description": "Discussion Board API",
   "keywords": [
@@ -41,7 +41,7 @@
     "url": ""
   },
   "author": "Rifa Achrinza <25147899+achrinza@users.noreply.github.com>",
-  "license": "",
+  "license": "MIT",
   "files": [
     "README.md",
     "dist",
@@ -68,5 +68,6 @@
     "eslint": "^7.25.0",
     "source-map-support": "^0.5.19",
     "typescript": "~4.2.4"
-  }
+  },
+  "copyright.owner": "The LearnSpot Authors"
 }
