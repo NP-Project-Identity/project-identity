@@ -96,3 +96,13 @@ jobs:
           npm ci --ignore-scripts
       - name: Verify commit linting
         run: npx commitlint --from origin/main --to HEAD --verbose
+
+  license-lint:
+    name: License Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: REUSE Compliance Check
+        uses: fsfe/reuse-action@v1
