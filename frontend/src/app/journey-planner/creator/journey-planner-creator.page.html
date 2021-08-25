@@ -1,5 +1,5 @@
 <ion-content>
-  <main-header [title]="_journeyPlanModel.name"></main-header>
+  <main-header [title]="journeyPlanModel.name"></main-header>
   <ion-card>
     <ion-card-header>
       <ion-card-title>New Journey Plan</ion-card-title>
@@ -7,11 +7,11 @@
         <form (ngSubmit)="onSubmit()">
           <label>
             Name
-            <input type="text" name="name" [(ngModel)]="_journeyPlanModel.name" required>
+            <input type="text" name="name" [(ngModel)]="journeyPlanModel.name" required>
           </label><br>
           <label>
             Description
-            <input type="text" name="description" [(ngModel)]="_journeyPlanModel.description" required>
+            <input type="text" name="description" [(ngModel)]="journeyPlanModel.description" required>
           </label><br>
           <ion-button type="submit">Create</ion-button>
         </form>
