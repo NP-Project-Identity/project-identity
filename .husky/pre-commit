@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+if [ "$LINT_STAGED" = '0' ]; then
+  echo 'lint-saged disabled via LINT_STAGED env var.'
+else
+  npx --no-install renovate-config-validator
+  npx --no-install lint-staged
+fi

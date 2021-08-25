@@ -47,7 +47,7 @@
     "prettier:docs": "node packages/build/bin/run-prettier \"**/*.md\"",
     "prettier:docs:check": "npm run prettier:docs -- --check",
     "prettier:docs:fix": "npm run prettier:docs -- --write",
-    "clean": "lerna run clean && node packages/build/bin/run-clean \"packages/*/dist\" \"extensions/*/dist\" \"examples/*/dist\" \"benchmark/dist\"",
+    "clean": "lerna run clean && lb-clean 'packages/*/dist'",
     "clean:lerna": "lerna clean",
     "build": "node packages/build/bin/compile-package -b",
     "build:full": "npm ci --ignore-scripts && lerna bootstrap --ci && npm run clean && npm run build",
@@ -79,6 +79,7 @@
     "markdown-table": "^3.0.0",
     "open-cli": "^6.0.1",
     "prettier": "2.3.2",
+    "renovate": "^26.6.0",
     "typescript": "~4.2.4"
   },
   "config": {
