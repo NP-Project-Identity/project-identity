@@ -82,7 +82,6 @@ jobs:
   commit-lint:
     name: Commit Lint
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -100,7 +99,6 @@ jobs:
   ci-lint:
     name: CI Lint
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request }}
     steps:
       - uses: actions/checkout@v2
         with:
