@@ -73,32 +73,41 @@ const routes: Routes = [
   {
     path: 'class',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./class/class.module').then(m => m.ClassPageModule)
+    loadChildren: () =>
+      import('./class/class.module').then(m => m.ClassPageModule),
   },
   {
     path: 'class-list',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./class-list/class-list.module').then(m => m.ClassListPageModule)
+    loadChildren: () =>
+      import('./class-list/class-list.module').then(m => m.ClassListPageModule),
   },
   {
     path: 'achievement',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./achievement/achievement.module').then(m => m.AchievementPageModule)
+    loadChildren: () =>
+      import('./achievement/achievement.module').then(
+        m => m.AchievementPageModule,
+      ),
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () =>
+      import('./login/login.module').then(m => m.LoginPageModule),
   },
   {
     path: 'pet',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pet/pet.module').then(m => m.PetPageModule)
+    loadChildren: () => import('./pet/pet.module').then(m => m.PetPageModule),
   },
   {
     path: 'journey-planner',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./journey-planner/journey-planner.module').then(m => m.JourneyPlannerPageModule),
-  }
+    loadChildren: () =>
+      import('./journey-planner/journey-planner.module').then(
+        m => m.JourneyPlannerPageModule,
+      ),
+  },
 ];
 
 @NgModule({
@@ -107,4 +116,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

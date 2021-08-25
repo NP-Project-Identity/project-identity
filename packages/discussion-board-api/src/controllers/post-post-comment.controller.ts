@@ -8,7 +8,7 @@ import {
   CountSchema,
   Filter,
   repository,
-  Where
+  Where,
 } from '@loopback/repository';
 import {
   del,
@@ -18,12 +18,9 @@ import {
   param,
   patch,
   post,
-  requestBody
+  requestBody,
 } from '@loopback/rest';
-import {
-  Post,
-  PostComment
-} from '../models';
+import {Post, PostComment} from '../models';
 import {PostRepository} from '../repositories';
 
 export class PostPostCommentController {
@@ -66,11 +63,12 @@ export class PostPostCommentController {
           schema: getModelSchemaRef(PostComment, {
             title: 'NewPostCommentInPost',
             exclude: ['id'],
-            optional: ['postId']
+            optional: ['postId'],
           }),
         },
       },
-    }) postComment: Omit<PostComment, 'id'>,
+    })
+    postComment: Omit<PostComment, 'id'>,
   ): Promise<PostComment> {
     return this.postRepository.postComments(id).create(postComment);
   }
@@ -93,7 +91,8 @@ export class PostPostCommentController {
       },
     })
     postComment: Partial<PostComment>,
-    @param.query.object('where', getWhereSchemaFor(PostComment)) where?: Where<PostComment>,
+    @param.query.object('where', getWhereSchemaFor(PostComment))
+    where?: Where<PostComment>,
   ): Promise<Count> {
     return this.postRepository.postComments(id).patch(postComment, where);
   }
@@ -108,7 +107,8 @@ export class PostPostCommentController {
   })
   async delete(
     @param.path.number('id') id: number,
-    @param.query.object('where', getWhereSchemaFor(PostComment)) where?: Where<PostComment>,
+    @param.query.object('where', getWhereSchemaFor(PostComment))
+    where?: Where<PostComment>,
   ): Promise<Count> {
     return this.postRepository.postComments(id).delete(where);
   }

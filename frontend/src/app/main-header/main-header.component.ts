@@ -10,10 +10,9 @@ export class MainHeaderComponent implements OnInit {
   @Input() title: any;
   public profile;
   public bg;
-  constructor(private user: UserService) { }
+  constructor(private user: UserService) {}
   async ngOnInit() {
-    this.profile = "./assets/user/profile/" + await this.user.getUserImg();
-    this.bg = "./assets/user/bg/" + await this.user.getUserBG();
+    this.profile = './assets/user/profile/' + (await this.user.getUserImg());
+    this.bg = './assets/user/bg/' + (await this.user.getUserBG());
   }
-
 }

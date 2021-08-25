@@ -2,11 +2,10 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ClassListPage} from './class-list.page';
 
-
 const routes: Routes = [
   {
     path: '',
-    component: ClassListPage
+    component: ClassListPage,
   },
   {
     path: '',
@@ -28,9 +27,9 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: ClassListPage
-      }
-    ]
+        component: ClassListPage,
+      },
+    ],
   },
 ];
 
@@ -38,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ClassListPageRoutingModule { }
+export class ClassListPageRoutingModule {}

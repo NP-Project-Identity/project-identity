@@ -8,13 +8,17 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {SafeentryPageModule} from './safeentry/safeentry.module';
 
-
-
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SafeentryPageModule, IonicStorageModule.forRoot()],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    SafeentryPageModule,
+    IonicStorageModule.forRoot(),
+  ],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

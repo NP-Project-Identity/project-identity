@@ -23,7 +23,7 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: ForumCreatePage
+        component: ForumCreatePage,
       },
       {
         path: ':id',
@@ -31,7 +31,7 @@ const routes: Routes = [
           import('../forum-content/forum-content.module').then(
             m => m.ForumContentPageModule,
           ),
-      }
+      },
     ],
   },
 ];
@@ -40,4 +40,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ForumListPageRoutingModule { }
+export class ForumListPageRoutingModule {}

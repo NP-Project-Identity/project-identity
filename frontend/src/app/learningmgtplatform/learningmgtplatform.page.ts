@@ -7,23 +7,18 @@ import {Router} from '@angular/router';
   styleUrls: ['./learningmgtplatform.page.scss'],
 })
 export class LearningmgtplatformPage implements OnInit {
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
   isSchoolShowing = true;
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   redirect(cat: string) {
-    if (cat == "Forum") {
+    if (cat == 'Forum') {
       this.router.navigate(['./forum/']);
-    }
-    else if (cat == "Class") {
+    } else if (cat == 'Class') {
       this.router.navigate(['./class/']);
-    }
-    else if (cat == "JourneyPlanner") {
-      this.router.navigate(['./journey-planner/'])
+    } else if (cat == 'JourneyPlanner') {
+      this.router.navigate(['./journey-planner/']);
     }
   }
-
 }

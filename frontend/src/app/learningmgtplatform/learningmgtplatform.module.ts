@@ -6,17 +6,14 @@ import {ComponentsModule} from '../components.module';
 import {LearningmgtplatformPageRoutingModule} from './learningmgtplatform-routing.module';
 import {LearningmgtplatformPage} from './learningmgtplatform.page';
 
-
-
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     LearningmgtplatformPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
-  declarations: [LearningmgtplatformPage]
+  declarations: [LearningmgtplatformPage],
 })
 export class LearningmgtplatformPageModule {}

@@ -6,17 +6,14 @@ import {ComponentsModule} from '../components.module';
 import {AchievementPageRoutingModule} from './achievement-routing.module';
 import {AchievementPage} from './achievement.page';
 
-
-
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     AchievementPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
-  declarations: [AchievementPage]
+  declarations: [AchievementPage],
 })
-export class AchievementPageModule { }
+export class AchievementPageModule {}

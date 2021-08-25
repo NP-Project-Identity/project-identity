@@ -6,17 +6,14 @@ import {ComponentsModule} from '../components.module';
 import {ClassPageRoutingModule} from './class-routing.module';
 import {ClassPage} from './class.page';
 
-
-
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     ClassPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
-  declarations: [ClassPage]
+  declarations: [ClassPage],
 })
-export class ClassPageModule { }
+export class ClassPageModule {}

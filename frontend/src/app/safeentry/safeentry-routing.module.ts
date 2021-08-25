@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { SafeentryCheckinPage } from './check-in.safeentry.page';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {SafeentryCheckinPage} from './check-in.safeentry.page';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'check-in/:venueId/:tenantId',
     component: SafeentryCheckinPage,
-  }
+  },
 ];
 
 @NgModule({

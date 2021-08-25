@@ -16,4 +16,4 @@ import {ForumPage} from './forum.page';
   ],
   declarations: [ForumPage],
 })
-export class ForumPageModule { }
+export class ForumPageModule {}

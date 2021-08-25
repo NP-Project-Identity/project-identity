@@ -10,9 +10,7 @@ import {JourneyPlan} from './models/journey-plan';
 export class JourneyPlannerPage {
   public journeyPlans: ReadonlyArray<JourneyPlan> = [];
 
-  constructor(
-    private _journeyPlannerService: JourneyPlannerService,
-  ) { }
+  constructor(private _journeyPlannerService: JourneyPlannerService) {}
 
   ionViewWillEnter() {
     this.journeyPlans = this._journeyPlannerService.getJourneyPlans() ?? [];

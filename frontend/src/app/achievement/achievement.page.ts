@@ -7,11 +7,10 @@ import {UserService} from '../services/user.service';
   styleUrls: ['./achievement.page.scss'],
 })
 export class AchievementPage implements OnInit {
-
   public medal;
   public trophy;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.medal = this.userService.getMedal();

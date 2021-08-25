@@ -14,7 +14,7 @@ export class JourneyPlannerCreatorPage {
   constructor(
     private _journeyPlannerService: JourneyPlannerService,
     private _navController: NavController,
-  ) { }
+  ) {}
 
   onSubmit() {
     this._journeyPlannerService.addJourneyPlan(this._journeyPlanModel);

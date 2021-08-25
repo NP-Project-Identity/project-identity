@@ -2,12 +2,11 @@ import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 import {UserService} from '../services/user.service';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router, public auth: UserService) { }
+  constructor(private router: Router, public auth: UserService) {}
 
   async canActivate() {
     if (await this.auth.isAuthenticated()) {
@@ -17,5 +16,4 @@ export class AuthGuard implements CanActivate {
       return false;
     }
   }
-
 }

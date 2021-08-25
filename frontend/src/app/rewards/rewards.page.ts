@@ -7,11 +7,7 @@ import {MenuController} from '@ionic/angular';
   styleUrls: ['./rewards.page.scss'],
 })
 export class RewardsPage implements OnInit {
+  constructor(public menuCtrl: MenuController) {}
 
-  constructor(public menuCtrl: MenuController) {
-  }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

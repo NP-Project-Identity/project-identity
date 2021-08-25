@@ -7,8 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SubbarComponent implements OnInit {
   @Input() navItems: any;
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

@@ -2,11 +2,10 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ClassPage} from './class.page';
 
-
 const routes: Routes = [
   {
     path: '',
-    component: ClassPage
+    component: ClassPage,
   },
   {
     path: ':id',
@@ -21,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ClassPageRoutingModule { }
+export class ClassPageRoutingModule {}

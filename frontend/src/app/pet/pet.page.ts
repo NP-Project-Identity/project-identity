@@ -15,13 +15,17 @@ export class PetPage implements OnInit {
   public rExp;
   public perExp;
   public hunger;
-  public sleeping = "none";
+  public sleeping = 'none';
   public error;
   private animation = false;
 
   @ViewChild('pet', {read: ElementRef}) petObj: ElementRef;
 
-  constructor(private pet: PetService, private router: Router, private animationCtrl: AnimationController) { }
+  constructor(
+    private pet: PetService,
+    private router: Router,
+    private animationCtrl: AnimationController,
+  ) {}
 
   getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -31,19 +35,18 @@ export class PetPage implements OnInit {
 
   ngOnInit() {
     this.petID = this.pet.getPet();
-    this.petBG = "../../assets/game/bg/" + this.pet.getPetBG() + ".jpg";
-    this.reloadStat()
+    this.petBG = '../../assets/game/bg/' + this.pet.getPetBG() + '.jpg';
+    this.reloadStat();
   }
   reloadStat() {
     this.level = this.pet.getLevel();
     this.rExp = this.pet.getExp();
     this.perExp = this.pet.getExpProgress();
-    this.hunger = this.pet.getHunger()
+    this.hunger = this.pet.getHunger();
     if (this.pet.getSleep()) {
-      this.sleeping = "red solid 4px";
-    }
-    else {
-      this.sleeping = "none";
+      this.sleeping = 'red solid 4px';
+    } else {
+      this.sleeping = 'none';
     }
   }
   onPlay() {
@@ -51,8 +54,9 @@ export class PetPage implements OnInit {
       this.animation = true;
       this.pet.setHunger(-10);
       this.pet.setExp(1);
-      this.reloadStat()
-      const loadingAnimation = this.animationCtrl.create('play-animation')
+      this.reloadStat();
+      const loadingAnimation = this.animationCtrl
+        .create('play-animation')
         .addElement(this.petObj.nativeElement)
         .duration(300)
         .iterations(2)
@@ -62,56 +66,50 @@ export class PetPage implements OnInit {
       setTimeout(() => {
         this.animation = false;
       }, 385);
-    }
-    else if (this.animation)
-      return;
+    } else if (this.animation) return;
     else {
-      this.errorMsg("Pet is low on hunger");
+      this.errorMsg('Pet is low on hunger');
     }
   }
   onFeed() {
     if (this.hunger <= 90 && this.pet.checkFood() && !this.animation) {
       this.pet.reduceInvFoodAmt();
       this.pet.setHunger(this.getRandomInt(2, 5));
-      this.reloadStat()
-      const loadingAnimation = this.animationCtrl.create('feed-animation')
+      this.reloadStat();
+      const loadingAnimation = this.animationCtrl
+        .create('feed-animation')
         .addElement(this.petObj.nativeElement)
         .duration(400)
         .iterations(2)
         .keyframes([
           {offset: 0, transform: 'scale(1))', opacity: '1'},
           {offset: 0.5, transform: 'scale(1.2)', opacity: '0.8'},
-          {offset: 1, transform: 'scale(1)', opacity: '1'}
+          {offset: 1, transform: 'scale(1)', opacity: '1'},
         ]);
       loadingAnimation.play();
       setTimeout(() => {
         this.animation = false;
       }, 450);
-    }
-    else if (this.animation)
-      return
-    else if (!this.pet.checkFood())
-      this.errorMsg("Run out of food");
-    else
-      this.errorMsg("Pet is too full to eat");
+    } else if (this.animation) return;
+    else if (!this.pet.checkFood()) this.errorMsg('Run out of food');
+    else this.errorMsg('Pet is too full to eat');
   }
   onSleep() {
     if (this.pet.getSleep()) {
-      let t = this.pet.endSleep();
+      const t = this.pet.endSleep();
       if (t > 0) {
         this.pet.setHunger(1);
       }
-    }
-    else {
+    } else {
       this.pet.setSleep();
     }
-    this.reloadStat()
+    this.reloadStat();
   }
   errorMsg(err: string) {
     this.error = err;
-    document.getElementById("error").setAttribute("style", "display:block");
-    setTimeout(function () {document.getElementById("error").setAttribute("style", "display:none");}, 5000);
+    document.getElementById('error').setAttribute('style', 'display:block');
+    setTimeout(function () {
+      document.getElementById('error').setAttribute('style', 'display:none');
+    }, 5000);
   }
-
-
 }

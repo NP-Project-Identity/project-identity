@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-safeentry-checkin',
@@ -10,7 +10,7 @@ export class SafeentryCheckinPage implements OnInit {
   public venueId: string;
   public tenantId: string;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.venueId = this.activatedRoute.snapshot.paramMap.get('venueId');

@@ -9,8 +9,11 @@ import {QuizService} from '../services/quiz.service';
   styleUrls: ['./quiz.page.scss'],
 })
 export class QuizPage implements OnInit {
-
-  constructor(private activatedRoute: ActivatedRoute, private quizService: QuizService, private formBuilder: FormBuilder) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private quizService: QuizService,
+    private formBuilder: FormBuilder,
+  ) {}
 
   public quizType: string;
   public quizTitle: string;
@@ -23,7 +26,7 @@ export class QuizPage implements OnInit {
   private selectedQuiz: any;
 
   quizForm = this.formBuilder.group({
-    answer: ''
+    answer: '',
   });
 
   getRandomInt(max) {
@@ -31,14 +34,15 @@ export class QuizPage implements OnInit {
   }
 
   ngOnInit() {
-    this.quiz = this.quizService.crateQuiz(this.activatedRoute.snapshot.parent.parent.paramMap.get('id'));
+    this.quiz = this.quizService.crateQuiz(
+      this.activatedRoute.snapshot.parent.parent.paramMap.get('id'),
+    );
     this.selectedQuiz = this.quiz[this.getRandomInt(this.quiz.length)];
     this.quizType = this.selectedQuiz.type;
     this.quizTitle = this.selectedQuiz.question;
-    if (this.quizType == "mcq")
-      this.quizOption = this.selectedQuiz.option;
-    else if (this.quizType == "img") {
-      this.quizImg = "./assets/game/quiz/" + this.selectedQuiz.src;
+    if (this.quizType == 'mcq') this.quizOption = this.selectedQuiz.option;
+    else if (this.quizType == 'img') {
+      this.quizImg = './assets/game/quiz/' + this.selectedQuiz.src;
     }
   }
   quizAns(ans: any) {
@@ -49,7 +53,7 @@ export class QuizPage implements OnInit {
   }
 
   submit() {
-    if (this.quizForm.get("answer").value != null)
-      this.quizAns(this.quizForm.get("answer").value.toLowerCase());
+    if (this.quizForm.get('answer').value != null)
+      this.quizAns(this.quizForm.get('answer').value.toLowerCase());
   }
 }

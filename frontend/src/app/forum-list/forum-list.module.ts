@@ -18,4 +18,4 @@ import {ForumListPage} from './forum-list.page';
   ],
   declarations: [ForumListPage, ForumCreatePage],
 })
-export class ForumListPageModule { }
+export class ForumListPageModule {}

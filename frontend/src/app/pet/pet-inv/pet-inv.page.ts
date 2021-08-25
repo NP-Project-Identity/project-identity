@@ -12,23 +12,23 @@ export class PetInvPage implements OnInit {
   public petBG;
   public inv;
 
-  constructor(private pet: PetService, private navCtrl: NavController) { }
+  constructor(private pet: PetService, private navCtrl: NavController) {}
 
   ngOnInit() {
-    this.petBG = "../../assets/game/bg/" + this.pet.getPetBG() + ".jpg";
-    this.inv = this.pet.getInv("pets");
-    this.invType = "pets";
+    this.petBG = '../../assets/game/bg/' + this.pet.getPetBG() + '.jpg';
+    this.inv = this.pet.getInv('pets');
+    this.invType = 'pets';
   }
   back() {
     this.navCtrl.back();
   }
   onPet() {
-    this.invType = "pets";
-    this.inv = this.pet.getInv("pets");
+    this.invType = 'pets';
+    this.inv = this.pet.getInv('pets');
   }
   onFood() {
-    this.invType = "food"
-    this.inv = this.pet.getInv("food");
+    this.invType = 'food';
+    this.inv = this.pet.getInv('food');
   }
   selectPet(petID: string) {
     this.pet.setPet(petID);

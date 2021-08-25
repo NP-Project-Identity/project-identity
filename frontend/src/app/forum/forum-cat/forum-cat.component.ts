@@ -12,7 +12,7 @@ export class ForumCatComponent implements OnInit {
   @Input() subCat: string;
   @Input() list: string[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
   cardList: string[] = [];
   schoolList = [
     ['CSF', 'ICT', 'DS'],
@@ -21,13 +21,12 @@ export class ForumCatComponent implements OnInit {
   ];
   ccaList = [['Overflow', 'Overwork', 'Overkill']];
 
-  ngOnInit() { }
+  ngOnInit() {}
   ngOnChanges(changes: SimpleChanges) {
     if (this.page == 'forum') {
       if (this.cat == 'school') this.cardList = this.schoolList[this.subCat];
       else if (this.cat == 'cca') this.cardList = this.ccaList[this.subCat];
-    }
-    else {
+    } else {
       this.cardList = this.list;
     }
   }
@@ -35,7 +34,6 @@ export class ForumCatComponent implements OnInit {
   redirect(pages: string, subPageNo: string) {
     if (this.page == 'forum')
       this.router.navigate(['./' + this.page + '/' + pages + '/' + subPageNo]);
-    else
-      this.router.navigate(['./' + this.page + '/' + subPageNo]);
+    else this.router.navigate(['./' + this.page + '/' + subPageNo]);
   }
 }
