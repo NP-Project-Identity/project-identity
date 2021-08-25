@@ -9,12 +9,6 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'folder/:id',
-    canActivate: [AuthGuard],
-    loadChildren: () =>
-      import('./folder/folder.module').then(m => m.FolderPageModule),
-  },
-  {
     path: 'safeentry',
     canActivate: [AuthGuard],
     loadChildren: () =>
@@ -116,4 +110,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

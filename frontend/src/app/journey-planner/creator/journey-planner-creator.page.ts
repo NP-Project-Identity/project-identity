@@ -9,15 +9,15 @@ import {JourneyPlan} from '../models/journey-plan';
   styleUrls: ['./journey-planner-creator.page.scss'],
 })
 export class JourneyPlannerCreatorPage {
-  private _journeyPlanModel = new JourneyPlan(0, 'New Journey Plan', '', []);
+  journeyPlanModel = new JourneyPlan(0, 'New Journey Plan', '', []);
 
   constructor(
     private _journeyPlannerService: JourneyPlannerService,
     private _navController: NavController,
-  ) {}
+  ) { }
 
   onSubmit() {
-    this._journeyPlannerService.addJourneyPlan(this._journeyPlanModel);
+    this._journeyPlannerService.addJourneyPlan(this.journeyPlanModel);
     this._navController.back();
   }
 }
