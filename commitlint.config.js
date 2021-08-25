@@ -1,5 +1,5 @@
-// Copyright IBM Corp. 2017,2018. All Rights Reserved.
-// Node module: loopback-next
+// Copyright The LearnSpot Authors.
+// Node module: learnspot
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
@@ -7,9 +7,6 @@ const isCI = process.env.CI;
 module.exports = {
   extends: [
     '@commitlint/config-conventional',
-    // https://github.com/marionebl/commitlint/pull/406
-    // '@commitlint/config-lerna-scopes',
-    './packages/monorepo/lib/config-lerna-scopes',
   ],
   rules: {
     'header-max-length': [2, 'always', 100],

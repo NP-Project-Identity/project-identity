@@ -95,7 +95,25 @@ jobs:
         run: |
           npm ci --ignore-scripts
       - name: Verify commit linting
-        run: npx commitlint --from origin/main --to HEAD --verbose
+        run: npx --no-install commitlint --from origin/main --to HEAD --verbose
+
+  ci-lint:
+    name: CI Lint
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install monorepo tools
+        run: |
+          npm ci --ignore-scripts
+      - name: Verify Renovate config linting
+        run: npx --no-install renovate-config-validator
 
   license-lint:
     name: License Lint
