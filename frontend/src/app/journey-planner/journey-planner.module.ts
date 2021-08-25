@@ -15,22 +15,24 @@ import {JourneyPlan} from './models/journey-plan';
     FormsModule,
     IonicModule,
     JourneyPlannerPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
-  declarations: [
-    JourneyPlannerPage,
-    JourneyPlannerCreatorPage,
-  ]
+  declarations: [JourneyPlannerPage, JourneyPlannerCreatorPage],
 })
 export class JourneyPlannerPageModule implements OnInit {
   public completedJourneyPlans: number[] = [];
 
-  constructor(
-    private _journeyPlannerService: JourneyPlannerService,
-  ) { }
+  constructor(private _journeyPlannerService: JourneyPlannerService) {}
 
   ngOnInit() {
-    this._journeyPlannerService.addJourneyPlan(new JourneyPlan(0, 'Web Development Fundamentals', 'Study up on the basics of web development for HTML, CSS, and JavaScript.', []));
+    this._journeyPlannerService.addJourneyPlan(
+      new JourneyPlan(
+        0,
+        'Web Development Fundamentals',
+        'Study up on the basics of web development for HTML, CSS, and JavaScript.',
+        [],
+      ),
+    );
   }
 
   removeJourneyPlan(id: number) {

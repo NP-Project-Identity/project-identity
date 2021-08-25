@@ -7,11 +7,7 @@ import {MenuController} from '@ionic/angular';
   styleUrls: ['./events.page.scss'],
 })
 export class EventsPage implements OnInit {
+  constructor(public menuCtrl: MenuController) {}
 
-  constructor(public menuCtrl: MenuController) {
-  }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

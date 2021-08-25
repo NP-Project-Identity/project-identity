@@ -12,21 +12,29 @@ import {UserService} from '../services/user.service';
 })
 export class LoginPage implements OnInit {
   isSubmitted = false;
-  errorMsg = "";
+  errorMsg = '';
   loginForm = this.formBuilder.group({
     password: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-    ]))
+    email: new FormControl(
+      '',
+      Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
+      ]),
+    ),
   });
 
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, private formBuilder: FormBuilder, private auth: UserService, private router: Router) {
-    this.menuCtrl.enable(false)
+  constructor(
+    public navCtrl: NavController,
+    public menuCtrl: MenuController,
+    private formBuilder: FormBuilder,
+    private auth: UserService,
+    private router: Router,
+  ) {
+    this.menuCtrl.enable(false);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   async ionViewWillEnter() {
     if (await this.auth.isAuthenticated()) {
       this.router.navigate(['home']);
@@ -35,29 +43,28 @@ export class LoginPage implements OnInit {
 
   submit() {
     if (this.loginForm.valid) {
-      let result = this.auth.login(this.loginForm.get("email").value, Md5.hashStr(this.loginForm.get("password").value))
+      const result = this.auth.login(
+        this.loginForm.get('email').value,
+        Md5.hashStr(this.loginForm.get('password').value),
+      );
       if (result) {
         this.menuCtrl.enable(true).then(() => {
           this.router.navigate(['home']);
         });
-      }
-      else {
+      } else {
         this.isSubmitted = true;
-        this.errorMsg = "Invaild email or password";
+        this.errorMsg = 'Invaild email or password';
       }
-    }
-    else {
+    } else {
       if (this.formError.email.errors?.required) {
         this.isSubmitted = true;
-        this.errorMsg = "Email is required";
-      }
-      else if (this.formError.email.errors?.pattern) {
+        this.errorMsg = 'Email is required';
+      } else if (this.formError.email.errors?.pattern) {
         this.isSubmitted = true;
-        this.errorMsg = "Invaild email";
-      }
-      else if (this.formError.password.errors?.required) {
+        this.errorMsg = 'Invaild email';
+      } else if (this.formError.password.errors?.required) {
         this.isSubmitted = true;
-        this.errorMsg = "Password is required";
+        this.errorMsg = 'Password is required';
       }
     }
   }

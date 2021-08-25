@@ -7,9 +7,6 @@ import {ForumCommentPage} from './forum-comment/forum-comment.page';
 import {ForumContentPageRoutingModule} from './forum-content-routing.module';
 import {ForumContentPage} from './forum-content.page';
 
-
-
-
 @NgModule({
   imports: [
     CommonModule,
@@ -19,6 +16,6 @@ import {ForumContentPage} from './forum-content.page';
     ReactiveFormsModule,
     ComponentsModule,
   ],
-  declarations: [ForumContentPage, ForumCommentPage]
+  declarations: [ForumContentPage, ForumCommentPage],
 })
-export class ForumContentPageModule { }
+export class ForumContentPageModule {}

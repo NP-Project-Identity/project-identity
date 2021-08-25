@@ -6,16 +6,8 @@ import {PetInvPage} from './pet-inv/pet-inv.page';
 import {PetPageRoutingModule} from './pet-routing.module';
 import {PetPage} from './pet.page';
 
-
-
-
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PetPageRoutingModule
-  ],
-  declarations: [PetPage, PetInvPage]
+  imports: [CommonModule, FormsModule, IonicModule, PetPageRoutingModule],
+  declarations: [PetPage, PetInvPage],
 })
-export class PetPageModule { }
+export class PetPageModule {}

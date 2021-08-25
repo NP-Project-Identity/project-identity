@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { LogoutPage } from './logout.page';
+import {LogoutPage} from './logout.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: LogoutPage
-  }
+    component: LogoutPage,
+  },
 ];
 
 @NgModule({

@@ -7,7 +7,7 @@ import {Getter, inject} from '@loopback/core';
 import {
   DefaultCrudRepository,
   HasManyRepositoryFactory,
-  repository
+  repository,
 } from '@loopback/repository';
 import {DbDataSource} from '../datasources';
 import {Post, PostComment, PostRelations} from '../models';

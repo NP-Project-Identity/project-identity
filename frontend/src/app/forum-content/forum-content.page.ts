@@ -16,10 +16,14 @@ export class ForumContentPage implements OnInit {
 
   navItems = [
     {title: 'Lmgtplatform', url: '/learningmgtplatform', icon: 'layers'},
-    {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'}
+    {title: 'Forum', url: '/forum', icon: 'chatbox-ellipses-outline'},
   ];
 
-  constructor(private activatedRoute: ActivatedRoute, private forumService: ForumService, private user: UserService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private forumService: ForumService,
+    private user: UserService,
+  ) {}
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -33,6 +37,6 @@ export class ForumContentPage implements OnInit {
     this.postList = this.forumService.loadPost(this.cat, this.id);
   }
   getProfileImg(user: string) {
-    return "./assets/user/profile/" + this.user.getUserImg(user);
+    return './assets/user/profile/' + this.user.getUserImg(user);
   }
 }

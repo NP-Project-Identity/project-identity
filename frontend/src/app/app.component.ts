@@ -18,10 +18,13 @@ export class AppComponent {
   //   { title: 'Forum', url: '/forum', icon: 'warning' },
   // ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private router: Router, private storage: Storage, public auth: UserService) {
+  constructor(
+    private router: Router,
+    private storage: Storage,
+    public auth: UserService,
+  ) {
     this.storage = storage;
   }
 
-  async ngOnInit() {
-  }
+  async ngOnInit() {}
 }

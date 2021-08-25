@@ -3,5 +3,5 @@ export class JourneyPlanStep {
     public name: string,
     public standardCurrencyReward: number,
     public completed: boolean,
-  ) { }
+  ) {}
 }

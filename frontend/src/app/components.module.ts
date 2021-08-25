@@ -11,4 +11,4 @@ import {SubbarComponent} from './subbar/subbar.component';
   exports: [MainHeaderComponent, SubbarComponent, ForumCatComponent],
   imports: [IonicModule, RouterModule, CommonModule],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

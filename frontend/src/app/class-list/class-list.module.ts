@@ -6,17 +6,14 @@ import {ComponentsModule} from '../components.module';
 import {ClassListPageRoutingModule} from './class-list-routing.module';
 import {ClassListPage} from './class-list.page';
 
-
-
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     ClassListPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
-  declarations: [ClassListPage]
+  declarations: [ClassListPage],
 })
-export class ClassListPageModule { }
+export class ClassListPageModule {}

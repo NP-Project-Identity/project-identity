@@ -8,11 +8,13 @@ import {ClassService} from '../services/class.service';
   styleUrls: ['./class.page.scss'],
 })
 export class ClassPage implements OnInit {
-
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private classService: ClassService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private classService: ClassService,
+  ) {}
   class: string[];
   ngOnInit() {
-    this.class = this.classService.loadClassList("S10198161");
+    this.class = this.classService.loadClassList('S10198161');
   }
-
 }

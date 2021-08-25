@@ -12,7 +12,7 @@ export class HomePage implements OnInit {
   public username;
   navItems = [
     {title: 'Lmgtplatform', url: '../learningmgtplatform', icon: 'layers'},
-    {title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline'}
+    {title: 'Forum', url: '../forum', icon: 'chatbox-ellipses-outline'},
   ];
   modules = [
     {name: 'All'},
@@ -20,45 +20,116 @@ export class HomePage implements OnInit {
     {name: 'EH'},
     {name: 'FP3'},
     {name: 'NS'},
-    {name: 'ISProid'}
+    {name: 'ISProid'},
   ];
   tasks = [
-    {name: 'ISProid', desc: 'Prototype & E-Poster', color: '#FA0000', deadline: '3d'},
+    {
+      name: 'ISProid',
+      desc: 'Prototype & E-Poster',
+      color: '#FA0000',
+      deadline: '3d',
+    },
     {name: 'EH', desc: 'EH Assignment', color: '#FA0000', deadline: '5d'},
-    {name: 'Capstone', desc: 'Capstone Assignment', color: '#FA4B00', deadline: '1w'},
+    {
+      name: 'Capstone',
+      desc: 'Capstone Assignment',
+      color: '#FA4B00',
+      deadline: '1w',
+    },
     {name: 'FP3', desc: 'FP3 Pair Interview', color: '#FA4B00', deadline: '1w'},
     {name: 'NS', desc: 'NS Group Assignment', color: '#FA4B00', deadline: '1w'},
-    {name: 'NS', desc: 'NS Individual Assignment', color: '#FA4B00', deadline: '1w'},
+    {
+      name: 'NS',
+      desc: 'NS Individual Assignment',
+      color: '#FA4B00',
+      deadline: '1w',
+    },
     {name: 'NS', desc: 'NS CA2 Test', color: '#FA4B00', deadline: '1w'},
     {name: 'NS', desc: 'NS Final Test', color: '#7E7E7E', deadline: '2w'},
-    {name: 'EH', desc: 'EH Practical Test 2', color: '#ABABAB', deadline: '3w'}
-
+    {name: 'EH', desc: 'EH Practical Test 2', color: '#ABABAB', deadline: '3w'},
   ];
   news = [
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'},
-    {title: 'TCP', content: 'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!'}
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
+    {
+      title: 'TCP',
+      content:
+        'Invitation to attend 2 online Lectures by distinguished speakers: "An Innovative Economy" by Mr Ravi Menon and "The US-China Relationship: From Conflict to Resolution" by Mr Stephen Roach!',
+    },
   ];
-  selectedtasks = [
-  ];
-  selectednews = [
-  ];
+  selectedtasks = [];
+  selectednews = [];
   newslength: number;
   tasklength: number;
   selectedmod: string;
 
-  constructor(private userService: UserService, public menuCtrl: MenuController) {
+  constructor(
+    private userService: UserService,
+    public menuCtrl: MenuController,
+  ) {
     this.newslength = 0;
     this.tasklength = 7;
     this.selectedmod = '';
@@ -67,7 +138,7 @@ export class HomePage implements OnInit {
   }
   async ngOnInit() {
     this.username = await this.userService.getUserName();
-    this.menuCtrl.enable(true)
+    this.menuCtrl.enable(true);
   }
   list = document.getElementById('list');
   loadNews(event) {
@@ -77,8 +148,7 @@ export class HomePage implements OnInit {
         this.appendNews(2);
         event.target.complete();
         console.log('done');
-      }
-      else {
+      } else {
         console.log('No news left');
         event.target.disabled = true;
         event.target.complete();
@@ -87,8 +157,8 @@ export class HomePage implements OnInit {
   }
   appendNews(number) {
     const olength = this.newslength;
-    for (var i = 0; i < number; i++) {
-      this.selectednews.push(this.news[i + olength])
+    for (let i = 0; i < number; i++) {
+      this.selectednews.push(this.news[i + olength]);
       this.newslength++;
     }
   }
@@ -103,13 +173,12 @@ export class HomePage implements OnInit {
       for (var i = 0; i < maxlength; i++) {
         this.selectedtasks.push(this.tasks[i]);
       }
-    }
-    else {
+    } else {
       var i = 0;
-      var v = 0;
+      let v = 0;
       while (i < maxlength && v < this.tasks.length) {
         if (this.tasks[v].name == selectedmod) {
-          this.selectedtasks.push(this.tasks[v])
+          this.selectedtasks.push(this.tasks[v]);
           i++;
         }
         v++;

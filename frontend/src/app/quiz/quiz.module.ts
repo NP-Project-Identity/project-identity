@@ -7,9 +7,6 @@ import {QuizPopupComponent} from './quiz-popup/quiz-popup.component';
 import {QuizPageRoutingModule} from './quiz-routing.module';
 import {QuizPage} from './quiz.page';
 
-
-
-
 @NgModule({
   imports: [
     CommonModule,
@@ -17,8 +14,8 @@ import {QuizPage} from './quiz.page';
     IonicModule,
     QuizPageRoutingModule,
     ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
   ],
-  declarations: [QuizPage, QuizPopupComponent]
+  declarations: [QuizPage, QuizPopupComponent],
 })
-export class QuizPageModule { }
+export class QuizPageModule {}

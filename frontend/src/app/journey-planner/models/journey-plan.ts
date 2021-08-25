@@ -13,15 +13,15 @@ export class JourneyPlan {
     let totalCount = 0;
 
     for (const step of this.steps) {
-      if (step.completed)
-        completedCount++;
+      if (step.completed) completedCount++;
 
       totalCount++;
     }
 
-    if (!steps.length)
-      this.completionPercentage = 0;
+    if (!steps.length) this.completionPercentage = 0;
     else
-      this.completionPercentage = Math.floor(completedCount / totalCount * 100);
+      this.completionPercentage = Math.floor(
+        (completedCount / totalCount) * 100,
+      );
   }
 }

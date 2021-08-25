@@ -21,7 +21,7 @@ const routes: Routes = [
         path: ':id',
         redirectTo: '/forum',
         pathMatch: 'full',
-      }
+      },
     ],
   },
 ];
@@ -30,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ForumPageRoutingModule { }
+export class ForumPageRoutingModule {}

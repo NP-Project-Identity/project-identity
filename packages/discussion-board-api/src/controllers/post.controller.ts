@@ -9,7 +9,7 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where
+  Where,
 } from '@loopback/repository';
 import {
   del,
@@ -20,7 +20,7 @@ import {
   post as restPost,
   put,
   requestBody,
-  response
+  response,
 } from '@loopback/rest';
 import {Post} from '../models';
 import {PostRepository} from '../repositories';

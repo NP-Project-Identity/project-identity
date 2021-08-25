@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { AchievementPage } from './achievement.page';
+import {AchievementPage} from './achievement.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AchievementPage
-  }
+    component: AchievementPage,
+  },
 ];
 
 @NgModule({
