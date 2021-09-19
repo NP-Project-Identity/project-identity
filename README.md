@@ -16,7 +16,7 @@ LearnSpot (codenamed Project Identity) is an all-in-one gamified learning engage
 
 ## Deployment
 
-This monorepo only consists of of TypeScript-based packages and development utilities. Deployment methods are documented in separate repos (See [Related Repositories](#related-repositories)).
+This monorepo only consists of of TypeScript-based packages and development utilities. Deployment methods are documented in separate repos (See [Related Repositories](https://github.com/NP-Project-Identity/project-identity/blob/main/docs/quick-start.md)).
 
 ## Status: ![POC](https://img.shields.io/badge/Proof%20of%20Concept-blue)
 
