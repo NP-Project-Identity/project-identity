@@ -74,7 +74,7 @@
     "markdown-table": "^3.0.0",
     "open-cli": "^6.0.1",
     "prettier": "2.3.2",
-    "renovate": "^26.6.0",
+    "renovate": "^31.0.0",
     "typescript": "~4.2.4"
   },
   "config": {
