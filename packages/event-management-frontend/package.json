@@ -47,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/carbon__icons-react": "^10.31.0",
+    "@types/carbon__icons-react": "^10.31.2",
     "@types/carbon-components-react": "^7.36.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/uuid": "^8.3.0"
