@@ -1,0 +1,14 @@
+The following commits were made pursuant to the Developer Certificate of Origin
+(DCO), Version 1.1, even though a Signed-off-by: was not included in the commit
+message. I have used these emails in the past: s10195387@connect.np.edu.sg
+
+7786a7a fixed-news-section-homepage
+b09173b added-event-&-store-iframes
+505bd32 fixed-width
+a479d9c added-tasks
+dc72073 added infinitescroll + news
+219844b adding basic layout for dashboard
+44b3672 added sub-bar + support for dynamic loading
+a712072 added subbar (no dynamic load yet)
+3879b26 added mobile view
+812eb59 navbar-desktop
