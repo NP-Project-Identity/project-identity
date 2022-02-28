@@ -1,0 +1,105 @@
+The following commits were made pursuant to the Developer Certificate of Origin
+(DCO), Version 1.1, even though a Signed-off-by: was not included in the commit
+message. I have used these emails in the past: dodieboy@users.noreply.github.com
+
+700a0d3 feat: remove iframe used for demo
+076e618 fix: prettier error
+1d3a09d feat: reorganize forum directory
+2115756 feat: cleanup quiz code
+bd97cc6 feat: reorganize quiz directory
+e57be49 feat: reorganize pet directory
+4da3fb0 fix: pet init failed
+3e2f35b fix: authGuard not working
+d9fbf0d fix: GET http://localhost:8100/svg/login.svg 404 error on login page
+5752455 fix: error from previous commit
+c5ef8b9 fix: error from previous commit
+e8ef9ef fix: #54
+93c89e7 fix: #53 #54
+c74931c fix: email should not care about uppercase
+c3df7af fix: pet too small on big screen
+2a33443 fix: auth session was clear when web refresh
+c88cf5a Feat: improve quiz format
+1ceb1f2 feat: improve quiz return
+3fcd9c6 Feat: error msg for invaild email and password
+6c1e722 Feat: added what this img quiz
+ef48bb1 Fix: cannot enter forum when sudden quest due to resource error
+a98f1b6 Feat: pet AuthGuard
+d1b6d74 feat: minor css change
+670fa65 Feat: improve quiz format
+176f8f2 feat: improve quiz return
+a509f79 Feat: pet animation
+27499fd Feat: pet animation
+fd2b5fd Fix: achievement typo and minor css fix
+64f886f fix: logout button disappear on mobile mode
+3954390 Feat: improve home page scroll menu
+3b9c71b Fix: #43
+1df2b28 Feat: password hashing
+fb629d9 Fix:  text overflow with ellipses #19
+29b2392 Fix: long header text cause header text to dissapear
+80d4cfd Feat: pet error msg
+e2d3ae3 Feat: quiz reward is link to user service now
+ebec43e Feat: feed pet now use food
+7786240 Feat: pet inv
+b28af1f Feat: changable pet bg
+6a6d7ab Fix: profile img not working for forum
+f50411b Feat: improve header for mobile
+d25ef71 Feat: customizable profile and bg img & redesign header
+ddffe6f feat: hide safeentry from nav for now
+26f12df feat: pet menu button
+5727192 feat: pet action function
+76df53f Feat: minor changes
+0d2fe74 feat: improve pet action button
+7256276 Feat: working pet exp indicator
+5be2811 Fix: a auth bug
+7e882a9 Fix: login layout for mobile
+42e4e6b Feat: pet action layout
+51f0858 Feat: pet layout
+a9fc488 Remove ubuntu 10 & 12 workflow
+641f275 fix: auth problem on initialze
+53b23bb Feat: add "All" filter for dashboard task
+34901e0 Fix: dashboard task filter not working when click text
+b2c0497 Feat: login validation
+e59cfc6 Feat: login auth
+ec12e8e Feat: enter keyup event for login
+27a13b4 feat: logout
+9333f1f feat: login
+06d44e0 feat: page will now auto get username using this.userService.getUserName()
+0ec2d99 feat: login
+1e8981f Feal: Achievement
+dd009f6 Feat: comment in forum
+8e19d14 Feat: improve forum create look
+e893fe5 Feat: post new forum
+1687ee9 Feat: forum like
+b28153e Feat: minor CSS change for forum list and content
+efeb9c0 Fix: forum post title not showing
+c75a7db Feat: Redesign data format for forum and class service
+0b933e5 Feat: add game to nav
+f8a3745 Feat: change profile img
+036a505 revert: quest append rate for class list
+884d604 Fix: quiz is not working for class list
+1263928 Feat: change profile img
+2b553cd Feat: improved class data format and more
+2cca27d feat: move some feature from forum list to class list
+5266340 feat: class module page
+153773e feat: learningmgtplatform
+b09e826 feat: code cleanup
+c8ae41e feat: minor CSS change for quiz
+3e5faa3 feat(forum list): sudden quiz will appear in the forum list now and more
+0ffffa4 fix: subbar is not fix at the bottom
+2277ec4 feat(forum list): sudden quiz will appear in the forum list now
+0aab37d Revert "Revert "Merge branch 'main' into Forum""
+55069d1 Revert "Merge branch 'main' into Forum"
+bea4a27 feat: quiz page
+d203b1c feat (forum service): minor format change
+78081d5 feat(forum): move forum data to forum service
+ecae293 add: forum content page
+afd7679 fix: UI problem for mobile view
+3f493e1 Add: forum list & more
+fd447b3 Fix: few bug fix for forum cat
+34ccdd4 fix: forum cat component selector
+f66c644 add: main forum sub cat (WIP)
+2e158dc add: main forum sub cat (WIP)
+ca8931d add: main forum cat
+9057534 add: menu button
+8fe6696 move: header to main-header component
+34d30bb add: header & forum page
